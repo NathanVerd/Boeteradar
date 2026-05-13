@@ -214,14 +214,47 @@ export default function BtwAangifteTeLaatPage() {
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-black">Officiële bronnen</h2>
+  <h2 className="text-2xl font-black">Officiële bronnen</h2>
 
-          <p className="mt-4 text-slate-700">
-            Deze pagina moet nog gekoppeld worden aan gecontroleerde officiële
-            bronnen. Voor concrete beslissingen controleer je best FOD Financiën
-            of vraag je advies aan je boekhouder.
-          </p>
-        </section>
+  <p className="mt-4 text-slate-700">
+    Controleer altijd de officiële informatie van FOD Financiën. BoeteRadar
+    geeft alleen een vereenvoudigde indicatie en vervangt geen advies van je
+    boekhouder.
+  </p>
+
+  <div className="mt-5 grid gap-3">
+    <a
+      href="https://financien.belgium.be/nl/ondernemingen/btw/boeten"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
+    >
+      FOD Financiën — Btw-boeten
+    </a>
+
+    <a
+      href="https://financien.belgium.be/nl/E-services/Intervat"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
+    >
+      FOD Financiën — Intervat aangifteportaal
+    </a>
+
+    <a
+      href="https://financien.belgium.be/nl/ondernemingen/btw/betaling-teruggave/betaling"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
+    >
+      FOD Financiën — Btw betalen
+    </a>
+  </div>
+
+  <p className="mt-4 text-sm text-slate-500">
+    Laatst inhoudelijk nagekeken: mei 2026. Regels kunnen wijzigen.
+  </p>
+</section>
 
         <div className="mt-8">
           <Link
