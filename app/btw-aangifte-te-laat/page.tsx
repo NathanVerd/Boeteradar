@@ -446,7 +446,7 @@ export default function BtwAangifteTeLaatPage() {
 
   <div className="mt-6 grid gap-3 md:grid-cols-2">
     <Link
-      href="/"
+      href="/btw-te-laat-betaald"
       className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
     >
       Btw te laat betaald →
