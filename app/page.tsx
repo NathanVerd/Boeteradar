@@ -22,11 +22,12 @@ const checks = [
     status: "Binnenkort",
   },
   {
-    title: "Autokeuring vervallen",
-    description: "Bekijk wat je best doet als je autokeuring verlopen is.",
-    href: "#",
-    status: "Binnenkort",
-  },
+  title: "Autokeuring vervallen",
+  description:
+    "Check je risico, stappenplan en officiële bronnen als je technische keuring verlopen is.",
+  href: "/autokeuring-vervallen",
+  status: "Actief",
+},
   {
     title: "Student te veel gewerkt",
     description: "Check mogelijke gevolgen voor uren, belastingen en groeipakket.",
