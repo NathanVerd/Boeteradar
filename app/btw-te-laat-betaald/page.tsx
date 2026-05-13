@@ -178,6 +178,58 @@ export default function BtwTeLaatBetaaldPage() {
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Veelgestelde vragen
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">
+            Vragen over btw te laat betalen
+          </h2>
+
+          <div className="mt-6 grid gap-4">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">
+                Wat moet ik doen als ik mijn btw te laat betaald heb?
+              </h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Controleer eerst of de betaling intussen correct gebeurd is. Als
+                je nog niet betaald hebt, betaal dan zo snel mogelijk met de
+                juiste mededeling.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">
+                Is de interestberekening op deze pagina exact?
+              </h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Nee. De berekening is een vereenvoudigde indicatie. De echte
+                interesten, boetes of gevolgen kunnen afwijken door je concrete
+                situatie.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">
+                Moet ik mijn boekhouder contacteren?
+              </h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Ja, zeker als het om een groot bedrag gaat, als je meerdere
+                dagen te laat bent of als dit niet de eerste keer is.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Wat moet ik bewaren als bewijs?</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Bewaar je betalingsbewijs, de gebruikte mededeling, eventuele
+                berichten van FOD Financiën en communicatie met je boekhouder.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-black">Officiële bronnen</h2>
 
           <p className="mt-4 text-slate-700">
