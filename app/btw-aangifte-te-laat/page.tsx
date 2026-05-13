@@ -228,6 +228,59 @@ export default function BtwAangifteTeLaatPage() {
             </div>
           </div>
         </section>
+        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+    Boekhouder voorbereiden
+  </p>
+
+  <h2 className="mt-2 text-2xl font-black">
+    Wat stuur je best naar je boekhouder?
+  </h2>
+
+  <p className="mt-3 max-w-2xl text-slate-700">
+    Als je btw-aangifte te laat is, verlies dan geen tijd met vage berichten.
+    Stuur meteen de juiste info door zodat je boekhouder sneller kan helpen.
+  </p>
+
+  <div className="mt-5 grid gap-3 md:grid-cols-2">
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">1. Periode van de aangifte</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Zeg duidelijk over welke maand, kwartaal of btw-periode het gaat.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">2. Status van indiening</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Meld of de aangifte al ingediend is of nog volledig moet gebeuren.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">3. Status van betaling</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Geef door of de btw al betaald is en wanneer de betaling gebeurde.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">4. Bewijsstukken</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Voeg screenshots, betalingsbewijzen of meldingen van FOD Financiën toe.
+      </p>
+    </div>
+  </div>
+
+  <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+    <p className="font-bold">Voorbeeldbericht:</p>
+    <p className="mt-2 text-sm text-slate-700">
+      “Hallo, ik denk dat mijn btw-aangifte voor [periode] te laat is. De aangifte
+      is [wel/niet] ingediend en de betaling is [wel/niet] gebeurd op [datum].
+      Kan je controleren wat ik nu best doe?”
+    </p>
+  </div>
+</section>
 
         <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
