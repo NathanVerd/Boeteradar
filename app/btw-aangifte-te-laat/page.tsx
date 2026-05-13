@@ -351,6 +351,49 @@ export default function BtwAangifteTeLaatPage() {
             Laatst inhoudelijk nagekeken: mei 2026. Regels kunnen wijzigen.
           </p>
         </section>
+        <section className="mt-6 rounded-3xl bg-slate-950 p-8 text-white shadow-sm">
+  <p className="text-sm font-bold uppercase tracking-wide text-orange-400">
+    Andere populaire checks
+  </p>
+
+  <h2 className="mt-2 text-2xl font-black">
+    Nog een administratieve fout checken?
+  </h2>
+
+  <div className="mt-6 grid gap-3 md:grid-cols-2">
+    <Link
+      href="/"
+      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+    >
+      Btw te laat betaald →
+    </Link>
+
+    <Link
+      href="/"
+      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+    >
+      Personenbelasting te laat →
+    </Link>
+
+    <Link
+      href="/"
+      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+    >
+      Autokeuring vervallen →
+    </Link>
+
+    <Link
+      href="/"
+      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+    >
+      Student te veel gewerkt →
+    </Link>
+  </div>
+
+  <p className="mt-4 text-sm text-slate-300">
+    Deze checks worden stap voor stap actief gemaakt.
+  </p>
+</section>
 
         <div className="mt-8">
           <Link
