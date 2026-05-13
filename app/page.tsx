@@ -11,9 +11,9 @@ const checks = [
   {
     title: "Btw te laat betaald",
     description:
-      "Bekijk wat er kan gebeuren als je je btw-bedrag te laat betaalt.",
-    href: "#",
-    status: "Binnenkort",
+      "Check je mogelijke risico, geschatte nalatigheidsinterest, stappenplan en officiële bronnen.",
+    href: "/btw-te-laat-betaald",
+    status: "Actief",
   },
   {
     title: "Personenbelasting te laat",
@@ -100,7 +100,7 @@ export default function Home() {
                   <p className="mt-3 text-slate-700">{check.description}</p>
 
                   <p className="mt-5 font-bold text-orange-600">
-                    Start btw-check →
+                    Start de check →
                   </p>
                 </Link>
               );
@@ -150,4 +150,5 @@ export default function Home() {
       </footer>
     </main>
   );
+}
 }
