@@ -204,21 +204,31 @@ export default function BtwAangifteTeLaatPage() {
           </div>
         </section>
 
-        <section className="mt-6 rounded-3xl border-2 border-dashed border-slate-300 bg-white p-8">
-          <h2 className="text-2xl font-black">
-            Gratis deadline checklist binnenkort
-          </h2>
+        <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
+            Gratis hulpmiddel
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">Btw-deadline checklist</h2>
 
           <p className="mt-3 max-w-2xl text-slate-700">
-            Binnenkort kun je hier een eenvoudige checklist downloaden om je
-            btw-deadlines, betalingen en bewijsstukken beter bij te houden.
+            Gebruik deze checklist om je btw-aangifte, betaling en bewijsstukken
+            niet meer uit het oog te verliezen. Binnenkort maken we hiervan een
+            echte downloadbare PDF.
           </p>
+
+          <ul className="mt-5 grid gap-2 text-slate-700 md:grid-cols-2">
+            <li>✓ Datum van aangifte noteren</li>
+            <li>✓ Betaling controleren</li>
+            <li>✓ Bewijs van indiening bewaren</li>
+            <li>✓ Volgende deadline vastleggen</li>
+          </ul>
 
           <button
             disabled
-            className="mt-5 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
+            className="mt-6 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
           >
-            Binnenkort beschikbaar
+            PDF-download binnenkort
           </button>
         </section>
 
