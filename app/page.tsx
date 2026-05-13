@@ -16,11 +16,12 @@ const checks = [
     status: "Actief",
   },
   {
-    title: "Personenbelasting te laat",
-    description: "Check de mogelijke gevolgen van een te late belastingaangifte.",
-    href: "#",
-    status: "Binnenkort",
-  },
+  title: "Personenbelasting te laat",
+  description:
+    "Check je risico, stappenplan en officiële bronnen als je belastingaangifte te laat is.",
+  href: "/personenbelasting-te-laat",
+  status: "Actief",
+},
   {
   title: "Autokeuring vervallen",
   description:
