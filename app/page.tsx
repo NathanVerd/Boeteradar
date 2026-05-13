@@ -30,11 +30,12 @@ const checks = [
   status: "Actief",
 },
   {
-    title: "Student te veel gewerkt",
-    description: "Check mogelijke gevolgen voor uren, belastingen en groeipakket.",
-    href: "#",
-    status: "Binnenkort",
-  },
+  title: "Student te veel gewerkt",
+  description:
+    "Check studentenuren, Groeipakket, risico's en officiële bronnen.",
+  href: "/student-te-veel-gewerkt",
+  status: "Actief",
+},
 ];
 
 export default function Home() {
