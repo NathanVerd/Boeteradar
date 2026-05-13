@@ -404,6 +404,37 @@ export default function BtwAangifteTeLaatPage() {
             Laatst inhoudelijk nagekeken: mei 2026. Regels kunnen wijzigen.
           </p>
         </section>
+        <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+    Binnenkort
+  </p>
+
+  <h2 className="mt-2 text-2xl font-black">
+    Wil je een gratis herinnering voor btw-deadlines?
+  </h2>
+
+  <p className="mt-3 max-w-2xl text-slate-700">
+    Later kan BoeteRadar je helpen met eenvoudige reminders voor btw-aangiftes,
+    betalingen en andere administratieve deadlines. Voorlopig bouwen we eerst de
+    belangrijkste checks uit.
+  </p>
+
+  <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+    <p className="font-bold">Waarom dit nuttig is:</p>
+    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
+      <li>Je vergeet minder snel een deadline.</li>
+      <li>Je houdt bewijs van aangifte en betaling beter bij.</li>
+      <li>Je krijgt later mogelijk een checklist per situatie.</li>
+    </ul>
+  </div>
+
+  <button
+    disabled
+    className="mt-6 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
+  >
+    Reminderfunctie binnenkort
+  </button>
+</section>
         <section className="mt-6 rounded-3xl bg-slate-950 p-8 text-white shadow-sm">
   <p className="text-sm font-bold uppercase tracking-wide text-orange-400">
     Andere populaire checks
