@@ -231,6 +231,58 @@ export default function BtwAangifteTeLaatPage() {
             PDF-download binnenkort
           </button>
         </section>
+        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+    Veelgestelde vragen
+  </p>
+
+  <h2 className="mt-2 text-2xl font-black">
+    Vragen over een te late btw-aangifte
+  </h2>
+
+  <div className="mt-6 grid gap-4">
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">
+        Wat moet ik doen als mijn btw-aangifte te laat is?
+      </h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Dien je aangifte zo snel mogelijk alsnog in. Controleer daarna of je
+        betaling gebeurd is en bewaar bewijs van indiening en betaling.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">
+        Is deze berekening exact?
+      </h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Nee. BoeteRadar gebruikt een vereenvoudigde indicatie. De echte gevolgen
+        hangen af van je concrete situatie, eerdere fouten, betaling en de
+        beoordeling door de administratie.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">
+        Moet ik mijn boekhouder contacteren?
+      </h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Ja, zeker als je meerdere maanden te laat bent, nog niet betaald hebt of
+        al eerder problemen had met btw-deadlines.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">
+        Kan een te late btw-aangifte extra gevolgen hebben?
+      </h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Ja. Naast een mogelijke administratieve boete kunnen laattijdige betaling,
+        herhaling of ontbrekende documenten je situatie risicovoller maken.
+      </p>
+    </div>
+  </div>
+</section>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-black">Officiële bronnen</h2>
