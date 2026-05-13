@@ -164,7 +164,9 @@ export default function BtwAangifteTeLaatPage() {
         </div>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-black">Wanneer moet je extra opletten?</h2>
+          <h2 className="text-2xl font-black">
+            Wanneer moet je extra opletten?
+          </h2>
 
           <div className="mt-4 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl bg-slate-50 p-5">
@@ -203,7 +205,10 @@ export default function BtwAangifteTeLaatPage() {
             btw-deadlines, betalingen en bewijsstukken beter bij te houden.
           </p>
 
-          <button className="mt-5 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60">
+          <button
+            disabled
+            className="mt-5 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
+          >
             Binnenkort beschikbaar
           </button>
         </section>
@@ -219,7 +224,10 @@ export default function BtwAangifteTeLaatPage() {
         </section>
 
         <div className="mt-8">
-          <Link href="/" className="font-bold text-slate-700 hover:text-slate-950">
+          <Link
+            href="/"
+            className="font-bold text-slate-700 hover:text-slate-950"
+          >
             ← Terug naar alle checks
           </Link>
         </div>
