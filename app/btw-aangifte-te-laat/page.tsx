@@ -66,6 +66,31 @@ export default function BtwAangifteTeLaatPage() {
             Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer
             altijd officiële bronnen of vraag advies aan je boekhouder.
           </div>
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
+  <div className="rounded-2xl bg-slate-50 p-5">
+    <p className="text-sm font-bold text-orange-600">Stap 1</p>
+    <h3 className="mt-1 font-black">Aangifte indienen</h3>
+    <p className="mt-2 text-sm text-slate-700">
+      Dien je btw-aangifte zo snel mogelijk alsnog in via Intervat.
+    </p>
+  </div>
+
+  <div className="rounded-2xl bg-slate-50 p-5">
+    <p className="text-sm font-bold text-orange-600">Stap 2</p>
+    <h3 className="mt-1 font-black">Betaling controleren</h3>
+    <p className="mt-2 text-sm text-slate-700">
+      Kijk na of je openstaande btw al betaald is of nog dringend betaald moet worden.
+    </p>
+  </div>
+
+  <div className="rounded-2xl bg-slate-50 p-5">
+    <p className="text-sm font-bold text-orange-600">Stap 3</p>
+    <h3 className="mt-1 font-black">Bewijs bewaren</h3>
+    <p className="mt-2 text-sm text-slate-700">
+      Bewaar je bewijs van indiening, betaling en communicatie met je boekhouder.
+    </p>
+  </div>
+</div>
         </div>
 
         <div className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
