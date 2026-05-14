@@ -96,6 +96,13 @@ export default function BronnenPage() {
         >
           Disclaimer
         </Link>
+        <Link
+      href="/bronnen"
+      className="font-bold text-slate-600 hover:text-slate-950"
+    >
+      Bronnen
+    </Link>
+  </div>
       </footer>
     </main>
   );
