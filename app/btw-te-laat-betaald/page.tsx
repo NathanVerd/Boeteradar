@@ -43,7 +43,7 @@ export default function BtwTeLaatBetaaldPage() {
       <Header label="Btw-betaling" />
 
       <section className="mx-auto max-w-5xl px-5 py-10">
-        <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
+        <div className="rounded-3xl bg-white p-7 shadow-sm md:p-12">
           <p className="mb-4 text-sm font-bold uppercase tracking-wide text-orange-600">
             Btw te laat betaald
           </p>
@@ -52,9 +52,10 @@ export default function BtwTeLaatBetaaldPage() {
             Btw te laat betaald? Check je mogelijke risico.
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg text-slate-700">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
             Deze checker geeft een eerste indicatie van je risico als je je btw
-            te laat betaalde of nog moet betalen.
+            te laat betaalde of nog moet betalen. Je ziet ook welke stappen je
+            best controleert: betalen, mededeling nakijken en bewijs bewaren.
           </p>
 
           <DisclaimerBox text="Dit is een informatieve tool met vereenvoudigde rekenvoorbeelden. Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
@@ -63,31 +64,36 @@ export default function BtwTeLaatBetaaldPage() {
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 1</p>
               <h3 className="mt-1 font-black">Betaal meteen</h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Wacht niet tot je een herinnering krijgt.
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Als er nog iets openstaat, betaal dan zo snel mogelijk.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 2</p>
               <h3 className="mt-1 font-black">Check mededeling</h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Gebruik de correcte gestructureerde mededeling.
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Controleer of je de juiste rekening en mededeling gebruikt.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 3</p>
               <h3 className="mt-1 font-black">Bewaar bewijs</h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Bewaar betalingsbewijs en communicatie.
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Bewaar je betalingsbewijs en eventuele communicatie.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <div className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <h2 className="text-2xl font-black">Snelle betalingscheck</h2>
+
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-700">
+            Vul hieronder je situatie in. De uitkomst is alleen een indicatie en
+            geen officiële berekening.
+          </p>
 
           <div className="mt-6 grid gap-5">
             <label className="font-bold">
@@ -146,10 +152,11 @@ export default function BtwTeLaatBetaaldPage() {
                 {estimatedInterest}
               </p>
 
-              <p className="mt-3 text-sm text-slate-700">
+              <p className="mt-3 text-sm leading-6 text-slate-700">
                 Dit is een vereenvoudigde indicatie op basis van een
                 voorbeeldrente. De echte interesten, boetes of gevolgen kunnen
-                afwijken.
+                afwijken door je concrete situatie, betalingstermijn,
+                verwerking en beoordeling door de administratie.
               </p>
 
               <p className="mt-3 font-bold">Beste actie: {advice}</p>
@@ -157,10 +164,10 @@ export default function BtwTeLaatBetaaldPage() {
           )}
         </div>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <h2 className="text-2xl font-black">Wat moet je nu doen?</h2>
 
-          <ol className="mt-4 list-decimal space-y-2 pl-5 text-slate-700">
+          <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-slate-700">
             <li>Betaal het openstaande btw-bedrag zo snel mogelijk.</li>
             <li>Controleer of je rekeningnummer en mededeling correct zijn.</li>
             <li>Bewaar je betalingsbewijs.</li>
@@ -169,19 +176,55 @@ export default function BtwTeLaatBetaaldPage() {
           </ol>
         </section>
 
-        <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Wanneer moet je extra opletten?
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">
+            Niet elke laattijdige betaling is even ernstig.
+          </h2>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Het bedrag is hoog</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Hoe groter het openstaande bedrag, hoe belangrijker het is om
+                snel te betalen en bewijs te bewaren.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Je hebt nog niet betaald</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Als de betaling nog openstaat, is snel handelen belangrijker dan
+                alleen de mogelijke interest berekenen.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">De mededeling klopt niet</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Een verkeerde mededeling kan de verwerking bemoeilijken. Laat dit
+                nakijken als je twijfelt.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
             Gratis hulpmiddel
           </p>
 
           <h2 className="mt-2 text-2xl font-black">Btw-deadline checklist</h2>
 
-          <p className="mt-3 max-w-2xl text-slate-700">
+          <p className="mt-3 max-w-2xl leading-7 text-slate-700">
             Gebruik deze checklist om je btw-aangifte, betaling, mededeling en
             bewijsstukken beter op te volgen.
           </p>
 
-          <ul className="mt-5 grid gap-2 text-slate-700 md:grid-cols-2">
+          <ul className="mt-5 grid gap-2 leading-7 text-slate-700 md:grid-cols-2">
             <li>✓ Volgende btw-deadline noteren</li>
             <li>✓ Intervat controleren</li>
             <li>✓ Betaling controleren</li>
@@ -196,7 +239,7 @@ export default function BtwTeLaatBetaaldPage() {
           </Link>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
             Veelgestelde vragen
           </p>
@@ -210,7 +253,7 @@ export default function BtwTeLaatBetaaldPage() {
               <h3 className="font-black">
                 Wat moet ik doen als ik mijn btw te laat betaald heb?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Controleer eerst of de betaling intussen correct gebeurd is. Als
                 je nog niet betaald hebt, betaal dan zo snel mogelijk met de
                 juiste mededeling.
@@ -221,7 +264,7 @@ export default function BtwTeLaatBetaaldPage() {
               <h3 className="font-black">
                 Is de interestberekening op deze pagina exact?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Nee. De berekening is een vereenvoudigde indicatie. De echte
                 interesten, boetes of gevolgen kunnen afwijken door je concrete
                 situatie.
@@ -232,7 +275,7 @@ export default function BtwTeLaatBetaaldPage() {
               <h3 className="font-black">
                 Moet ik mijn boekhouder contacteren?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Ja, zeker als het om een groot bedrag gaat, als je meerdere
                 dagen te laat bent of als dit niet de eerste keer is.
               </p>
@@ -240,7 +283,7 @@ export default function BtwTeLaatBetaaldPage() {
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">Wat moet ik bewaren als bewijs?</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Bewaar je betalingsbewijs, de gebruikte mededeling, eventuele
                 berichten van FOD Financiën en communicatie met je boekhouder.
               </p>

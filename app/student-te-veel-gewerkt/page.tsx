@@ -31,7 +31,7 @@ export default function StudentTeVeelGewerktPage() {
     risk = "Middelmatig";
     riskColor = "border-orange-300 bg-orange-50";
     advice =
-      "Controleer je Student@work-teller, je loonfiches en eventuele impact op Groeipakket.";
+      "Controleer je Student@work-teller, je loonfiches en eventuele impact op Groeipakket of kinderbijslag.";
     possibleConsequence =
       "Je zit dicht bij de grens of combineert studentenwerk met ander werk. Dat kan gevolgen hebben voor sociale bijdragen of voordelen.";
   }
@@ -46,7 +46,7 @@ export default function StudentTeVeelGewerktPage() {
     advice =
       "Stop niet blind verder met werken. Controleer Student@work, contacteer je werkgever en vraag advies aan je ouders, uitbetaler of boekhouder.";
     possibleConsequence =
-      "Boven de 650 studentenuren betaal je vanaf extra uren mogelijk normale sociale bijdragen. Te veel of ander werk kan ook invloed hebben op Groeipakket of fiscale situatie.";
+      "Boven de 650 studentenuren betaal je vanaf extra uren mogelijk normale sociale bijdragen. Te veel of ander werk kan ook invloed hebben op Groeipakket, kinderbijslag of je fiscale situatie.";
   }
 
   if (region === "brussels" && safeHours > 0) {
@@ -59,7 +59,7 @@ export default function StudentTeVeelGewerktPage() {
       <Header label="Student" />
 
       <section className="mx-auto max-w-5xl px-5 py-10">
-        <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
+        <div className="rounded-3xl bg-white p-7 shadow-sm md:p-12">
           <p className="mb-4 text-sm font-bold uppercase tracking-wide text-orange-600">
             Student te veel gewerkt
           </p>
@@ -68,10 +68,11 @@ export default function StudentTeVeelGewerktPage() {
             Te veel gewerkt als student? Check je mogelijke risico.
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg text-slate-700">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
             Deze checker geeft een eerste indicatie als je twijfelt of je te veel
-            studentenuren hebt gewerkt en wat dat kan betekenen voor sociale
-            bijdragen, Groeipakket of belastingen.
+            studentenuren hebt gewerkt. Je ziet wat je best controleert:
+            Student@work, je contracten, loonfiches en mogelijke impact op
+            Groeipakket, kinderbijslag of belastingen.
           </p>
 
           <DisclaimerBox text="Dit is een informatieve tool met vereenvoudigde inschattingen. Het is geen juridisch, fiscaal of sociaal advies. Controleer altijd Student@work, officiële bronnen of vraag professioneel advies." />
@@ -80,31 +81,38 @@ export default function StudentTeVeelGewerktPage() {
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 1</p>
               <h3 className="mt-1 font-black">Check Student@work</h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Kijk hoeveel uren je officieel nog over hebt.
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Kijk hoeveel uren je officieel gebruikt hebt en hoeveel er nog
+                overblijven.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 2</p>
-              <h3 className="mt-1 font-black">Controleer Groeipakket</h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Kijk of je werk invloed kan hebben op kinderbijslag/Groeipakket.
+              <h3 className="mt-1 font-black">Controleer voordelen</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Kijk of je werk invloed kan hebben op Groeipakket, kinderbijslag
+                of fiscale situatie.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 3</p>
               <h3 className="mt-1 font-black">Bewaar bewijs</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Bewaar contracten, loonfiches en je Student@work-attest.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <div className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <h2 className="text-2xl font-black">Snelle studentenwerk-check</h2>
+
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-700">
+            Vul hieronder je situatie in. De uitkomst is alleen een indicatie en
+            geen officiële berekening.
+          </p>
 
           <div className="mt-6 grid gap-5">
             <label className="font-bold">
@@ -191,10 +199,11 @@ export default function StudentTeVeelGewerktPage() {
                 <strong>Mogelijk gevolg:</strong> {possibleConsequence}
               </p>
 
-              <p className="mt-3 text-sm text-slate-700">
+              <p className="mt-3 text-sm leading-6 text-slate-700">
                 Deze inschatting gebruikt de 650-urenregel als vereenvoudigd
-                uitgangspunt. Regionale regels, type contract, inkomen en
-                gezinssituatie kunnen het resultaat veranderen.
+                uitgangspunt. Regionale regels, type contract, inkomen,
+                gezinssituatie en het feit of studeren je hoofdactiviteit blijft,
+                kunnen het resultaat veranderen.
               </p>
 
               <p className="mt-3 font-bold">Beste actie: {advice}</p>
@@ -202,10 +211,10 @@ export default function StudentTeVeelGewerktPage() {
           )}
         </div>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <h2 className="text-2xl font-black">Wat moet je nu doen?</h2>
 
-          <ol className="mt-4 list-decimal space-y-2 pl-5 text-slate-700">
+          <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-slate-700">
             <li>Log in op Student@work en controleer je officiële uren.</li>
             <li>Download of bewaar je Student@work-attest.</li>
             <li>Controleer je contracten en loonfiches.</li>
@@ -216,7 +225,43 @@ export default function StudentTeVeelGewerktPage() {
           </ol>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Wanneer moet je extra opletten?
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">
+            Te veel werken kan meer gevolgen hebben dan alleen extra bijdragen.
+          </h2>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Je zit dicht bij 650 uur</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Controleer je officiële teller voordat je nog extra shifts
+                aanneemt.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Je werkt ook buiten studentencontract</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Andere arbeid kan andere regels hebben en mogelijk invloed
+                hebben op voordelen.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Studeren is niet meer je hoofdactiviteit</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Dan moet je extra voorzichtig zijn en je situatie laten
+                controleren.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
             Ouders voorbereiden
           </p>
@@ -225,36 +270,37 @@ export default function StudentTeVeelGewerktPage() {
             Wat check je best samen met je ouders?
           </h2>
 
-          <p className="mt-3 max-w-2xl text-slate-700">
+          <p className="mt-3 max-w-2xl leading-7 text-slate-700">
             Studentenwerk kan niet alleen voor jou gevolgen hebben, maar soms ook
-            voor het Groeipakket of voor de fiscale situatie thuis.
+            voor het Groeipakket, kinderbijslag of de fiscale situatie thuis.
           </p>
 
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">1. Student@work-attest</h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Toon hoeveel uren je officieel gebruikt hebt en hoeveel rest.
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Toon hoeveel uren je officieel gebruikt hebt en hoeveel er nog
+                overblijven.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">2. Loonfiches</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Verzamel je loonfiches zodat je inkomsten duidelijk zijn.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">3. Groeipakket</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <h3 className="font-black">3. Groeipakket of kinderbijslag</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Controleer bij je uitbetaler of je werk invloed kan hebben.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">4. Fiscale situatie</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Vraag bij twijfel aan een boekhouder of je nog fiscaal ten laste
                 bent.
               </p>
@@ -263,15 +309,15 @@ export default function StudentTeVeelGewerktPage() {
 
           <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
             <p className="font-bold">Voorbeeldbericht:</p>
-            <p className="mt-2 text-sm text-slate-700">
+            <p className="mt-2 text-sm leading-6 text-slate-700">
               “Ik heb ongeveer [aantal] studentenuren gewerkt. Kunnen we samen
-              checken of dit invloed heeft op Groeipakket, sociale bijdragen of
-              fiscaal ten laste blijven?”
+              checken of dit invloed heeft op Groeipakket, kinderbijslag,
+              sociale bijdragen of fiscaal ten laste blijven?”
             </p>
           </div>
         </section>
 
-        <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
             Gratis hulpmiddel
           </p>
@@ -280,27 +326,27 @@ export default function StudentTeVeelGewerktPage() {
             Studentenwerk noodchecklist
           </h2>
 
-          <p className="mt-3 max-w-2xl text-slate-700">
+          <p className="mt-3 max-w-2xl leading-7 text-slate-700">
             Gebruik deze checklist om snel te verzamelen wat je nodig hebt als je
             denkt dat je te veel gewerkt hebt als student.
           </p>
 
-          <ul className="mt-5 grid gap-2 text-slate-700 md:grid-cols-2">
+          <ul className="mt-5 grid gap-2 leading-7 text-slate-700 md:grid-cols-2">
             <li>✓ Student@work-teller controleren</li>
             <li>✓ Loonfiches verzamelen</li>
             <li>✓ Contracttype controleren</li>
-            <li>✓ Groeipakket-uitbetaler checken</li>
+            <li>✓ Uitbetaler checken</li>
           </ul>
 
           <button
             disabled
             className="mt-6 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
           >
-            PDF-download binnenkort
+            PDF-download later
           </button>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
             Veelgestelde vragen
           </p>
@@ -314,9 +360,10 @@ export default function StudentTeVeelGewerktPage() {
               <h3 className="font-black">
                 Hoeveel uur mag ik werken als jobstudent?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Vanaf 2025 gaat het om 650 uur per kalenderjaar aan verminderde
-                sociale bijdragen. Controleer altijd je teller op Student@work.
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                BoeteRadar gebruikt 650 uur per kalenderjaar als uitgangspunt
+                voor deze indicatie. Controleer altijd je officiële teller op
+                Student@work.
               </p>
             </div>
 
@@ -324,7 +371,7 @@ export default function StudentTeVeelGewerktPage() {
               <h3 className="font-black">
                 Wat gebeurt er als ik boven 650 uur ga?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Vanaf de uren boven de grens kunnen normale sociale bijdragen
                 gelden. Er kunnen ook andere gevolgen zijn afhankelijk van je
                 situatie.
@@ -333,18 +380,17 @@ export default function StudentTeVeelGewerktPage() {
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">
-                Kan mijn Groeipakket beïnvloed worden?
+                Kan mijn Groeipakket of kinderbijslag beïnvloed worden?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
-                Ja, afhankelijk van je regio, type werk en aantal uren. Voor
-                Vlaanderen vermeldt Vlaanderen.be onder meer de 650 uren en de
-                80-urenregel voor andere arbeid.
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Ja, afhankelijk van je regio, type werk en aantal uren. Controleer
+                dit altijd bij je uitbetaler.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">Is deze checker exact?</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Nee. BoeteRadar geeft een vereenvoudigde indicatie. Controleer
                 Student@work, je uitbetaler of een boekhouder voor je concrete
                 situatie.

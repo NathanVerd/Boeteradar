@@ -39,18 +39,19 @@ export default function AutokeuringVervallenPage() {
       <Header label="Autokeuring" />
 
       <section className="mx-auto max-w-5xl px-5 py-10">
-        <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
+        <div className="rounded-3xl bg-white p-7 shadow-sm md:p-12">
           <p className="mb-4 text-sm font-bold uppercase tracking-wide text-orange-600">
             Autokeuring vervallen
           </p>
 
           <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-            Autokeuring vervallen? Check wat je nu best doet.
+            Autokeuring vervallen? Check je mogelijke risico.
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg text-slate-700">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
             Deze checker geeft een eerste indicatie van je risico als je
-            technische keuring verlopen is en je nog met de auto rijdt.
+            technische keuring verlopen is. Je ziet ook welke stappen je best
+            controleert: afspraak maken, ritten beperken en bewijs bewaren.
           </p>
 
           <DisclaimerBox text="Dit is een informatieve tool met vereenvoudigde inschattingen. Het is geen juridisch, verzekerings- of verkeersadvies. Controleer altijd officiële bronnen of vraag professioneel advies bij twijfel." />
@@ -59,7 +60,7 @@ export default function AutokeuringVervallenPage() {
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 1</p>
               <h3 className="mt-1 font-black">Maak afspraak</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Plan zo snel mogelijk een nieuwe technische keuring.
               </p>
             </div>
@@ -67,7 +68,7 @@ export default function AutokeuringVervallenPage() {
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 2</p>
               <h3 className="mt-1 font-black">Beperk ritten</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Vermijd onnodig rijden zolang je keuring vervallen is.
               </p>
             </div>
@@ -75,15 +76,20 @@ export default function AutokeuringVervallenPage() {
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-bold text-orange-600">Stap 3</p>
               <h3 className="mt-1 font-black">Bewaar bewijs</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Bewaar je afspraakbevestiging en keuringsdocumenten.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <div className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <h2 className="text-2xl font-black">Snelle autokeuring-check</h2>
+
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-700">
+            Vul hieronder je situatie in. De uitkomst is alleen een indicatie en
+            geen officiële beoordeling.
+          </p>
 
           <div className="mt-6 grid gap-5">
             <label className="font-bold">
@@ -138,9 +144,11 @@ export default function AutokeuringVervallenPage() {
                 <strong>Risiconiveau:</strong> {risk}
               </p>
 
-              <p className="mt-3 text-sm text-slate-700">
+              <p className="mt-3 text-sm leading-6 text-slate-700">
                 Deze inschatting kijkt naar hoe lang je keuring vervallen is, of
-                je nog rijdt en of je al een afspraak hebt gemaakt.
+                je nog rijdt en of je al een afspraak hebt gemaakt. De echte
+                gevolgen kunnen afhangen van controle, verzekering, ongeval en
+                je concrete situatie.
               </p>
 
               <p className="mt-3 font-bold">Beste actie: {advice}</p>
@@ -148,10 +156,10 @@ export default function AutokeuringVervallenPage() {
           )}
         </div>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <h2 className="text-2xl font-black">Wat moet je nu doen?</h2>
 
-          <ol className="mt-4 list-decimal space-y-2 pl-5 text-slate-700">
+          <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-slate-700">
             <li>Maak zo snel mogelijk een afspraak voor technische keuring.</li>
             <li>Rij niet onnodig rond met een vervallen keuring.</li>
             <li>Bewaar je afspraakbevestiging.</li>
@@ -160,7 +168,43 @@ export default function AutokeuringVervallenPage() {
           </ol>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Wanneer moet je extra opletten?
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">
+            Rijden met een vervallen keuring kan extra risico geven.
+          </h2>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Je rijdt nog dagelijks</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Hoe meer je rijdt, hoe groter de kans op controle of problemen
+                bij een ongeval.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Je hebt nog geen afspraak</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Zonder afspraak toon je minder duidelijk aan dat je het probleem
+                actief probeert op te lossen.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Je keuring is lang vervallen</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Hoe langer de keuring vervallen is, hoe belangrijker het wordt om
+                snel actie te nemen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
             Veelgestelde vragen
           </p>
@@ -174,7 +218,7 @@ export default function AutokeuringVervallenPage() {
               <h3 className="font-black">
                 Wat moet ik doen als mijn autokeuring vervallen is?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Maak zo snel mogelijk een afspraak bij een keuringscentrum en
                 vermijd onnodige ritten tot je opnieuw gekeurd bent.
               </p>
@@ -184,7 +228,7 @@ export default function AutokeuringVervallenPage() {
               <h3 className="font-black">
                 Mag ik nog rijden met een vervallen keuring?
               </h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Dat kan risico’s geven bij controle, ongeval of verzekering.
                 Controleer officiële informatie en beperk je ritten.
               </p>
@@ -192,7 +236,7 @@ export default function AutokeuringVervallenPage() {
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">Is een afspraakbewijs nuttig?</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Ja. Een afspraakbewijs toont dat je actie hebt ondernomen, maar
                 het vervangt geen geldig keuringsbewijs.
               </p>
@@ -200,7 +244,7 @@ export default function AutokeuringVervallenPage() {
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">Wat met mijn verzekering?</h3>
-              <p className="mt-2 text-sm text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-700">
                 Bij twijfel contacteer je best je verzekeraar of makelaar. Zeker
                 als je betrokken bent bij een ongeval.
               </p>
