@@ -58,6 +58,23 @@ export default function BtwTeLaatBetaaldPage() {
             best controleert: betalen, mededeling nakijken en bewijs bewaren.
           </p>
 
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/downloads/btw-deadline-checklist.pdf"
+              download
+              className="rounded-xl bg-slate-950 px-5 py-3 text-center font-bold text-white transition hover:bg-slate-800"
+            >
+              Download btw-checklist als PDF
+            </a>
+
+            <Link
+              href="/checklists/btw-deadline-checklist"
+              className="rounded-xl border border-orange-200 bg-orange-50 px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
+            >
+              Open checklistpagina
+            </Link>
+          </div>
+
           <DisclaimerBox text="Dit is een informatieve tool met vereenvoudigde rekenvoorbeelden. Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
 
           <div className="mt-6 grid gap-3 md:grid-cols-3">
@@ -231,12 +248,22 @@ export default function BtwTeLaatBetaaldPage() {
             <li>✓ Betalingsbewijs bewaren</li>
           </ul>
 
-          <Link
-            href="/checklists/btw-deadline-checklist"
-            className="mt-6 inline-flex rounded-xl bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-slate-800"
-          >
-            Open de btw-checklist →
-          </Link>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/downloads/btw-deadline-checklist.pdf"
+              download
+              className="rounded-xl bg-slate-950 px-5 py-3 text-center font-bold text-white transition hover:bg-slate-800"
+            >
+              Download PDF →
+            </a>
+
+            <Link
+              href="/checklists/btw-deadline-checklist"
+              className="rounded-xl border border-orange-200 bg-white px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
+            >
+              Open checklistpagina →
+            </Link>
+          </div>
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
