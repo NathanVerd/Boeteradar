@@ -156,24 +156,25 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       <footer className="px-6 py-8 text-center text-sm text-slate-500">
-  <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
+        <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
 
-  <Link
-    href="/disclaimer"
-    className="mt-2 inline-block font-bold text-slate-600 hover:text-slate-950"
-  >
-    Disclaimer
-  </Link>
-  <Link
-      href="/bronnen"
-      className="font-bold text-slate-600 hover:text-slate-950"
-    >
-      Bronnen
-    </Link>
-  </div>
-</footer>
+        <div className="mt-2 flex justify-center gap-4">
+          <Link
+            href="/disclaimer"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Disclaimer
+          </Link>
+
+          <Link
+            href="/bronnen"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Bronnen
+          </Link>
+        </div>
+      </footer>
     </main>
   );
 }
