@@ -4,6 +4,7 @@ import BackHomeLink from "@/components/BackHomeLink";
 import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
 import { useState } from "react";
 
@@ -361,48 +362,22 @@ export default function BtwAangifteTeLaatPage() {
           </div>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-black">Officiële bronnen</h2>
-
-          <p className="mt-4 text-slate-700">
-            Controleer altijd de officiële informatie van FOD Financiën.
-            BoeteRadar geeft alleen een vereenvoudigde indicatie en vervangt
-            geen advies van je boekhouder.
-          </p>
-
-          <div className="mt-5 grid gap-3">
-            <a
-              href="https://financien.belgium.be/nl/ondernemingen/btw/boeten"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              FOD Financiën — Btw-boeten
-            </a>
-
-            <a
-              href="https://financien.belgium.be/nl/E-services/Intervat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              FOD Financiën — Intervat aangifteportaal
-            </a>
-
-            <a
-              href="https://financien.belgium.be/nl/ondernemingen/btw/betaling-teruggave/betaling"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              FOD Financiën — Btw betalen
-            </a>
-          </div>
-
-          <p className="mt-4 text-sm text-slate-500">
-            Laatst inhoudelijk nagekeken: mei 2026. Regels kunnen wijzigen.
-          </p>
-        </section>
+        <OfficialSources
+          sources={[
+            {
+              label: "FOD Financiën — Btw-boeten",
+              href: "https://financien.belgium.be/nl/ondernemingen/btw/boeten",
+            },
+            {
+              label: "FOD Financiën — Intervat aangifteportaal",
+              href: "https://financien.belgium.be/nl/E-services/Intervat",
+            },
+            {
+              label: "FOD Financiën — Btw betalen",
+              href: "https://financien.belgium.be/nl/ondernemingen/btw/betaling-teruggave/betaling",
+            },
+          ]}
+        />
 
         <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">

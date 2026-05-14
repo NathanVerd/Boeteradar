@@ -4,6 +4,7 @@ import BackHomeLink from "@/components/BackHomeLink";
 import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
 import { useState } from "react";
 
@@ -327,47 +328,22 @@ export default function PersonenbelastingTeLaatPage() {
           </div>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-black">Officiële bronnen</h2>
-
-          <p className="mt-4 text-slate-700">
-            Controleer altijd officiële informatie. BoeteRadar geeft alleen een
-            vereenvoudigde indicatie.
-          </p>
-
-          <div className="mt-5 grid gap-3">
-            <a
-              href="https://financien.belgium.be/nl/E-services/Tax-on-web"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              FOD Financiën — Tax-on-web
-            </a>
-
-            <a
-              href="https://financien.belgium.be/nl/E-services/MyMinfin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              FOD Financiën — MyMinfin
-            </a>
-
-            <a
-              href="https://financien.belgium.be/nl/experten_partners/economische-beroepen/indieningstermijnen-aangiften"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              FOD Financiën — Indieningstermijnen aangiften
-            </a>
-          </div>
-
-          <p className="mt-4 text-sm text-slate-500">
-            Laatst inhoudelijk nagekeken: mei 2026. Regels kunnen wijzigen.
-          </p>
-        </section>
+        <OfficialSources
+          sources={[
+            {
+              label: "FOD Financiën — Tax-on-web",
+              href: "https://financien.belgium.be/nl/E-services/Tax-on-web",
+            },
+            {
+              label: "FOD Financiën — MyMinfin",
+              href: "https://financien.belgium.be/nl/E-services/MyMinfin",
+            },
+            {
+              label: "FOD Financiën — Indieningstermijnen aangiften",
+              href: "https://financien.belgium.be/nl/experten_partners/economische-beroepen/indieningstermijnen-aangiften",
+            },
+          ]}
+        />
 
         <RelatedChecks excludeHref="/personenbelasting-te-laat" />
 

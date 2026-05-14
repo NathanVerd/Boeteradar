@@ -4,6 +4,7 @@ import BackHomeLink from "@/components/BackHomeLink";
 import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
 import { useState } from "react";
 
@@ -207,38 +208,18 @@ export default function AutokeuringVervallenPage() {
           </div>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-black">Officiële bronnen</h2>
-
-          <p className="mt-4 text-slate-700">
-            Controleer altijd officiële informatie. BoeteRadar geeft alleen een
-            vereenvoudigde indicatie.
-          </p>
-
-          <div className="mt-5 grid gap-3">
-            <a
-              href="https://www.vlaanderen.be/auto-en-motor/technische-keuring-van-voertuigen"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              Vlaanderen.be — Technische keuring
-            </a>
-
-            <a
-              href="https://www.gocavlaanderen.be"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 font-bold text-slate-900 hover:bg-slate-100"
-            >
-              GOCA Vlaanderen — Keuringscentra
-            </a>
-          </div>
-
-          <p className="mt-4 text-sm text-slate-500">
-            Laatst inhoudelijk nagekeken: mei 2026. Regels kunnen wijzigen.
-          </p>
-        </section>
+        <OfficialSources
+          sources={[
+            {
+              label: "Vlaanderen.be — Technische keuring",
+              href: "https://www.vlaanderen.be/auto-en-motor/technische-keuring-van-voertuigen",
+            },
+            {
+              label: "GOCA Vlaanderen — Keuringscentra",
+              href: "https://www.gocavlaanderen.be",
+            },
+          ]}
+        />
 
         <RelatedChecks excludeHref="/autokeuring-vervallen" />
 
