@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     locale: "nl_BE",
     type: "website",
   },
+  verification: {
+    google: "j51kbhPGLePnircPYs-LtkkG5C4M4PyQgJbe8EW2Co0",
+  },
 };
 
 export default function RootLayout({
