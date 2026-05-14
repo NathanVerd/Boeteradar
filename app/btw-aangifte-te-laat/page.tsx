@@ -1,7 +1,10 @@
 "use client";
 
+import BackHomeLink from "@/components/BackHomeLink";
+import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import Header from "@/components/Header";
+import RelatedChecks from "@/components/RelatedChecks";
 import { useState } from "react";
 
 export default function BtwAangifteTeLaatPage() {
@@ -34,17 +37,7 @@ export default function BtwAangifteTeLaatPage() {
 
   return (
     <main className="min-h-screen bg-slate-100 text-slate-950">
-      <header className="border-b border-slate-800 bg-slate-950 px-6 py-6 text-white">
-        <div className="mx-auto flex max-w-5xl items-center justify-between">
-          <Link href="/" className="font-black text-white">
-            BoeteRadar België
-          </Link>
-
-          <span className="rounded-full bg-orange-500 px-4 py-2 text-sm font-bold">
-            Btw-checker
-          </span>
-        </div>
-      </header>
+      <Header label="Btw-checker" />
 
       <section className="mx-auto max-w-5xl px-5 py-10">
         <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
@@ -62,11 +55,7 @@ export default function BtwAangifteTeLaatPage() {
             te laat is.
           </p>
 
-          <div className="mt-6 rounded-2xl border-l-4 border-orange-500 bg-orange-50 p-4 text-sm text-slate-700">
-            Dit is een informatieve tool met vereenvoudigde rekenvoorbeelden.
-            Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer
-            altijd officiële bronnen of vraag advies aan je boekhouder.
-          </div>
+          <DisclaimerBox text="Dit is een informatieve tool met vereenvoudigde rekenvoorbeelden. Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
 
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             <div className="rounded-2xl bg-slate-50 p-5">
@@ -447,58 +436,9 @@ export default function BtwAangifteTeLaatPage() {
           </button>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-slate-950 p-8 text-white shadow-sm">
-          <p className="text-sm font-bold uppercase tracking-wide text-orange-400">
-            Andere populaire checks
-          </p>
+        <RelatedChecks excludeHref="/btw-aangifte-te-laat" />
 
-          <h2 className="mt-2 text-2xl font-black">
-            Nog een administratieve fout checken?
-          </h2>
-
-          <div className="mt-6 grid gap-3 md:grid-cols-2">
-            <Link
-              href="/btw-te-laat-betaald"
-              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-            >
-              Btw te laat betaald →
-            </Link>
-
-            <Link
-              href="/personenbelasting-te-laat"
-              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-            >
-              Personenbelasting te laat →
-            </Link>
-
-            <Link
-              href="/autokeuring-vervallen"
-              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-            >
-              Autokeuring vervallen →
-            </Link>
-
-            <Link
-              href="/student-te-veel-gewerkt"
-              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-            >
-              Student te veel gewerkt →
-            </Link>
-          </div>
-
-          <p className="mt-4 text-sm text-slate-300">
-            Alle eerste fase-checks zijn nu actief.
-          </p>
-        </section>
-
-        <div className="mt-8">
-          <Link
-            href="/"
-            className="font-bold text-slate-700 hover:text-slate-950"
-          >
-            ← Terug naar alle checks
-          </Link>
-        </div>
+        <BackHomeLink />
       </section>
 
       <Footer />

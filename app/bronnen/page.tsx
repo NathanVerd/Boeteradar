@@ -1,20 +1,12 @@
+import BackHomeLink from "@/components/BackHomeLink";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Link from "next/link";
 
 export default function BronnenPage() {
   return (
     <main className="min-h-screen bg-slate-100 text-slate-950">
-      <header className="border-b border-slate-800 bg-slate-950 px-6 py-6 text-white">
-        <div className="mx-auto flex max-w-5xl items-center justify-between">
-          <Link href="/" className="font-black text-white">
-            BoeteRadar België
-          </Link>
-
-          <span className="rounded-full bg-orange-500 px-4 py-2 text-sm font-bold">
-            Bronnen
-          </span>
-        </div>
-      </header>
+      <Header label="Bronnen" />
 
       <section className="mx-auto max-w-5xl px-5 py-10">
         <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
@@ -81,14 +73,7 @@ export default function BronnenPage() {
           </Link>
         </section>
 
-        <div className="mt-8">
-          <Link
-            href="/"
-            className="font-bold text-slate-700 hover:text-slate-950"
-          >
-            ← Terug naar homepage
-          </Link>
-        </div>
+        <BackHomeLink label="← Terug naar homepage" />
       </section>
 
       <Footer />

@@ -1,4 +1,6 @@
+import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Link from "next/link";
 
 const checks = [
@@ -42,25 +44,10 @@ const checks = [
 export default function NotFound() {
   return (
     <main className="min-h-screen bg-slate-100 text-slate-950">
-      <header className="border-b border-slate-800 bg-slate-950 px-6 py-6 text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <div>
-            <Link
-              href="/"
-              className="text-2xl font-black tracking-tight text-white"
-            >
-              BoeteRadar België
-            </Link>
-            <p className="mt-1 text-sm text-slate-300">
-              Snelle checks voor Belgische administratieve fouten.
-            </p>
-          </div>
-
-          <div className="hidden rounded-full bg-orange-500 px-4 py-2 text-sm font-bold text-white md:block">
-            404
-          </div>
-        </div>
-      </header>
+      <Header
+        label="404"
+        subtitle="Snelle checks voor Belgische administratieve fouten."
+      />
 
       <section className="mx-auto max-w-6xl px-5 py-12">
         <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
@@ -76,12 +63,7 @@ export default function NotFound() {
             Kies hieronder een actieve check of ga terug naar de homepage.
           </p>
 
-          <div className="mt-6 rounded-2xl border-l-4 border-orange-500 bg-orange-50 p-4 text-sm text-slate-700">
-            BoeteRadar geeft eenvoudige informatie en rekenvoorbeelden. Dit is
-            geen juridisch, fiscaal, boekhoudkundig, sociaal of
-            verzekeringsadvies. Controleer altijd officiële bronnen of vraag
-            professioneel advies bij twijfel.
-          </div>
+          <DisclaimerBox text="BoeteRadar geeft eenvoudige informatie en rekenvoorbeelden. Dit is geen juridisch, fiscaal, boekhoudkundig, sociaal of verzekeringsadvies. Controleer altijd officiële bronnen of vraag professioneel advies bij twijfel." />
 
           <Link
             href="/"

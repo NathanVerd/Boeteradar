@@ -1,5 +1,7 @@
-import Link from "next/link";
+import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Link from "next/link";
 
 const checks = [
   {
@@ -42,22 +44,10 @@ const checks = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-100 text-slate-950">
-      <header className="border-b border-slate-800 bg-slate-950 px-6 py-6 text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <div>
-            <p className="text-2xl font-black tracking-tight">
-              BoeteRadar België
-            </p>
-            <p className="mt-1 text-sm text-slate-300">
-              Snelle checks voor Belgische administratieve fouten.
-            </p>
-          </div>
-
-          <div className="hidden rounded-full bg-orange-500 px-4 py-2 text-sm font-bold text-white md:block">
-            Beta MVP
-          </div>
-        </div>
-      </header>
+      <Header
+        label="Beta MVP"
+        subtitle="Snelle checks voor Belgische administratieve fouten."
+      />
 
       <section className="mx-auto max-w-6xl px-5 py-12">
         <div className="rounded-3xl bg-white p-8 shadow-sm md:p-12">
@@ -75,11 +65,7 @@ export default function Home() {
             situatie en krijg een duidelijke eerste indicatie.
           </p>
 
-          <div className="mt-6 rounded-2xl border-l-4 border-orange-500 bg-orange-50 p-4 text-sm text-slate-700">
-            BoeteRadar geeft eenvoudige informatie en rekenvoorbeelden. Dit is
-            geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd
-            officiële bronnen of vraag professioneel advies bij twijfel.
-          </div>
+          <DisclaimerBox text="BoeteRadar geeft eenvoudige informatie en rekenvoorbeelden. Dit is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag professioneel advies bij twijfel." />
         </div>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2">
