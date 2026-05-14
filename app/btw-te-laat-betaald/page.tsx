@@ -280,21 +280,21 @@ export default function BtwTeLaatBetaaldPage() {
             </Link>
 
             <Link
-              href="/"
+              href="/personenbelasting-te-laat"
               className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
             >
               Personenbelasting te laat →
             </Link>
 
             <Link
-              href="/"
+              href="/autokeuring-vervallen"
               className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
             >
               Autokeuring vervallen →
             </Link>
 
             <Link
-              href="/"
+              href="/student-te-veel-gewerkt"
               className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
             >
               Student te veel gewerkt →
@@ -302,7 +302,7 @@ export default function BtwTeLaatBetaaldPage() {
           </div>
 
           <p className="mt-4 text-sm text-slate-300">
-            Deze checks worden stap voor stap actief gemaakt.
+            Alle eerste fase-checks zijn nu actief.
           </p>
         </section>
 
@@ -316,8 +316,25 @@ export default function BtwTeLaatBetaaldPage() {
         </div>
       </section>
 
-    </main>
-      
+      <footer className="px-6 py-8 text-center text-sm text-slate-500">
+        <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
+
+        <div className="mt-2 flex justify-center gap-4">
+          <Link
+            href="/disclaimer"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Disclaimer
+          </Link>
+
+          <Link
+            href="/bronnen"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Bronnen
+          </Link>
+        </div>
+      </footer>
     </main>
   );
 }

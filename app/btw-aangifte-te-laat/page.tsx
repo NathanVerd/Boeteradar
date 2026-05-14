@@ -66,31 +66,34 @@ export default function BtwAangifteTeLaatPage() {
             Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer
             altijd officiële bronnen of vraag advies aan je boekhouder.
           </div>
+
           <div className="mt-6 grid gap-3 md:grid-cols-3">
-  <div className="rounded-2xl bg-slate-50 p-5">
-    <p className="text-sm font-bold text-orange-600">Stap 1</p>
-    <h3 className="mt-1 font-black">Aangifte indienen</h3>
-    <p className="mt-2 text-sm text-slate-700">
-      Dien je btw-aangifte zo snel mogelijk alsnog in via Intervat.
-    </p>
-  </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <p className="text-sm font-bold text-orange-600">Stap 1</p>
+              <h3 className="mt-1 font-black">Aangifte indienen</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Dien je btw-aangifte zo snel mogelijk alsnog in via Intervat.
+              </p>
+            </div>
 
-  <div className="rounded-2xl bg-slate-50 p-5">
-    <p className="text-sm font-bold text-orange-600">Stap 2</p>
-    <h3 className="mt-1 font-black">Betaling controleren</h3>
-    <p className="mt-2 text-sm text-slate-700">
-      Kijk na of je openstaande btw al betaald is of nog dringend betaald moet worden.
-    </p>
-  </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <p className="text-sm font-bold text-orange-600">Stap 2</p>
+              <h3 className="mt-1 font-black">Betaling controleren</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Kijk na of je openstaande btw al betaald is of nog dringend
+                betaald moet worden.
+              </p>
+            </div>
 
-  <div className="rounded-2xl bg-slate-50 p-5">
-    <p className="text-sm font-bold text-orange-600">Stap 3</p>
-    <h3 className="mt-1 font-black">Bewijs bewaren</h3>
-    <p className="mt-2 text-sm text-slate-700">
-      Bewaar je bewijs van indiening, betaling en communicatie met je boekhouder.
-    </p>
-  </div>
-</div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <p className="text-sm font-bold text-orange-600">Stap 3</p>
+              <h3 className="mt-1 font-black">Bewijs bewaren</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Bewaar je bewijs van indiening, betaling en communicatie met je
+                boekhouder.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
@@ -228,59 +231,64 @@ export default function BtwAangifteTeLaatPage() {
             </div>
           </div>
         </section>
+
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
-    Boekhouder voorbereiden
-  </p>
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Boekhouder voorbereiden
+          </p>
 
-  <h2 className="mt-2 text-2xl font-black">
-    Wat stuur je best naar je boekhouder?
-  </h2>
+          <h2 className="mt-2 text-2xl font-black">
+            Wat stuur je best naar je boekhouder?
+          </h2>
 
-  <p className="mt-3 max-w-2xl text-slate-700">
-    Als je btw-aangifte te laat is, verlies dan geen tijd met vage berichten.
-    Stuur meteen de juiste info door zodat je boekhouder sneller kan helpen.
-  </p>
+          <p className="mt-3 max-w-2xl text-slate-700">
+            Als je btw-aangifte te laat is, verlies dan geen tijd met vage
+            berichten. Stuur meteen de juiste info door zodat je boekhouder
+            sneller kan helpen.
+          </p>
 
-  <div className="mt-5 grid gap-3 md:grid-cols-2">
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">1. Periode van de aangifte</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Zeg duidelijk over welke maand, kwartaal of btw-periode het gaat.
-      </p>
-    </div>
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">1. Periode van de aangifte</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Zeg duidelijk over welke maand, kwartaal of btw-periode het gaat.
+              </p>
+            </div>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">2. Status van indiening</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Meld of de aangifte al ingediend is of nog volledig moet gebeuren.
-      </p>
-    </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">2. Status van indiening</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Meld of de aangifte al ingediend is of nog volledig moet
+                gebeuren.
+              </p>
+            </div>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">3. Status van betaling</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Geef door of de btw al betaald is en wanneer de betaling gebeurde.
-      </p>
-    </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">3. Status van betaling</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Geef door of de btw al betaald is en wanneer de betaling
+                gebeurde.
+              </p>
+            </div>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">4. Bewijsstukken</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Voeg screenshots, betalingsbewijzen of meldingen van FOD Financiën toe.
-      </p>
-    </div>
-  </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">4. Bewijsstukken</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Voeg screenshots, betalingsbewijzen of meldingen van FOD
+                Financiën toe.
+              </p>
+            </div>
+          </div>
 
-  <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-    <p className="font-bold">Voorbeeldbericht:</p>
-    <p className="mt-2 text-sm text-slate-700">
-      “Hallo, ik denk dat mijn btw-aangifte voor [periode] te laat is. De aangifte
-      is [wel/niet] ingediend en de betaling is [wel/niet] gebeurd op [datum].
-      Kan je controleren wat ik nu best doe?”
-    </p>
-  </div>
-</section>
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p className="font-bold">Voorbeeldbericht:</p>
+            <p className="mt-2 text-sm text-slate-700">
+              “Hallo, ik denk dat mijn btw-aangifte voor [periode] te laat is.
+              De aangifte is [wel/niet] ingediend en de betaling is [wel/niet]
+              gebeurd op [datum]. Kan je controleren wat ik nu best doe?”
+            </p>
+          </div>
+        </section>
 
         <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
@@ -309,58 +317,59 @@ export default function BtwAangifteTeLaatPage() {
             PDF-download binnenkort
           </button>
         </section>
+
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
-    Veelgestelde vragen
-  </p>
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Veelgestelde vragen
+          </p>
 
-  <h2 className="mt-2 text-2xl font-black">
-    Vragen over een te late btw-aangifte
-  </h2>
+          <h2 className="mt-2 text-2xl font-black">
+            Vragen over een te late btw-aangifte
+          </h2>
 
-  <div className="mt-6 grid gap-4">
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">
-        Wat moet ik doen als mijn btw-aangifte te laat is?
-      </h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Dien je aangifte zo snel mogelijk alsnog in. Controleer daarna of je
-        betaling gebeurd is en bewaar bewijs van indiening en betaling.
-      </p>
-    </div>
+          <div className="mt-6 grid gap-4">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">
+                Wat moet ik doen als mijn btw-aangifte te laat is?
+              </h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Dien je aangifte zo snel mogelijk alsnog in. Controleer daarna
+                of je betaling gebeurd is en bewaar bewijs van indiening en
+                betaling.
+              </p>
+            </div>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">
-        Is deze berekening exact?
-      </h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Nee. BoeteRadar gebruikt een vereenvoudigde indicatie. De echte gevolgen
-        hangen af van je concrete situatie, eerdere fouten, betaling en de
-        beoordeling door de administratie.
-      </p>
-    </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Is deze berekening exact?</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Nee. BoeteRadar gebruikt een vereenvoudigde indicatie. De echte
+                gevolgen hangen af van je concrete situatie, eerdere fouten,
+                betaling en de beoordeling door de administratie.
+              </p>
+            </div>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">
-        Moet ik mijn boekhouder contacteren?
-      </h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Ja, zeker als je meerdere maanden te laat bent, nog niet betaald hebt of
-        al eerder problemen had met btw-deadlines.
-      </p>
-    </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">
+                Moet ik mijn boekhouder contacteren?
+              </h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Ja, zeker als je meerdere maanden te laat bent, nog niet betaald
+                hebt of al eerder problemen had met btw-deadlines.
+              </p>
+            </div>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">
-        Kan een te late btw-aangifte extra gevolgen hebben?
-      </h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Ja. Naast een mogelijke administratieve boete kunnen laattijdige betaling,
-        herhaling of ontbrekende documenten je situatie risicovoller maken.
-      </p>
-    </div>
-  </div>
-</section>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">
+                Kan een te late btw-aangifte extra gevolgen hebben?
+              </h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Ja. Naast een mogelijke administratieve boete kunnen laattijdige
+                betaling, herhaling of ontbrekende documenten je situatie
+                risicovoller maken.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-black">Officiële bronnen</h2>
@@ -404,80 +413,82 @@ export default function BtwAangifteTeLaatPage() {
             Laatst inhoudelijk nagekeken: mei 2026. Regels kunnen wijzigen.
           </p>
         </section>
+
         <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
-    Binnenkort
-  </p>
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Binnenkort
+          </p>
 
-  <h2 className="mt-2 text-2xl font-black">
-    Wil je een gratis herinnering voor btw-deadlines?
-  </h2>
+          <h2 className="mt-2 text-2xl font-black">
+            Wil je een gratis herinnering voor btw-deadlines?
+          </h2>
 
-  <p className="mt-3 max-w-2xl text-slate-700">
-    Later kan BoeteRadar je helpen met eenvoudige reminders voor btw-aangiftes,
-    betalingen en andere administratieve deadlines. Voorlopig bouwen we eerst de
-    belangrijkste checks uit.
-  </p>
+          <p className="mt-3 max-w-2xl text-slate-700">
+            Later kan BoeteRadar je helpen met eenvoudige reminders voor
+            btw-aangiftes, betalingen en andere administratieve deadlines.
+            Voorlopig bouwen we eerst de belangrijkste checks uit.
+          </p>
 
-  <div className="mt-5 rounded-2xl bg-slate-50 p-5">
-    <p className="font-bold">Waarom dit nuttig is:</p>
-    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
-      <li>Je vergeet minder snel een deadline.</li>
-      <li>Je houdt bewijs van aangifte en betaling beter bij.</li>
-      <li>Je krijgt later mogelijk een checklist per situatie.</li>
-    </ul>
-  </div>
+          <div className="mt-5 rounded-2xl bg-slate-50 p-5">
+            <p className="font-bold">Waarom dit nuttig is:</p>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
+              <li>Je vergeet minder snel een deadline.</li>
+              <li>Je houdt bewijs van aangifte en betaling beter bij.</li>
+              <li>Je krijgt later mogelijk een checklist per situatie.</li>
+            </ul>
+          </div>
 
-  <button
-    disabled
-    className="mt-6 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
-  >
-    Reminderfunctie binnenkort
-  </button>
-</section>
+          <button
+            disabled
+            className="mt-6 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
+          >
+            Reminderfunctie binnenkort
+          </button>
+        </section>
+
         <section className="mt-6 rounded-3xl bg-slate-950 p-8 text-white shadow-sm">
-  <p className="text-sm font-bold uppercase tracking-wide text-orange-400">
-    Andere populaire checks
-  </p>
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-400">
+            Andere populaire checks
+          </p>
 
-  <h2 className="mt-2 text-2xl font-black">
-    Nog een administratieve fout checken?
-  </h2>
+          <h2 className="mt-2 text-2xl font-black">
+            Nog een administratieve fout checken?
+          </h2>
 
-  <div className="mt-6 grid gap-3 md:grid-cols-2">
-    <Link
-      href="/btw-te-laat-betaald"
-      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-    >
-      Btw te laat betaald →
-    </Link>
+          <div className="mt-6 grid gap-3 md:grid-cols-2">
+            <Link
+              href="/btw-te-laat-betaald"
+              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+            >
+              Btw te laat betaald →
+            </Link>
 
-    <Link
-      href="/"
-      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-    >
-      Personenbelasting te laat →
-    </Link>
+            <Link
+              href="/personenbelasting-te-laat"
+              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+            >
+              Personenbelasting te laat →
+            </Link>
 
-    <Link
-      href="/"
-      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-    >
-      Autokeuring vervallen →
-    </Link>
+            <Link
+              href="/autokeuring-vervallen"
+              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+            >
+              Autokeuring vervallen →
+            </Link>
 
-    <Link
-      href="/"
-      className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
-    >
-      Student te veel gewerkt →
-    </Link>
-  </div>
+            <Link
+              href="/student-te-veel-gewerkt"
+              className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+            >
+              Student te veel gewerkt →
+            </Link>
+          </div>
 
-  <p className="mt-4 text-sm text-slate-300">
-    Deze checks worden stap voor stap actief gemaakt.
-  </p>
-</section>
+          <p className="mt-4 text-sm text-slate-300">
+            Alle eerste fase-checks zijn nu actief.
+          </p>
+        </section>
 
         <div className="mt-8">
           <Link
@@ -489,8 +500,25 @@ export default function BtwAangifteTeLaatPage() {
         </div>
       </section>
 
-    </main>
-      
+      <footer className="px-6 py-8 text-center text-sm text-slate-500">
+        <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
+
+        <div className="mt-2 flex justify-center gap-4">
+          <Link
+            href="/disclaimer"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Disclaimer
+          </Link>
+
+          <Link
+            href="/bronnen"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Bronnen
+          </Link>
+        </div>
+      </footer>
     </main>
   );
 }

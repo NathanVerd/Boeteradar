@@ -262,7 +262,8 @@ export default function StudentTeVeelGewerktPage() {
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">4. Fiscale situatie</h3>
               <p className="mt-2 text-sm text-slate-700">
-                Vraag bij twijfel aan een boekhouder of je nog fiscaal ten laste bent.
+                Vraag bij twijfel aan een boekhouder of je nog fiscaal ten laste
+                bent.
               </p>
             </div>
           </div>
@@ -349,9 +350,7 @@ export default function StudentTeVeelGewerktPage() {
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">
-                Is deze checker exact?
-              </h3>
+              <h3 className="font-black">Is deze checker exact?</h3>
               <p className="mt-2 text-sm text-slate-700">
                 Nee. BoeteRadar geeft een vereenvoudigde indicatie. Controleer
                 Student@work, je uitbetaler of een boekhouder voor je concrete
@@ -456,6 +455,7 @@ export default function StudentTeVeelGewerktPage() {
           </Link>
         </div>
       </section>
+
       <footer className="px-6 py-8 text-center text-sm text-slate-500">
         <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
 

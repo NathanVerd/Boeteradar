@@ -34,7 +34,9 @@ export default function DisclaimerPage() {
         </div>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-black">Geen juridisch of fiscaal advies</h2>
+          <h2 className="text-2xl font-black">
+            Geen juridisch of fiscaal advies
+          </h2>
 
           <p className="mt-4 text-slate-700">
             De informatie op BoeteRadar is algemeen en informatief. Ze is geen
@@ -56,7 +58,9 @@ export default function DisclaimerPage() {
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-black">Officiële bronnen blijven leidend</h2>
+          <h2 className="text-2xl font-black">
+            Officiële bronnen blijven leidend
+          </h2>
 
           <p className="mt-4 text-slate-700">
             We proberen bij elke check officiële bronnen te tonen, zoals FOD
@@ -111,14 +115,34 @@ export default function DisclaimerPage() {
         </section>
 
         <div className="mt-8">
-          <Link href="/" className="font-bold text-slate-700 hover:text-slate-950">
+          <Link
+            href="/"
+            className="font-bold text-slate-700 hover:text-slate-950"
+          >
             ← Terug naar homepage
           </Link>
         </div>
       </section>
 
-    </main>
-      
+      <footer className="px-6 py-8 text-center text-sm text-slate-500">
+        <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
+
+        <div className="mt-2 flex justify-center gap-4">
+          <Link
+            href="/disclaimer"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Disclaimer
+          </Link>
+
+          <Link
+            href="/bronnen"
+            className="font-bold text-slate-600 hover:text-slate-950"
+          >
+            Bronnen
+          </Link>
+        </div>
+      </footer>
     </main>
   );
 }

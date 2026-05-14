@@ -81,11 +81,15 @@ export default function BronnenPage() {
         </section>
 
         <div className="mt-8">
-          <Link href="/" className="font-bold text-slate-700 hover:text-slate-950">
+          <Link
+            href="/"
+            className="font-bold text-slate-700 hover:text-slate-950"
+          >
             ← Terug naar homepage
           </Link>
         </div>
       </section>
+
       <footer className="px-6 py-8 text-center text-sm text-slate-500">
         <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
 

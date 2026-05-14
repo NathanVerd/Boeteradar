@@ -200,9 +200,7 @@ export default function AutokeuringVervallenPage() {
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">
-                Is een afspraakbewijs nuttig?
-              </h3>
+              <h3 className="font-black">Is een afspraakbewijs nuttig?</h3>
               <p className="mt-2 text-sm text-slate-700">
                 Ja. Een afspraakbewijs toont dat je actie hebt ondernomen, maar
                 het vervangt geen geldig keuringsbewijs.
@@ -210,9 +208,7 @@ export default function AutokeuringVervallenPage() {
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">
-                Wat met mijn verzekering?
-              </h3>
+              <h3 className="font-black">Wat met mijn verzekering?</h3>
               <p className="mt-2 text-sm text-slate-700">
                 Bij twijfel contacteer je best je verzekeraar of makelaar. Zeker
                 als je betrokken bent bij een ongeval.
@@ -279,14 +275,14 @@ export default function AutokeuringVervallenPage() {
             </Link>
 
             <Link
-              href="/"
+              href="/personenbelasting-te-laat"
               className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
             >
               Personenbelasting te laat →
             </Link>
 
             <Link
-              href="/"
+              href="/student-te-veel-gewerkt"
               className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
             >
               Student te veel gewerkt →
@@ -294,7 +290,7 @@ export default function AutokeuringVervallenPage() {
           </div>
 
           <p className="mt-4 text-sm text-slate-300">
-            Deze checks worden stap voor stap actief gemaakt.
+            Alle eerste fase-checks zijn nu actief.
           </p>
         </section>
 
@@ -307,6 +303,7 @@ export default function AutokeuringVervallenPage() {
           </Link>
         </div>
       </section>
+
       <footer className="px-6 py-8 text-center text-sm text-slate-500">
         <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
 
