@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -219,7 +220,9 @@ export default function StudentTeVeelGewerktPage() {
             <li>Download of bewaar je Student@work-attest.</li>
             <li>Controleer je contracten en loonfiches.</li>
             <li>Check of er impact kan zijn op Groeipakket of kinderbijslag.</li>
-            <li>Vraag advies aan je ouders, werkgever, uitbetaler of boekhouder.</li>
+            <li>
+              Vraag advies aan je ouders, werkgever, uitbetaler of boekhouder.
+            </li>
           </ol>
         </section>
 
@@ -456,25 +459,7 @@ export default function StudentTeVeelGewerktPage() {
         </div>
       </section>
 
-      <footer className="px-6 py-8 text-center text-sm text-slate-500">
-        <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
-
-        <div className="mt-2 flex justify-center gap-4">
-          <Link
-            href="/disclaimer"
-            className="font-bold text-slate-600 hover:text-slate-950"
-          >
-            Disclaimer
-          </Link>
-
-          <Link
-            href="/bronnen"
-            className="font-bold text-slate-600 hover:text-slate-950"
-          >
-            Bronnen
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
