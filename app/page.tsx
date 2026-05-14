@@ -107,6 +107,43 @@ export default function Home() {
 
         <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Hoe werkt het?
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">
+            Van paniek naar een duidelijk eerste stappenplan.
+          </h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <p className="text-sm font-bold text-orange-600">Stap 1</p>
+              <h3 className="mt-1 font-black">Kies je situatie</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Selecteer de check die past bij jouw administratieve fout.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <p className="text-sm font-bold text-orange-600">Stap 2</p>
+              <h3 className="mt-1 font-black">Vul enkele gegevens in</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Geef bijvoorbeeld aan hoeveel dagen of maanden je te laat bent.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <p className="text-sm font-bold text-orange-600">Stap 3</p>
+              <h3 className="mt-1 font-black">Volg het stappenplan</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Je krijgt een eerste indicatie, praktische acties en officiële
+                bronnen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
             Waarom BoeteRadar?
           </p>
 
@@ -156,6 +193,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+
       <footer className="px-6 py-8 text-center text-sm text-slate-500">
         <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
 
