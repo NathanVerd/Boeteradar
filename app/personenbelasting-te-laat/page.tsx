@@ -435,8 +435,15 @@ export default function PersonenbelastingTeLaatPage() {
       </section>
 
       <footer className="px-6 py-8 text-center text-sm text-slate-500">
-        © 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.
-      </footer>
+  <p>© 2026 BoeteRadar België — Informatieve tool, geen juridisch advies.</p>
+
+  <Link
+    href="/disclaimer"
+    className="mt-2 inline-block font-bold text-slate-600 hover:text-slate-950"
+  >
+    Disclaimer
+  </Link>
+</footer>
     </main>
   );
 }
