@@ -131,6 +131,41 @@ export default function Home() {
             );
           })}
         </div>
+      <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm">
+  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+    Waarom BoeteRadar?
+  </p>
+
+  <h2 className="mt-2 text-2xl font-black">
+    Snel duidelijkheid zonder te doen alsof dit juridisch advies is.
+  </h2>
+
+  <div className="mt-6 grid gap-4 md:grid-cols-3">
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">1. Eerst paniek verminderen</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Je krijgt snel een eerste indicatie van je situatie en een concreet
+        stappenplan.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">2. Altijd met disclaimer</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        BoeteRadar geeft informatie en rekenvoorbeelden, geen juridisch,
+        fiscaal of boekhoudkundig advies.
+      </p>
+    </div>
+
+    <div className="rounded-2xl bg-slate-50 p-5">
+      <h3 className="font-black">3. Officiële bronnen erbij</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        Elke actieve check verwijst naar officiële bronnen zodat je verder kunt
+        controleren.
+      </p>
+    </div>
+  </div>
+</section>
 
         <div className="mt-8 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
