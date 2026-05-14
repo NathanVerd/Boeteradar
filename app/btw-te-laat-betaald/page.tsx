@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function BtwTeLaatBetaaldPage() {
@@ -166,6 +167,33 @@ export default function BtwTeLaatBetaaldPage() {
             <li>Controleer later of de betaling correct verwerkt is.</li>
             <li>Vraag je boekhouder om je situatie te controleren.</li>
           </ol>
+        </section>
+
+        <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
+            Gratis hulpmiddel
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">Btw-deadline checklist</h2>
+
+          <p className="mt-3 max-w-2xl text-slate-700">
+            Gebruik deze checklist om je btw-aangifte, betaling, mededeling en
+            bewijsstukken beter op te volgen.
+          </p>
+
+          <ul className="mt-5 grid gap-2 text-slate-700 md:grid-cols-2">
+            <li>✓ Volgende btw-deadline noteren</li>
+            <li>✓ Intervat controleren</li>
+            <li>✓ Betaling controleren</li>
+            <li>✓ Betalingsbewijs bewaren</li>
+          </ul>
+
+          <Link
+            href="/checklists/btw-deadline-checklist"
+            className="mt-6 inline-flex rounded-xl bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-slate-800"
+          >
+            Open de btw-checklist →
+          </Link>
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">

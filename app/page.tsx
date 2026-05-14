@@ -73,12 +73,12 @@ export default function Home() {
               Start een check
             </a>
 
-            <a
-              href="#checklist"
+            <Link
+              href="/checklists/btw-deadline-checklist"
               className="rounded-full border border-orange-200 bg-orange-50 px-6 py-3 text-center font-black text-orange-700 transition hover:bg-orange-100"
             >
-              Bekijk checklist
-            </a>
+              Bekijk btw-checklist
+            </Link>
           </div>
 
           <div className="mt-8 grid gap-3 md:grid-cols-3">
@@ -235,31 +235,33 @@ export default function Home() {
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
-            Btw-deadline checklist komt als eerste
+            Btw-deadline checklist
           </h2>
 
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-            We bouwen eerst een eenvoudige checklist om je btw-deadline beter op
-            te volgen. Geen ingewikkelde PDF-generator: gewoon een duidelijke
-            pagina met wat je moet controleren.
+            Gebruik de eerste BoeteRadar-checklist om je btw-deadline beter op
+            te volgen. De checklist helpt je om Intervat, betaling, bewijs en
+            boekhoudercontrole niet te vergeten.
           </p>
 
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             <div className="rounded-2xl bg-white p-4">
-              <p className="font-black">Wat erin komt</p>
+              <p className="font-black">Wat erin staat</p>
               <p className="mt-1 text-sm leading-6 text-slate-700">
                 Deadline noteren, Intervat controleren, betaling controleren,
                 bewijs bewaren en boekhouder contacteren.
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white p-4">
-              <p className="font-black">Volgende stap</p>
-              <p className="mt-1 text-sm leading-6 text-slate-700">
-                Na deze homepage maken we de eerste checklistpagina en linken we
-                die vanuit de relevante btw-checks.
+            <Link
+              href="/checklists/btw-deadline-checklist"
+              className="rounded-2xl bg-white p-4 transition hover:shadow-sm"
+            >
+              <p className="font-black">Open de checklist</p>
+              <p className="mt-1 text-sm font-black leading-6 text-orange-600">
+                Naar de btw-deadline checklist →
               </p>
-            </div>
+            </Link>
           </div>
         </section>
       </section>

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function BtwAangifteTeLaatPage() {
@@ -290,23 +291,22 @@ export default function BtwAangifteTeLaatPage() {
 
           <p className="mt-3 max-w-2xl text-slate-700">
             Gebruik deze checklist om je btw-aangifte, betaling en bewijsstukken
-            niet meer uit het oog te verliezen. Binnenkort maken we hiervan een
-            echte downloadbare PDF.
+            niet meer uit het oog te verliezen.
           </p>
 
           <ul className="mt-5 grid gap-2 text-slate-700 md:grid-cols-2">
             <li>✓ Datum van aangifte noteren</li>
+            <li>✓ Intervat controleren</li>
             <li>✓ Betaling controleren</li>
             <li>✓ Bewijs van indiening bewaren</li>
-            <li>✓ Volgende deadline vastleggen</li>
           </ul>
 
-          <button
-            disabled
-            className="mt-6 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
+          <Link
+            href="/checklists/btw-deadline-checklist"
+            className="mt-6 inline-flex rounded-xl bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-slate-800"
           >
-            PDF-download binnenkort
-          </button>
+            Open de btw-checklist →
+          </Link>
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-8 shadow-sm">
