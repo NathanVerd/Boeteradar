@@ -16,26 +16,26 @@ const checks = [
     status: "Actief",
   },
   {
-  title: "Personenbelasting te laat",
-  description:
-    "Check je risico, stappenplan en officiële bronnen als je belastingaangifte te laat is.",
-  href: "/personenbelasting-te-laat",
-  status: "Actief",
-},
+    title: "Personenbelasting te laat",
+    description:
+      "Check je risico, stappenplan en officiële bronnen als je belastingaangifte te laat is.",
+    href: "/personenbelasting-te-laat",
+    status: "Actief",
+  },
   {
-  title: "Autokeuring vervallen",
-  description:
-    "Check je risico, stappenplan en officiële bronnen als je technische keuring verlopen is.",
-  href: "/autokeuring-vervallen",
-  status: "Actief",
-},
+    title: "Autokeuring vervallen",
+    description:
+      "Check je risico, stappenplan en officiële bronnen als je technische keuring verlopen is.",
+    href: "/autokeuring-vervallen",
+    status: "Actief",
+  },
   {
-  title: "Student te veel gewerkt",
-  description:
-    "Check studentenuren, Groeipakket, risico's en officiële bronnen.",
-  href: "/student-te-veel-gewerkt",
-  status: "Actief",
-},
+    title: "Student te veel gewerkt",
+    description:
+      "Check studentenuren, Groeipakket, risico's en officiële bronnen.",
+    href: "/student-te-veel-gewerkt",
+    status: "Actief",
+  },
 ];
 
 export default function Home() {
@@ -82,90 +82,64 @@ export default function Home() {
         </div>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {checks.map((check) => {
-            const isActive = check.status === "Actief";
-
-            if (isActive) {
-              return (
-                <Link
-                  key={check.title}
-                  href={check.href}
-                  className="rounded-3xl border border-orange-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-                >
-                  <div className="mb-4 inline-flex rounded-full bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
-                    Actief
-                  </div>
-
-                  <h2 className="text-2xl font-black text-slate-950">
-                    {check.title}
-                  </h2>
-
-                  <p className="mt-3 text-slate-700">{check.description}</p>
-
-                  <p className="mt-5 font-bold text-orange-600">
-                    Start de check →
-                  </p>
-                </Link>
-              );
-            }
-
-            return (
-              <div
-                key={check.title}
-                className="rounded-3xl bg-white p-6 opacity-70 shadow-sm"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <h2 className="text-2xl font-black">{check.title}</h2>
-
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
-                    Binnenkort
-                  </span>
-                </div>
-
-                <p className="mt-3 text-slate-700">{check.description}</p>
-
-                <p className="mt-6 font-bold text-slate-950">
-                  Komt binnenkort
-                </p>
+          {checks.map((check) => (
+            <Link
+              key={check.title}
+              href={check.href}
+              className="rounded-3xl border border-orange-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <div className="mb-4 inline-flex rounded-full bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
+                {check.status}
               </div>
-            );
-          })}
+
+              <h2 className="text-2xl font-black text-slate-950">
+                {check.title}
+              </h2>
+
+              <p className="mt-3 text-slate-700">{check.description}</p>
+
+              <p className="mt-5 font-bold text-orange-600">
+                Start de check →
+              </p>
+            </Link>
+          ))}
         </div>
-      <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm">
-  <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
-    Waarom BoeteRadar?
-  </p>
 
-  <h2 className="mt-2 text-2xl font-black">
-    Snel duidelijkheid zonder te doen alsof dit juridisch advies is.
-  </h2>
+        <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Waarom BoeteRadar?
+          </p>
 
-  <div className="mt-6 grid gap-4 md:grid-cols-3">
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">1. Eerst paniek verminderen</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Je krijgt snel een eerste indicatie van je situatie en een concreet
-        stappenplan.
-      </p>
-    </div>
+          <h2 className="mt-2 text-2xl font-black">
+            Snel duidelijkheid zonder te doen alsof dit juridisch advies is.
+          </h2>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">2. Altijd met disclaimer</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        BoeteRadar geeft informatie en rekenvoorbeelden, geen juridisch,
-        fiscaal of boekhoudkundig advies.
-      </p>
-    </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">1. Eerst paniek verminderen</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Je krijgt snel een eerste indicatie van je situatie en een
+                concreet stappenplan.
+              </p>
+            </div>
 
-    <div className="rounded-2xl bg-slate-50 p-5">
-      <h3 className="font-black">3. Officiële bronnen erbij</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        Elke actieve check verwijst naar officiële bronnen zodat je verder kunt
-        controleren.
-      </p>
-    </div>
-  </div>
-</section>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">2. Altijd met disclaimer</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                BoeteRadar geeft informatie en rekenvoorbeelden, geen juridisch,
+                fiscaal of boekhoudkundig advies.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">3. Officiële bronnen erbij</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Elke actieve check verwijst naar officiële bronnen zodat je
+                verder kunt controleren.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <div className="mt-8 rounded-3xl border border-orange-200 bg-orange-50 p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
