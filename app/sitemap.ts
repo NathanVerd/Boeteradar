@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/autokeuring-vervallen",
     "/personenbelasting-te-laat",
     "/student-te-veel-gewerkt",
+    "/disclaimer",
   ];
 
   return pages.map((page) => ({
