@@ -73,19 +73,11 @@ export default function Home() {
               Start een check
             </a>
 
-            <Link
-              href="/checklists/btw-deadline-checklist"
+            <a
+              href="#checklists"
               className="rounded-full border border-orange-200 bg-orange-50 px-6 py-3 text-center font-black text-orange-700 transition hover:bg-orange-100"
             >
-              Bekijk btw-checklist
-            </Link>
-
-            <a
-              href="/downloads/btw-deadline-checklist.pdf"
-              download
-              className="rounded-full border border-slate-200 bg-slate-50 px-6 py-3 text-center font-black text-slate-900 transition hover:bg-slate-100"
-            >
-              Download PDF
+              Bekijk checklists
             </a>
           </div>
 
@@ -235,56 +227,91 @@ export default function Home() {
         </section>
 
         <section
-          id="checklist"
+          id="checklists"
           className="mt-8 rounded-3xl border border-orange-200 bg-orange-50 p-7 shadow-sm md:p-8"
         >
           <p className="text-sm font-black uppercase tracking-wide text-orange-700">
-            Gratis hulpmiddel
+            Gratis hulpmiddelen
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
-            Btw-deadline checklist is beschikbaar
+            Checklists om sneller te verzamelen wat je nodig hebt.
           </h2>
 
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-            Gebruik de eerste BoeteRadar-checklist om je btw-deadline beter op
-            te volgen. De checklist helpt je om Intervat, betaling, bewijs en
-            boekhoudercontrole niet te vergeten.
+            Gebruik de checklists als praktische voorbereiding. Ze vervangen geen
+            professioneel advies, maar helpen je wel om documenten, deadlines en
+            bewijsstukken beter op orde te krijgen.
           </p>
 
           <p className="mt-3 text-sm font-bold text-slate-700">
             Geen e-mailadres nodig.
           </p>
 
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
-            <div className="rounded-2xl bg-white p-4">
-              <p className="font-black">Wat erin staat</p>
-              <p className="mt-1 text-sm leading-6 text-slate-700">
-                Deadline noteren, Intervat controleren, betaling controleren,
-                bewijs bewaren en boekhouder contacteren.
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            <div className="rounded-2xl bg-white p-5">
+              <p className="text-sm font-black uppercase tracking-wide text-orange-600">
+                Btw
               </p>
+
+              <h3 className="mt-2 text-xl font-black">
+                Btw-deadline checklist
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Voor btw-aangifte, Intervat, betaling, bewijs en
+                boekhoudercontrole.
+              </p>
+
+              <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                <Link
+                  href="/checklists/btw-deadline-checklist"
+                  className="rounded-xl bg-slate-950 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-800"
+                >
+                  Open checklist
+                </Link>
+
+                <a
+                  href="/downloads/btw-deadline-checklist.pdf"
+                  download
+                  className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center text-sm font-bold text-slate-900 transition hover:bg-slate-100"
+                >
+                  Download PDF
+                </a>
+              </div>
             </div>
 
-            <Link
-              href="/checklists/btw-deadline-checklist"
-              className="rounded-2xl bg-white p-4 transition hover:shadow-sm"
-            >
-              <p className="font-black">Open de checklist</p>
-              <p className="mt-1 text-sm font-black leading-6 text-orange-600">
-                Naar de btw-deadline checklist →
+            <div className="rounded-2xl bg-white p-5">
+              <p className="text-sm font-black uppercase tracking-wide text-orange-600">
+                Personenbelasting
               </p>
-            </Link>
 
-            <a
-              href="/downloads/btw-deadline-checklist.pdf"
-              download
-              className="rounded-2xl bg-white p-4 transition hover:shadow-sm"
-            >
-              <p className="font-black">Download als PDF</p>
-              <p className="mt-1 text-sm font-black leading-6 text-orange-600">
-                Download btw-checklist →
+              <h3 className="mt-2 text-xl font-black">
+                Personenbelasting noodchecklist
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Voor MyMinfin, aanslagjaar, fiscale fiches, bewijsstukken en
+                contact met je boekhouder.
               </p>
-            </a>
+
+              <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                <Link
+                  href="/checklists/personenbelasting-noodchecklist"
+                  className="rounded-xl bg-slate-950 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-800"
+                >
+                  Open checklist
+                </Link>
+
+                <a
+                  href="/downloads/personenbelasting-noodchecklist.pdf"
+                  download
+                  className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center text-sm font-bold text-slate-900 transition hover:bg-slate-100"
+                >
+                  Download PDF
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </section>
