@@ -79,6 +79,14 @@ export default function Home() {
             >
               Bekijk btw-checklist
             </Link>
+
+            <a
+              href="/downloads/btw-deadline-checklist.pdf"
+              download
+              className="rounded-full border border-slate-200 bg-slate-50 px-6 py-3 text-center font-black text-slate-900 transition hover:bg-slate-100"
+            >
+              Download PDF
+            </a>
           </div>
 
           <div className="mt-8 grid gap-3 md:grid-cols-3">
@@ -235,7 +243,7 @@ export default function Home() {
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
-            Btw-deadline checklist
+            Btw-deadline checklist is beschikbaar
           </h2>
 
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
@@ -244,7 +252,11 @@ export default function Home() {
             boekhoudercontrole niet te vergeten.
           </p>
 
-          <div className="mt-5 grid gap-3 md:grid-cols-2">
+          <p className="mt-3 text-sm font-bold text-slate-700">
+            Geen e-mailadres nodig.
+          </p>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
             <div className="rounded-2xl bg-white p-4">
               <p className="font-black">Wat erin staat</p>
               <p className="mt-1 text-sm leading-6 text-slate-700">
@@ -262,6 +274,17 @@ export default function Home() {
                 Naar de btw-deadline checklist →
               </p>
             </Link>
+
+            <a
+              href="/downloads/btw-deadline-checklist.pdf"
+              download
+              className="rounded-2xl bg-white p-4 transition hover:shadow-sm"
+            >
+              <p className="font-black">Download als PDF</p>
+              <p className="mt-1 text-sm font-black leading-6 text-orange-600">
+                Download btw-checklist →
+              </p>
+            </a>
           </div>
         </section>
       </section>
