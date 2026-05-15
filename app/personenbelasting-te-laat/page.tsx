@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function PersonenbelastingTeLaatPage() {
@@ -67,6 +68,22 @@ export default function PersonenbelastingTeLaatPage() {
             MyMinfin, Tax-on-web of je boekhouder.
           </p>
 
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/checklists/personenbelasting-noodchecklist"
+              className="rounded-xl bg-slate-950 px-5 py-3 text-center font-bold text-white transition hover:bg-slate-800"
+            >
+              Open noodchecklist
+            </Link>
+
+            <a
+              href="#check"
+              className="rounded-xl border border-orange-200 bg-orange-50 px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
+            >
+              Start snelle check
+            </a>
+          </div>
+
           <DisclaimerBox text="Dit is een informatieve tool met vereenvoudigde inschattingen. Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
 
           <div className="mt-6 grid gap-3 md:grid-cols-3">
@@ -96,7 +113,10 @@ export default function PersonenbelastingTeLaatPage() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
+        <div
+          id="check"
+          className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8"
+        >
           <h2 className="text-2xl font-black">
             Snelle personenbelasting-check
           </h2>
@@ -311,12 +331,12 @@ export default function PersonenbelastingTeLaatPage() {
             <li>✓ Boekhouder contacteren</li>
           </ul>
 
-          <button
-            disabled
-            className="mt-6 rounded-xl bg-slate-950 px-5 py-3 font-bold text-white opacity-60"
+          <Link
+            href="/checklists/personenbelasting-noodchecklist"
+            className="mt-6 inline-flex rounded-xl bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-slate-800"
           >
-            PDF-download later
-          </button>
+            Open de noodchecklist →
+          </Link>
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">

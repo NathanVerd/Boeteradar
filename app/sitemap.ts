@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/personenbelasting-te-laat",
     "/student-te-veel-gewerkt",
     "/checklists/btw-deadline-checklist",
+    "/checklists/personenbelasting-noodchecklist",
     "/disclaimer",
     "/bronnen",
   ];
