@@ -78,6 +78,23 @@ export default function PersonenbelastingNoodchecklistPage() {
             Tax-on-web, FOD Financiën of je boekhouder contacteert.
           </p>
 
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/downloads/personenbelasting-noodchecklist.pdf"
+              download
+              className="rounded-xl bg-slate-950 px-5 py-3 text-center font-bold text-white transition hover:bg-slate-800"
+            >
+              Download checklist als PDF
+            </a>
+
+            <Link
+              href="/personenbelasting-te-laat"
+              className="rounded-xl border border-orange-200 bg-orange-50 px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
+            >
+              Start personenbelasting-check
+            </Link>
+          </div>
+
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             <div className="rounded-2xl bg-slate-50 p-4">
               <p className="font-black">Eerst controleren</p>
@@ -131,6 +148,22 @@ export default function PersonenbelastingNoodchecklistPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-5">
+            <p className="font-black">Liever bewaren of printen?</p>
+            <p className="mt-2 text-sm leading-6 text-slate-700">
+              Download de noodchecklist als PDF en bewaar ze bij je fiscale
+              documenten.
+            </p>
+
+            <a
+              href="/downloads/personenbelasting-noodchecklist.pdf"
+              download
+              className="mt-4 inline-flex rounded-xl bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-slate-800"
+            >
+              Download checklist als PDF →
+            </a>
           </div>
         </section>
 

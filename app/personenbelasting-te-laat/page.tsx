@@ -77,6 +77,14 @@ export default function PersonenbelastingTeLaatPage() {
             </Link>
 
             <a
+              href="/downloads/personenbelasting-noodchecklist.pdf"
+              download
+              className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 text-center font-bold text-slate-900 transition hover:bg-slate-100"
+            >
+              Download PDF
+            </a>
+
+            <a
               href="#check"
               className="rounded-xl border border-orange-200 bg-orange-50 px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
             >
@@ -331,12 +339,22 @@ export default function PersonenbelastingTeLaatPage() {
             <li>✓ Boekhouder contacteren</li>
           </ul>
 
-          <Link
-            href="/checklists/personenbelasting-noodchecklist"
-            className="mt-6 inline-flex rounded-xl bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-slate-800"
-          >
-            Open de noodchecklist →
-          </Link>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/downloads/personenbelasting-noodchecklist.pdf"
+              download
+              className="rounded-xl bg-slate-950 px-5 py-3 text-center font-bold text-white transition hover:bg-slate-800"
+            >
+              Download PDF →
+            </a>
+
+            <Link
+              href="/checklists/personenbelasting-noodchecklist"
+              className="rounded-xl border border-orange-200 bg-white px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
+            >
+              Open noodchecklist →
+            </Link>
+          </div>
         </section>
 
         <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
