@@ -413,7 +413,7 @@ export default function BtwAangifteTeLaatPage() {
 
         <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
-            Binnenkort
+            Later mogelijk
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
@@ -421,10 +421,9 @@ export default function BtwAangifteTeLaatPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-            Later kan BoeteRadar helpen met eenvoudige reminders voor
-            btw-aangiftes, betalingen en andere administratieve deadlines.
-            Voorlopig bouwen we eerst de belangrijkste checks en checklistpagina
-            verder uit.
+            BoeteRadar kan later uitbreiden met eenvoudige reminders voor
+            btw-aangiftes, betalingen en andere administratieve deadlines. Eerst
+            verbeteren we de bestaande checks en hulpmiddelen.
           </p>
 
           <div className="mt-5 rounded-2xl bg-slate-50 p-5">
