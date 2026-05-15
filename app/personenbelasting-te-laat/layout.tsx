@@ -1,23 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Personenbelasting te laat? Risico & stappenplan | BoeteRadar België",
+  title:
+    "Personenbelasting te laat in België? Check je mogelijke risico | BoeteRadar",
   description:
-    "Check snel wat je best doet als je aangifte personenbelasting te laat is in België. Met risico-inschatting, stappenplan en officiële bronnen. Geen juridisch advies.",
-  keywords: [
-    "personenbelasting te laat",
-    "belastingaangifte te laat",
-    "aangifte personenbelasting vergeten",
-    "Tax-on-web te laat",
-    "BoeteRadar België",
-  ],
+    "Check wat je best doet als je aangifte personenbelasting te laat is of nog niet werd ingediend. Krijg een eerste indicatie, stappenplan, officiële bronnen en noodchecklist.",
   alternates: {
     canonical: "https://boeteradar.vercel.app/personenbelasting-te-laat",
   },
   openGraph: {
-    title: "Personenbelasting te laat? Check je risico",
+    title: "Personenbelasting te laat in België?",
     description:
-      "Snelle Belgische checker voor een laattijdige belastingaangifte. Met stappenplan en officiële bronnen.",
+      "Krijg een eerste indicatie van je mogelijke risico en zie wat je best controleert via MyMinfin, Tax-on-web of je boekhouder.",
     url: "https://boeteradar.vercel.app/personenbelasting-te-laat",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
@@ -27,8 +21,8 @@ export const metadata: Metadata = {
 
 export default function PersonenbelastingTeLaatLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return children;
 }

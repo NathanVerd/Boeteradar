@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Btw te laat betaald? Interest & stappenplan | BoeteRadar België",
+  title: "Btw te laat betaald in België? Check je mogelijke risico | BoeteRadar",
   description:
-    "Check snel je mogelijke risico als je btw te laat betaald hebt in België. Bekijk een ruwe interestindicatie, stappenplan en officiële bronnen. Geen juridisch advies.",
-  keywords: [
-    "btw te laat betaald",
-    "btw betaling te laat",
-    "nalatigheidsinterest btw",
-    "btw betalen België",
-    "BoeteRadar België",
-  ],
+    "Check wat je mogelijk riskeert als je btw te laat betaald is. Krijg een eerste indicatie, praktische stappen, officiële bronnen en een btw-deadline checklist.",
   alternates: {
     canonical: "https://boeteradar.vercel.app/btw-te-laat-betaald",
   },
   openGraph: {
-    title: "Btw te laat betaald? Check je risico",
+    title: "Btw te laat betaald in België?",
     description:
-      "Snelle Belgische checker voor een laattijdige btw-betaling. Met stappenplan en officiële bronnen.",
+      "Krijg een eerste indicatie van je mogelijke risico en zie welke stappen je best controleert.",
     url: "https://boeteradar.vercel.app/btw-te-laat-betaald",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
@@ -27,8 +20,8 @@ export const metadata: Metadata = {
 
 export default function BtwTeLaatBetaaldLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return children;
 }

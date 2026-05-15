@@ -244,7 +244,9 @@ export default function StudentTeVeelGewerktPage() {
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Je werkt ook buiten studentencontract</h3>
+              <h3 className="font-black">
+                Je werkt ook buiten studentencontract
+              </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
                 Andere arbeid kan andere regels hebben en mogelijk invloed
                 hebben op voordelen.
@@ -252,7 +254,9 @@ export default function StudentTeVeelGewerktPage() {
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Studeren is niet meer je hoofdactiviteit</h3>
+              <h3 className="font-black">
+                Studeren is niet meer je hoofdactiviteit
+              </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
                 Dan moet je extra voorzichtig zijn en je situatie laten
                 controleren.
@@ -415,6 +419,21 @@ export default function StudentTeVeelGewerktPage() {
             },
           ]}
         />
+
+        <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Laatst inhoudelijk nagekeken
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">Mei 2026</h2>
+
+          <p className="mt-3 max-w-2xl leading-7 text-slate-700">
+            Regels rond studentenwerk, sociale bijdragen, Groeipakket,
+            kinderbijslag en fiscale gevolgen kunnen wijzigen. Controleer altijd
+            de officiële bronnen of vraag professioneel advies voor je concrete
+            situatie.
+          </p>
+        </section>
 
         <RelatedChecks excludeHref="/student-te-veel-gewerkt" />
 

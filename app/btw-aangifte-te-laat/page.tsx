@@ -413,6 +413,20 @@ export default function BtwAangifteTeLaatPage() {
 
         <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-8">
           <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+            Laatst inhoudelijk nagekeken
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">Mei 2026</h2>
+
+          <p className="mt-3 max-w-2xl leading-7 text-slate-700">
+            Regels, bedragen en procedures kunnen wijzigen. Controleer altijd de
+            officiële bronnen of vraag professioneel advies voor je concrete
+            situatie.
+          </p>
+        </section>
+
+        <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
             Later mogelijk
           </p>
 

@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Autokeuring vervallen? Risico & stappenplan | BoeteRadar België",
+  title: "Autokeuring vervallen in België? Check je volgende stap | BoeteRadar",
   description:
-    "Check snel wat je best doet als je autokeuring vervallen is. Bekijk risico, stappenplan en officiële bronnen. Geen juridisch advies.",
-  keywords: [
-    "autokeuring vervallen",
-    "autokeuring te laat",
-    "keuring verlopen",
-    "vervallen autokeuring boete",
-    "BoeteRadar België",
-  ],
+    "Check wat je best doet als je autokeuring vervallen is. Krijg een eerste risico-inschatting, praktisch stappenplan en officiële bronnen.",
   alternates: {
     canonical: "https://boeteradar.vercel.app/autokeuring-vervallen",
   },
   openGraph: {
-    title: "Autokeuring vervallen? Check je risico",
+    title: "Autokeuring vervallen in België?",
     description:
-      "Snelle Belgische checker voor een vervallen autokeuring. Met stappenplan en officiële bronnen.",
+      "Krijg een eerste indicatie van je mogelijke risico en zie welke stappen je best controleert.",
     url: "https://boeteradar.vercel.app/autokeuring-vervallen",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
@@ -27,8 +20,8 @@ export const metadata: Metadata = {
 
 export default function AutokeuringVervallenLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return children;
 }
