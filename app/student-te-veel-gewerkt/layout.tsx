@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Check studentenuren, mogelijke gevolgen voor sociale bijdragen, Groeipakket en officiële bronnen als je denkt dat je te veel gewerkt hebt als student.",
   alternates: {
-    canonical: "https://boeteradar.vercel.app/student-te-veel-gewerkt",
+    canonical: "https://www.boeteradar.be/student-te-veel-gewerkt",
   },
   openGraph: {
     title: "Te veel gewerkt als student in België?",
     description:
       "Controleer studentenuren, mogelijke gevolgen voor Groeipakket en welke officiële bronnen je moet nakijken.",
-    url: "https://boeteradar.vercel.app/student-te-veel-gewerkt",
+    url: "https://www.boeteradar.be/student-te-veel-gewerkt",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
     type: "website",

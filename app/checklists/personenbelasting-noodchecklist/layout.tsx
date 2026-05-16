@@ -6,13 +6,13 @@ export const metadata: Metadata = {
     "Gratis noodchecklist voor een te late of onduidelijke aangifte personenbelasting. Controleer MyMinfin, aanslagjaar, fiscale fiches, bewijsstukken en boekhoudercommunicatie.",
   alternates: {
     canonical:
-      "https://boeteradar.vercel.app/checklists/personenbelasting-noodchecklist",
+      "https://www.boeteradar.be/checklists/personenbelasting-noodchecklist",
   },
   openGraph: {
     title: "Personenbelasting noodchecklist België",
     description:
       "Verzamel snel wat je nodig hebt als je aangifte personenbelasting te laat is of nog openstaat.",
-    url: "https://boeteradar.vercel.app/checklists/personenbelasting-noodchecklist",
+    url: "https://www.boeteradar.be/checklists/personenbelasting-noodchecklist",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
     type: "website",

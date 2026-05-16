@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     "personenbelasting te laat",
   ],
   alternates: {
-    canonical: "https://boeteradar.vercel.app",
+    canonical: "https://www.boeteradar.be",
   },
   openGraph: {
     title: "BoeteRadar België",
     description:
       "Snelle Belgische checks voor administratieve fouten, deadlines en mogelijke boetes.",
-    url: "https://boeteradar.vercel.app",
+    url: "https://www.boeteradar.be",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
     type: "website",

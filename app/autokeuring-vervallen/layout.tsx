@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Check wat je best doet als je autokeuring vervallen is. Krijg een eerste risico-inschatting, praktisch stappenplan en officiële bronnen.",
   alternates: {
-    canonical: "https://boeteradar.vercel.app/autokeuring-vervallen",
+    canonical: "https://www.boeteradar.be/autokeuring-vervallen",
   },
   openGraph: {
     title: "Autokeuring vervallen in België?",
     description:
       "Krijg een eerste indicatie van je mogelijke risico en zie welke stappen je best controleert.",
-    url: "https://boeteradar.vercel.app/autokeuring-vervallen",
+    url: "https://www.boeteradar.be/autokeuring-vervallen",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
     type: "website",

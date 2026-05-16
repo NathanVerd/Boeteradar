@@ -6,13 +6,13 @@ export const metadata: Metadata = {
     "Gratis btw-deadline checklist voor België. Controleer Intervat, btw-aangifte, betaling, bewijsstukken en boekhoudercontrole.",
   alternates: {
     canonical:
-      "https://boeteradar.vercel.app/checklists/btw-deadline-checklist",
+      "https://www.boeteradar.be/checklists/btw-deadline-checklist",
   },
   openGraph: {
     title: "Btw-deadline checklist België",
     description:
       "Gebruik een praktische checklist om je btw-aangifte, betaling en bewijsstukken beter op te volgen.",
-    url: "https://boeteradar.vercel.app/checklists/btw-deadline-checklist",
+    url: "https://www.boeteradar.be/checklists/btw-deadline-checklist",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
     type: "website",

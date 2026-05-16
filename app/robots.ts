@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://boeteradar.vercel.app/sitemap.xml",
+    sitemap: "https://www.boeteradar.be/sitemap.xml",
   };
 }

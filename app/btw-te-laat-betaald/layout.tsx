@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Check wat je mogelijk riskeert als je btw te laat betaald is. Krijg een eerste indicatie, praktische stappen, officiële bronnen en een btw-deadline checklist.",
   alternates: {
-    canonical: "https://boeteradar.vercel.app/btw-te-laat-betaald",
+    canonical: "https://www.boeteradar.be/btw-te-laat-betaald",
   },
   openGraph: {
     title: "Btw te laat betaald in België?",
     description:
       "Krijg een eerste indicatie van je mogelijke risico en zie welke stappen je best controleert.",
-    url: "https://boeteradar.vercel.app/btw-te-laat-betaald",
+    url: "https://www.boeteradar.be/btw-te-laat-betaald",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
     type: "website",
