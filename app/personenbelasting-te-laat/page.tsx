@@ -20,58 +20,64 @@ export default function PersonenbelastingTeLaatPage() {
 
   let risk = "Laag";
   let riskColor = "border-emerald-300 bg-emerald-50";
-  let advice = "Controleer je aangifte en bewaar je bewijs van indiening.";
+  let advice = "Controleer je aangifte en bewaar je bewijs.";
   let possibleConsequence =
-    "Beperkt risico als alles tijdig of bijna tijdig werd rechtgezet.";
+    "Als alles intussen in orde is, blijft het risico meestal beperkter.";
 
   if (safeDays >= 1 || submitted === "no") {
     risk = "Middelmatig";
     riskColor = "border-orange-300 bg-orange-50";
     advice =
-      "Dien je aangifte zo snel mogelijk in via MyMinfin/Tax-on-web en bewaar je bewijs.";
+      "Controleer MyMinfin en dien je aangifte zo snel mogelijk alsnog in.";
     possibleConsequence =
-      "Er kan een risico ontstaan op een administratieve boete, extra controle of verdere opvolging.";
+      "Er kan een risico zijn op opvolging, een administratieve sanctie of extra controle.";
   }
 
   if (safeDays >= 30 || reminderReceived === "yes" || submitted === "no") {
     risk = "Hoog";
     riskColor = "border-red-300 bg-red-50";
     advice =
-      "Dien onmiddellijk in, contacteer je boekhouder of FOD Financiën en bewaar alle communicatie.";
+      "Dien zo snel mogelijk in en contacteer je boekhouder of FOD Financiën.";
     possibleConsequence =
-      "Bij laattijdige of ontbrekende aangifte kunnen boetes, belastingverhoging of aanslag van ambtswege mogelijk worden.";
+      "Bij een ontbrekende of laattijdige aangifte kunnen boetes, belastingverhoging of een aanslag van ambtswege mogelijk worden.";
   }
 
   if (hasAccountant === "yes" && submitted === "no") {
     advice =
-      "Contacteer je boekhouder vandaag nog en vraag expliciet of je aangifte al werd ingediend.";
+      "Contacteer je boekhouder vandaag nog en vraag of de aangifte al verzonden werd.";
   }
 
   return (
-    <main className="min-h-screen bg-slate-100 text-slate-950">
+    <main className="min-h-screen bg-[#f6f1ea] text-slate-950">
       <Header label="Personenbelasting" />
 
       <section className="mx-auto max-w-5xl px-5 py-10">
-        <div className="rounded-3xl bg-white p-7 shadow-sm md:p-12">
-          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-orange-600">
+        <div className="rounded-[2rem] bg-white p-7 shadow-sm md:p-12">
+          <p className="mb-4 text-sm font-black uppercase tracking-wide text-orange-600">
             Personenbelasting te laat
           </p>
 
           <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-            Personenbelasting te laat ingediend? Check je mogelijke risico.
+            Belastingaangifte te laat? Dit doe je eerst.
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-            Deze checker geeft een eerste indicatie van je risico als je
-            belastingaangifte te laat is, nog niet ingediend werd of je een
-            herinnering kreeg. Je ziet ook welke stappen je best controleert via
-            MyMinfin, Tax-on-web of je boekhouder.
+            Is je aangifte personenbelasting te laat of nog niet ingediend?
+            Check wat je best nakijkt in MyMinfin, wat je bewaart en wanneer je
+            je boekhouder contacteert.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#check"
+              className="rounded-full bg-slate-950 px-6 py-3 text-center font-black text-white transition hover:bg-slate-800"
+            >
+              Start de check
+            </a>
+
             <Link
               href="/checklists/personenbelasting-noodchecklist"
-              className="rounded-xl bg-slate-950 px-5 py-3 text-center font-bold text-white transition hover:bg-slate-800"
+              className="rounded-full border border-orange-200 bg-orange-50 px-6 py-3 text-center font-black text-orange-700 transition hover:bg-orange-100"
             >
               Open noodchecklist
             </Link>
@@ -79,43 +85,36 @@ export default function PersonenbelastingTeLaatPage() {
             <a
               href="/downloads/personenbelasting-noodchecklist.pdf"
               download
-              className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 text-center font-bold text-slate-900 transition hover:bg-slate-100"
+              className="rounded-full border border-slate-200 bg-slate-50 px-6 py-3 text-center font-black text-slate-900 transition hover:bg-slate-100"
             >
               Download PDF
             </a>
-
-            <a
-              href="#check"
-              className="rounded-xl border border-orange-200 bg-orange-50 px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
-            >
-              Start snelle check
-            </a>
           </div>
 
-          <DisclaimerBox text="Dit is een informatieve tool met vereenvoudigde inschattingen. Het is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
+          <DisclaimerBox text="BoeteRadar geeft informatie en eenvoudige inschattingen. Dit is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
 
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             <div className="rounded-2xl bg-slate-50 p-5">
-              <p className="text-sm font-bold text-orange-600">Stap 1</p>
+              <p className="text-sm font-black text-orange-600">1</p>
               <h3 className="mt-1 font-black">Check MyMinfin</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Kijk na of je aangifte al ingediend is of nog openstaat.
+                Kijk of je aangifte ingediend is of nog openstaat.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <p className="text-sm font-bold text-orange-600">Stap 2</p>
+              <p className="text-sm font-black text-orange-600">2</p>
               <h3 className="mt-1 font-black">Dien alsnog in</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Als je aangifte nog niet ingediend is, doe dit zo snel mogelijk.
+                Staat ze nog open? Wacht dan niet langer.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <p className="text-sm font-bold text-orange-600">Stap 3</p>
+              <p className="text-sm font-black text-orange-600">3</p>
               <h3 className="mt-1 font-black">Bewaar bewijs</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Bewaar bewijs van indiening, herinneringen en communicatie.
+                Bewaar bevestigingen, berichten en communicatie.
               </p>
             </div>
           </div>
@@ -123,15 +122,19 @@ export default function PersonenbelastingTeLaatPage() {
 
         <div
           id="check"
-          className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8"
+          className="mt-6 rounded-[2rem] bg-white p-7 shadow-sm md:p-8"
         >
-          <h2 className="text-2xl font-black">
-            Snelle personenbelasting-check
+          <p className="text-sm font-black uppercase tracking-wide text-orange-600">
+            Snelle check
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black">
+            Hoe dringend is je situatie?
           </h2>
 
           <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-700">
-            Vul hieronder je situatie in. De uitkomst is alleen een indicatie en
-            geen officiële beslissing.
+            Vul je situatie in. De uitkomst is een hulpmiddel, geen officiële
+            beslissing.
           </p>
 
           <div className="mt-6 grid gap-5">
@@ -143,7 +146,7 @@ export default function PersonenbelastingTeLaatPage() {
                 max="1000"
                 value={daysLate}
                 onChange={(e) => setDaysLate(Number(e.target.value))}
-                className="mt-2 w-full rounded-xl border border-slate-300 p-3 font-normal"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
               />
             </label>
 
@@ -152,7 +155,7 @@ export default function PersonenbelastingTeLaatPage() {
               <select
                 value={submitted}
                 onChange={(e) => setSubmitted(e.target.value)}
-                className="mt-2 w-full rounded-xl border border-slate-300 p-3 font-normal"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
               >
                 <option value="yes">Ja</option>
                 <option value="no">Nee</option>
@@ -164,7 +167,7 @@ export default function PersonenbelastingTeLaatPage() {
               <select
                 value={reminderReceived}
                 onChange={(e) => setReminderReceived(e.target.value)}
-                className="mt-2 w-full rounded-xl border border-slate-300 p-3 font-normal"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
               >
                 <option value="no">Nee</option>
                 <option value="yes">Ja</option>
@@ -176,7 +179,7 @@ export default function PersonenbelastingTeLaatPage() {
               <select
                 value={hasAccountant}
                 onChange={(e) => setHasAccountant(e.target.value)}
-                className="mt-2 w-full rounded-xl border border-slate-300 p-3 font-normal"
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
               >
                 <option value="no">Nee</option>
                 <option value="yes">Ja</option>
@@ -185,9 +188,9 @@ export default function PersonenbelastingTeLaatPage() {
 
             <button
               onClick={() => setCalculated(true)}
-              className="rounded-xl bg-slate-950 px-5 py-4 font-bold text-white hover:bg-slate-800"
+              className="rounded-xl bg-slate-950 px-5 py-4 font-bold text-white transition hover:bg-slate-800"
             >
-              Bereken risico
+              Toon mijn indicatie
             </button>
           </div>
 
@@ -204,132 +207,107 @@ export default function PersonenbelastingTeLaatPage() {
               </p>
 
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                Deze inschatting kijkt naar vertraging, indieningsstatus en of je
-                al een herinnering kreeg. De echte gevolgen hangen af van je
-                concrete situatie en de beoordeling door de administratie.
+                Deze inschatting kijkt naar vertraging, indieningsstatus en of
+                je al een bericht kreeg. De echte gevolgen hangen af van je
+                concrete situatie.
               </p>
 
-              <p className="mt-3 font-bold">Beste actie: {advice}</p>
+              <p className="mt-3 font-bold">Wat nu? {advice}</p>
             </div>
           )}
         </div>
 
-        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
-          <h2 className="text-2xl font-black">Wat moet je nu doen?</h2>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <section className="rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
+            <h2 className="text-2xl font-black">Wat kan meespelen?</h2>
 
-          <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-slate-700">
-            <li>Log in op MyMinfin en controleer je aangifte.</li>
-            <li>Dien je aangifte zo snel mogelijk alsnog in.</li>
-            <li>Bewaar bewijs van verzending of bevestiging.</li>
-            <li>Controleer of je een herinnering of bericht kreeg.</li>
-            <li>Contacteer je boekhouder als je twijfelt.</li>
-          </ol>
-        </section>
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+              <li>Of je aangifte al dan niet ingediend is.</li>
+              <li>Hoe lang je te laat bent.</li>
+              <li>Of je al een herinnering of bericht kreeg.</li>
+              <li>Of je aangifte via een boekhouder loopt.</li>
+            </ul>
+          </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
-          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
-            Wanneer moet je extra opletten?
-          </p>
+          <section className="rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
+            <h2 className="text-2xl font-black">Wat doe je nu best?</h2>
 
-          <h2 className="mt-2 text-2xl font-black">
-            Een ontbrekende aangifte is dringender dan een kleine vertraging.
-          </h2>
+            <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-slate-700">
+              <li>Log in op MyMinfin en controleer de status.</li>
+              <li>Dien je aangifte zo snel mogelijk alsnog in.</li>
+              <li>Bewaar bewijs van verzending of bevestiging.</li>
+              <li>Controleer of je een bericht van FOD Financiën kreeg.</li>
+              <li>Contacteer je boekhouder bij twijfel.</li>
+            </ol>
+          </section>
+        </div>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Je aangifte is nog niet ingediend</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Dan is de eerste actie niet rekenen, maar zo snel mogelijk
-                indienen of je boekhouder contacteren.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Je kreeg al een herinnering</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Een herinnering of bericht van FOD Financiën betekent dat je
-                situatie extra aandacht vraagt.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Je werkt via een boekhouder</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Vraag expliciet of je aangifte al verzonden is en bewaar dat
-                antwoord.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
-          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+        <section className="mt-6 rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-black uppercase tracking-wide text-orange-600">
             Boekhouder voorbereiden
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
-            Wat stuur je best naar je boekhouder?
+            Stuur meteen de juiste info door.
           </h2>
 
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-            Stuur meteen duidelijke info door, zodat je boekhouder sneller kan
-            inschatten wat er nog moet gebeuren.
+            Dan kan je boekhouder sneller zien wat er nog moet gebeuren.
           </p>
 
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">1. Aanslagjaar</h3>
+              <h3 className="font-black">Aanslagjaar</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Zeg duidelijk over welk aanslagjaar of inkomstenjaar het gaat.
+                Over welk aanslagjaar of inkomstenjaar gaat het?
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">2. Status van indiening</h3>
+              <h3 className="font-black">Status van indiening</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Meld of je aangifte al ingediend is of nog openstaat.
+                Is de aangifte al ingediend of staat ze nog open?
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">3. Berichten van FOD</h3>
+              <h3 className="font-black">Berichten van FOD Financiën</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Voeg screenshots of brieven toe als je een herinnering kreeg.
+                Voeg brieven, meldingen of screenshots toe.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">4. Bewijsstukken</h3>
+              <h3 className="font-black">Bewijsstukken</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Verzamel fiches, attesten, bewijs van kosten en eerdere
-                aangiftes.
+                Verzamel fiches, attesten en relevante documenten.
               </p>
             </div>
           </div>
 
           <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <p className="font-bold">Voorbeeldbericht:</p>
+            <p className="font-bold">Voorbeeldbericht</p>
             <p className="mt-2 text-sm leading-6 text-slate-700">
-              “Hallo, ik denk dat mijn aangifte personenbelasting voor
-              [aanslagjaar] te laat is. Ze is [wel/niet] ingediend en ik heb
-              [wel/geen] herinnering ontvangen. Kan je controleren wat ik nu best
+              “Hallo, mijn aangifte personenbelasting voor [aanslagjaar] is
+              mogelijk te laat. Ze is [wel/niet] ingediend en ik heb
+              [wel/geen] bericht ontvangen. Kan je nakijken wat ik nu best
               doe?”
             </p>
           </div>
         </section>
 
-        <section className="mt-6 rounded-3xl border border-orange-200 bg-orange-50 p-7 shadow-sm md:p-8">
-          <p className="text-sm font-bold uppercase tracking-wide text-orange-700">
+        <section className="mt-6 rounded-[2rem] border border-orange-200 bg-orange-50 p-7 shadow-sm md:p-8">
+          <p className="text-sm font-black uppercase tracking-wide text-orange-700">
             Gratis hulpmiddel
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
-            Belastingaangifte noodchecklist
+            Personenbelasting noodchecklist
           </h2>
 
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-            Gebruik deze checklist om snel te verzamelen wat je nodig hebt als je
-            aangifte te laat is of nog moet worden ingediend.
+            Gebruik de checklist om MyMinfin, documenten en communicatie sneller
+            op orde te krijgen.
           </p>
 
           <ul className="mt-5 grid gap-2 leading-7 text-slate-700 md:grid-cols-2">
@@ -352,18 +330,18 @@ export default function PersonenbelastingTeLaatPage() {
               href="/checklists/personenbelasting-noodchecklist"
               className="rounded-xl border border-orange-200 bg-white px-5 py-3 text-center font-bold text-orange-700 transition hover:bg-orange-100"
             >
-              Open noodchecklist →
+              Open checklist →
             </Link>
           </div>
         </section>
 
-        <section className="mt-6 rounded-3xl bg-white p-7 shadow-sm md:p-8">
-          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+        <section className="mt-6 rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-black uppercase tracking-wide text-orange-600">
             Veelgestelde vragen
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
-            Vragen over personenbelasting te laat
+            Personenbelasting te laat: veelgestelde vragen
           </h2>
 
           <div className="mt-6 grid gap-4">
@@ -372,19 +350,16 @@ export default function PersonenbelastingTeLaatPage() {
                 Wat moet ik doen als mijn belastingaangifte te laat is?
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Log in op MyMinfin, controleer de status van je aangifte en dien
-                ze zo snel mogelijk alsnog in.
+                Log in op MyMinfin, controleer de status en dien de aangifte zo
+                snel mogelijk alsnog in.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">
-                Kan ik een boete krijgen als ik te laat ben?
-              </h3>
+              <h3 className="font-black">Kan ik een boete krijgen?</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Bij laattijdige of ontbrekende aangifte kunnen administratieve
-                sancties mogelijk worden. De exacte gevolgen hangen af van je
-                concrete situatie.
+                Dat kan bij een laattijdige of ontbrekende aangifte. De echte
+                gevolgen hangen af van je concrete situatie.
               </p>
             </div>
 
@@ -393,16 +368,8 @@ export default function PersonenbelastingTeLaatPage() {
                 Wat als mijn boekhouder te laat is?
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Contacteer je boekhouder meteen en vraag expliciet of de aangifte
-                al verzonden werd. Bewaar alle communicatie.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Is deze checker exact?</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Nee. BoeteRadar gebruikt een vereenvoudigde risico-inschatting.
-                Controleer altijd FOD Financiën of vraag professioneel advies.
+                Vraag meteen of de aangifte al verzonden werd en bewaar die
+                communicatie.
               </p>
             </div>
           </div>
@@ -425,17 +392,16 @@ export default function PersonenbelastingTeLaatPage() {
           ]}
         />
 
-        <section className="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-8">
-          <p className="text-sm font-bold uppercase tracking-wide text-orange-600">
+        <section className="mt-6 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-black uppercase tracking-wide text-orange-600">
             Laatst inhoudelijk nagekeken
           </p>
 
           <h2 className="mt-2 text-2xl font-black">Mei 2026</h2>
 
           <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-            Regels, termijnen en procedures kunnen wijzigen. Controleer altijd de
-            officiële bronnen of vraag professioneel advies voor je concrete
-            situatie.
+            Regels, termijnen en procedures kunnen wijzigen. Controleer altijd
+            officiële bronnen of vraag professioneel advies.
           </p>
         </section>
 
