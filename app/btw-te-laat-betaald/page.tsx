@@ -9,9 +9,80 @@ import RelatedChecks from "@/components/RelatedChecks";
 import Link from "next/link";
 import { useState } from "react";
 
+function parseDate(dateString: string) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateString);
+
+  if (!match) {
+    return null;
+  }
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+
+  const date = new Date(year, month - 1, day);
+
+  if (
+    date.getFullYear() !== year ||
+    date.getMonth() !== month - 1 ||
+    date.getDate() !== day
+  ) {
+    return null;
+  }
+
+  return date;
+}
+
+function addDays(date: Date, days: number) {
+  const nextDate = new Date(date);
+  nextDate.setDate(nextDate.getDate() + days);
+  return nextDate;
+}
+
+function getDaysInMonth(year: number, monthIndex: number) {
+  return new Date(year, monthIndex + 1, 0).getDate();
+}
+
+function addMonthsClamped(date: Date, months: number) {
+  const targetMonthIndex = date.getMonth() + months;
+  const targetYear = date.getFullYear() + Math.floor(targetMonthIndex / 12);
+  const normalizedMonthIndex = ((targetMonthIndex % 12) + 12) % 12;
+  const targetDay = Math.min(
+    date.getDate(),
+    getDaysInMonth(targetYear, normalizedMonthIndex)
+  );
+
+  return new Date(targetYear, normalizedMonthIndex, targetDay);
+}
+
+function countStartedVatInterestMonths(
+  dueDateString: string,
+  paymentDateString: string
+) {
+  const dueDate = parseDate(dueDateString);
+  const paymentDate = parseDate(paymentDateString);
+
+  if (!dueDate || !paymentDate || paymentDate <= dueDate) {
+    return 0;
+  }
+
+  const firstInterestPeriodStart = addDays(dueDate, 1);
+  let currentPeriodStart = firstInterestPeriodStart;
+  let startedMonths = 0;
+
+  while (currentPeriodStart <= paymentDate) {
+    startedMonths += 1;
+    currentPeriodStart = addMonthsClamped(firstInterestPeriodStart, startedMonths);
+  }
+
+  return startedMonths;
+}
+
 export default function BtwTeLaatBetaaldPage() {
-  const [daysLate, setDaysLate] = useState(7);
   const [amount, setAmount] = useState(1000);
+  const [filingFrequency, setFilingFrequency] = useState("quarterly");
+  const [dueDate, setDueDate] = useState("2026-04-25");
+  const [paymentDate, setPaymentDate] = useState("2026-05-10");
   const [alreadyPaid, setAlreadyPaid] = useState("no");
   const [communicationCorrect, setCommunicationCorrect] = useState("yes");
   const [declarationLate, setDeclarationLate] = useState("no");
@@ -21,13 +92,10 @@ export default function BtwTeLaatBetaaldPage() {
   const [hasAccountant, setHasAccountant] = useState("no");
   const [calculated, setCalculated] = useState(false);
 
-  const safeDays = Math.max(0, Number(daysLate));
   const safeAmount = Math.max(0, Number(amount));
   const safeDeclarationMonthsLate = Math.max(0, Number(declarationMonthsLate));
 
-  const startedMonthsLate =
-    safeDays === 0 ? 0 : Math.max(1, Math.ceil(safeDays / 30));
-
+  const startedMonthsLate = countStartedVatInterestMonths(dueDate, paymentDate);
   const interestRate = 0.08;
 
   const estimatedInterest = Math.round(
@@ -48,18 +116,18 @@ export default function BtwTeLaatBetaaldPage() {
   let explanation =
     "Als de betaling intussen correct verwerkt is, blijft de situatie meestal overzichtelijker.";
 
-  if (safeDays >= 1 || alreadyPaid === "no") {
+  if (startedMonthsLate >= 1 || alreadyPaid === "no") {
     risk = "Middelmatig";
     riskColor = "border-orange-300 bg-orange-50";
     resultTitle = "Onderneem snel actie";
     advice =
       "Betaal wat nog openstaat en controleer rekeningnummer, bedrag en mededeling.";
     explanation =
-      "Laattijdige betaling kan nalatigheidsinteresten veroorzaken. Hoe langer je wacht, hoe hoger de indicatie wordt.";
+      "Laattijdige betaling kan nalatigheidsinteresten veroorzaken. Hoe meer begonnen maanden meetellen, hoe hoger de indicatie wordt.";
   }
 
   if (
-    safeDays >= 30 ||
+    startedMonthsLate >= 2 ||
     alreadyPaid === "no" ||
     safeAmount >= 5000 ||
     communicationCorrect !== "yes" ||
@@ -96,9 +164,9 @@ export default function BtwTeLaatBetaaldPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-            Vul je bedrag, vertraging en situatie in. BoeteRadar geeft een
-            indicatieve berekening van mogelijke interesten en, als je aangifte
-            ook te laat was, een mogelijke aangifteboete.
+            Vul je bedrag, uiterste betaaldatum en betaaldatum in. BoeteRadar
+            telt begonnen interestmaanden op basis van kalenderdatums, niet op
+            basis van een vaste 30-dagenregel.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -132,7 +200,7 @@ export default function BtwTeLaatBetaaldPage() {
               <p className="text-sm font-black text-orange-600">1</p>
               <h3 className="mt-1 font-black">Bereken je indicatie</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Vul bedrag, vertraging en betalingstatus in.
+                Vul bedrag, uiterste betaaldatum en betaaldatum in.
               </p>
             </div>
 
@@ -167,8 +235,8 @@ export default function BtwTeLaatBetaaldPage() {
           </h2>
 
           <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-700">
-            De berekening blijft indicatief, maar wordt veel nuttiger als je ook
-            betalingstatus, mededeling en aangiftestatus meeneemt.
+            De berekening blijft indicatief, maar wordt veel nuttiger als je met
+            datums werkt in plaats van afgeronde dagen.
           </p>
 
           <div className="mt-6 grid gap-5">
@@ -190,28 +258,50 @@ export default function BtwTeLaatBetaaldPage() {
             </label>
 
             <label className="font-bold">
-              Hoeveel dagen ben je ongeveer te laat?
+              Ben je maand- of kwartaalaangever?
+              <select
+                value={filingFrequency}
+                onChange={(e) => setFilingFrequency(e.target.value)}
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="monthly">Maandaangever</option>
+                <option value="quarterly">Kwartaalaangever</option>
+              </select>
+            </label>
+
+            <label className="font-bold">
+              Wat was de uiterste betaaldatum?
               <input
-                type="number"
-                min="0"
-                max="3650"
-                value={daysLate}
-                onChange={(e) => setDaysLate(Number(e.target.value))}
+                type="date"
+                value={dueDate}
+                onChange={(e) => setDueDate(e.target.value)}
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              />
+            </label>
+
+            <label className="font-bold">
+              Wat was of wordt de betaaldatum?
+              <input
+                type="date"
+                value={paymentDate}
+                onChange={(e) => setPaymentDate(e.target.value)}
                 className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
               />
             </label>
 
             <div className="rounded-2xl bg-slate-50 p-4">
               <p className="text-sm font-bold text-slate-700">
-                Begonnen maanden vertraging
+                Btw-interestmaanden
               </p>
               <p className="mt-1 text-2xl font-black text-slate-950">
                 {startedMonthsLate}
               </p>
               <p className="mt-1 text-xs leading-5 text-slate-600">
-                BoeteRadar benadert dit op basis van je aantal dagen te laat.
-                Controleer de exacte periode altijd via officiële bronnen of je
-                boekhouder.
+                BoeteRadar telt hoeveel interestperiodes begonnen zijn tussen de
+                dag na de uiterste betaaldatum en je betaaldatum.
+                {filingFrequency === "monthly"
+                  ? " Bij maandaangevers valt de grens vaak rond de 21e."
+                  : " Bij kwartaalaangevers valt de grens vaak rond de 26e."}
               </p>
             </div>
 
@@ -347,7 +437,7 @@ export default function BtwTeLaatBetaaldPage() {
                   </p>
                   <p className="mt-1 text-xs leading-5 text-slate-600">
                     Berekend met 8% per jaar en {startedMonthsLate} begonnen
-                    maand(en).
+                    interestmaand(en).
                   </p>
                 </div>
 
@@ -365,7 +455,7 @@ export default function BtwTeLaatBetaaldPage() {
 
                 <div className="rounded-2xl bg-white/70 p-4">
                   <p className="text-sm font-bold text-slate-700">
-                    Openstaand bedrag
+                    Btw-bedrag
                   </p>
                   <p className="mt-1 text-2xl font-black">€{safeAmount}</p>
                   <p className="mt-1 text-xs leading-5 text-slate-600">
@@ -396,8 +486,8 @@ export default function BtwTeLaatBetaaldPage() {
 
             <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
               <li>Het btw-bedrag dat je invult.</li>
-              <li>Het aantal begonnen maanden vertraging.</li>
-              <li>Of de btw intussen betaald is.</li>
+              <li>De uiterste betaaldatum en betaaldatum.</li>
+              <li>Het aantal begonnen btw-interestmaanden.</li>
               <li>Of je aangifte zelf ook te laat was.</li>
               <li>Of je al een herinnering kreeg of eerder problemen had.</li>
             </ul>
@@ -469,8 +559,18 @@ export default function BtwTeLaatBetaaldPage() {
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
                 BoeteRadar gebruikt het ingevulde btw-bedrag, 8% jaarlijkse
-                interest en het aantal begonnen maanden vertraging. Dit blijft
-                een indicatie.
+                interest en het aantal begonnen interestmaanden. Dit blijft een
+                indicatie.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">
+                Waarom werkt de calculator met datums?
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Omdat kalendermaanden niet altijd even lang zijn. Met datums is
+                de inschatting beter dan met een vaste 30-dagenregel.
               </p>
             </div>
 
@@ -489,16 +589,6 @@ export default function BtwTeLaatBetaaldPage() {
               <p className="mt-2 text-sm leading-6 text-slate-700">
                 Nee. De berekening is een hulpmiddel. De echte interesten,
                 boetes of gevolgen kunnen anders zijn.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">
-                Moet ik mijn boekhouder contacteren?
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Dat is verstandig bij een groot bedrag, meerdere dagen
-                vertraging, foutieve mededeling, herinnering of twijfel.
               </p>
             </div>
           </div>
