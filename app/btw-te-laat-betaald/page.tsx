@@ -25,7 +25,9 @@ export default function BtwTeLaatBetaaldPage() {
   const safeAmount = Math.max(0, Number(amount));
   const safeDeclarationMonthsLate = Math.max(0, Number(declarationMonthsLate));
 
-  const startedMonthsLate = safeDays === 0 ? 0 : Math.max(1, Math.ceil(safeDays / 30));
+  const startedMonthsLate =
+    safeDays === 0 ? 0 : Math.max(1, Math.ceil(safeDays / 30));
+
   const interestRate = 0.08;
 
   const estimatedInterest = Math.round(
@@ -172,13 +174,19 @@ export default function BtwTeLaatBetaaldPage() {
           <div className="mt-6 grid gap-5">
             <label className="font-bold">
               Over welk btw-bedrag gaat het ongeveer?
-              <input
-                type="number"
-                min="0"
-                value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
-                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
-              />
+              <div className="relative mt-2">
+                <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-500">
+                  €
+                </span>
+
+                <input
+                  type="number"
+                  min="0"
+                  value={amount}
+                  onChange={(e) => setAmount(Number(e.target.value))}
+                  className="w-full rounded-xl border border-slate-300 bg-white p-3 pl-9 font-normal"
+                />
+              </div>
             </label>
 
             <label className="font-bold">
