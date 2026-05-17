@@ -41,9 +41,82 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.7fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-sm font-black text-slate-950">
-                BR
-              </span>
+              <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-[1rem] bg-white shadow-sm">
+  <span className="absolute inset-0 rounded-[1rem] bg-[radial-gradient(circle_at_30%_20%,rgba(251,146,60,0.35),transparent_38%)]" />
+
+  <svg
+    viewBox="0 0 64 64"
+    aria-hidden="true"
+    className="relative h-8 w-8"
+  >
+    <defs>
+      <linearGradient id="footerRadarBeam" x1="14" y1="50" x2="50" y2="14">
+        <stop offset="0%" stopColor="#fb923c" />
+        <stop offset="100%" stopColor="#f97316" />
+      </linearGradient>
+
+      <linearGradient id="footerRadarRing" x1="10" y1="10" x2="54" y2="54">
+        <stop offset="0%" stopColor="#0f172a" />
+        <stop offset="100%" stopColor="#334155" />
+      </linearGradient>
+    </defs>
+
+    <circle
+      cx="32"
+      cy="32"
+      r="23"
+      fill="none"
+      stroke="url(#footerRadarRing)"
+      strokeWidth="4"
+      opacity="0.95"
+    />
+
+    <circle
+      cx="32"
+      cy="32"
+      r="13"
+      fill="none"
+      stroke="#0f172a"
+      strokeWidth="3"
+      opacity="0.35"
+    />
+
+    <path
+      d="M32 32L49 17"
+      stroke="url(#footerRadarBeam)"
+      strokeWidth="5"
+      strokeLinecap="round"
+    />
+
+    <path
+      d="M32 32L46 39"
+      stroke="#fb923c"
+      strokeWidth="4"
+      strokeLinecap="round"
+      opacity="0.45"
+    />
+
+    <circle cx="32" cy="32" r="5" fill="#fb923c" />
+
+    <path
+      d="M18 43C21 47 26 50 32 50C38 50 43 47 46 43"
+      fill="none"
+      stroke="#0f172a"
+      strokeWidth="3"
+      strokeLinecap="round"
+      opacity="0.65"
+    />
+
+    <path
+      d="M18 21C21 17 26 14 32 14C38 14 43 17 46 21"
+      fill="none"
+      stroke="#0f172a"
+      strokeWidth="3"
+      strokeLinecap="round"
+      opacity="0.25"
+    />
+  </svg>
+</span>
 
               <span>
                 <span className="block text-2xl font-black tracking-tight">
