@@ -29,7 +29,9 @@ export default function BtwAangifteTeLaatPage() {
   const estimatedFilingFine = cappedMonths * 100;
 
   const startedPaymentMonthsLate =
-    safePaymentDaysLate === 0 ? 0 : Math.max(1, Math.ceil(safePaymentDaysLate / 30));
+    safePaymentDaysLate === 0
+      ? 0
+      : Math.max(1, Math.ceil(safePaymentDaysLate / 30));
 
   const estimatedInterest =
     vatDue === "yes"
@@ -170,19 +172,14 @@ export default function BtwAangifteTeLaatPage() {
           <div className="mt-6 grid gap-5">
             <label className="font-bold">
               Hoeveel maanden is je aangifte ongeveer te laat?
-              <div className="relative mt-2">
-  <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-500">
-    €
-  </span>
-
-  <input
-    type="number"
-    min="0"
-    value={amount}
-    onChange={(e) => setAmount(Number(e.target.value))}
-    className="w-full rounded-xl border border-slate-300 bg-white p-3 pl-9 font-normal"
-  />
-</div>
+              <input
+                type="number"
+                min="0"
+                max="24"
+                value={monthsLate}
+                onChange={(e) => setMonthsLate(Number(e.target.value))}
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              />
             </label>
 
             <div className="rounded-2xl bg-slate-50 p-4">
@@ -225,13 +222,19 @@ export default function BtwAangifteTeLaatPage() {
               <>
                 <label className="font-bold">
                   Over welk btw-bedrag gaat het ongeveer?
-                  <input
-                    type="number"
-                    min="0"
-                    value={amount}
-                    onChange={(e) => setAmount(Number(e.target.value))}
-                    className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
-                  />
+                  <div className="relative mt-2">
+                    <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-500">
+                      €
+                    </span>
+
+                    <input
+                      type="number"
+                      min="0"
+                      value={amount}
+                      onChange={(e) => setAmount(Number(e.target.value))}
+                      className="w-full rounded-xl border border-slate-300 bg-white p-3 pl-9 font-normal"
+                    />
+                  </div>
                 </label>
 
                 <label className="font-bold">
