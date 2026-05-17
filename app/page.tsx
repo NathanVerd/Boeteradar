@@ -7,15 +7,15 @@ const checks = [
   {
     title: "Btw-aangifte te laat",
     description:
-      "Bekijk je mogelijke administratieve boete, risico en eerste stappen als je btw-aangifte te laat werd ingediend.",
+      "Je aangifte is te laat of nog niet ingediend. Bekijk wat je nu eerst doet.",
     href: "/btw-aangifte-te-laat",
     category: "Btw",
-    tag: "Zelfstandigen",
+    tag: "Aangifte",
   },
   {
     title: "Btw te laat betaald",
     description:
-      "Bereken een indicatie van mogelijke nalatigheidsinteresten en zie wat je best controleert.",
+      "Je btw is nog niet betaald of kwam te laat binnen. Check wat belangrijk is.",
     href: "/btw-te-laat-betaald",
     category: "Btw",
     tag: "Betaling",
@@ -23,23 +23,21 @@ const checks = [
   {
     title: "Personenbelasting te laat",
     description:
-      "Check wat je kan doen als je aangifte personenbelasting te laat is of dreigt te laat te zijn.",
+      "Je belastingaangifte is te laat of onzeker. Kijk wat je nog kan doen.",
     href: "/personenbelasting-te-laat",
     category: "Belastingen",
     tag: "MyMinfin",
   },
   {
     title: "Autokeuring vervallen",
-    description:
-      "Bekijk je mogelijke risico’s en praktische stappen als je technische keuring verlopen is.",
+    description: "Je keuring is verlopen. Bekijk wat je best meteen regelt.",
     href: "/autokeuring-vervallen",
     category: "Auto",
     tag: "Keuring",
   },
   {
     title: "Student te veel gewerkt",
-    description:
-      "Controleer studentenuren, mogelijke gevolgen voor Groeipakket en welke bronnen je moet nakijken.",
+    description: "Je twijfelt over je studentenuren. Check wat je best nakijkt.",
     href: "/student-te-veel-gewerkt",
     category: "Student",
     tag: "Student@work",
@@ -52,14 +50,14 @@ const situations = [
   "Belastingaangifte te laat",
   "Keuring verlopen",
   "Te veel studentenuren",
-  "Bewijsstukken verzamelen",
+  "Bewijs kwijt of onduidelijk",
 ];
 
 const trustPoints = [
-  "Geen juridisch of fiscaal advies",
-  "Altijd met officiële bronnen",
-  "Duidelijke eerste actie",
-  "Gemaakt voor Belgische situaties",
+  "Geen advies, wel houvast",
+  "Met links naar officiële bronnen",
+  "Eerst weten wat belangrijk is",
+  "Gemaakt voor België",
 ];
 
 export default function Home() {
@@ -79,18 +77,17 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-black text-orange-700">
                 <span className="h-2 w-2 rounded-full bg-orange-500" />
-                Belgische administratie, sneller uitgelegd
+                Voor als je niet weet waar te beginnen
               </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-black tracking-tight text-slate-950 md:text-6xl">
-                Weet sneller wat je moet doen na een administratieve fout.
+                Fout gemaakt? Krijg snel overzicht.
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-                BoeteRadar helpt je bij situaties zoals btw te laat,
-                personenbelasting te laat, autokeuring vervallen of te veel
-                gewerkt als student. Je krijgt een eerste indicatie, een
-                stappenplan en officiële bronnen om verder te controleren.
+                BoeteRadar helpt je bij btw, belastingen, autokeuring en
+                studentenwerk. Kies je situatie en zie meteen wat je best
+                nakijkt, bewaart of regelt.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -129,15 +126,15 @@ export default function Home() {
                 <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                   <div>
                     <p className="text-sm font-black uppercase tracking-wide text-orange-600">
-                      Snelle indicatie
+                      Zo werkt het
                     </p>
                     <h2 className="mt-1 text-2xl font-black">
-                      Van probleem naar actie
+                      Rustig stap voor stap
                     </h2>
                   </div>
 
                   <div className="rounded-full bg-orange-100 px-3 py-1 text-sm font-black text-orange-700">
-                    1 min
+                    kort
                   </div>
                 </div>
 
@@ -150,7 +147,7 @@ export default function Home() {
                       <div>
                         <p className="font-black">Kies je situatie</p>
                         <p className="mt-1 text-sm leading-6 text-slate-600">
-                          Bijvoorbeeld btw, belasting, auto of student.
+                          Btw, belasting, auto of studentenwerk.
                         </p>
                       </div>
                     </div>
@@ -162,9 +159,9 @@ export default function Home() {
                         2
                       </div>
                       <div>
-                        <p className="font-black">Vul kort iets in</p>
+                        <p className="font-black">Geef je situatie aan</p>
                         <p className="mt-1 text-sm leading-6 text-slate-700">
-                          Zoals aantal dagen te laat, bedrag of status.
+                          Bijvoorbeeld hoeveel dagen je te laat bent.
                         </p>
                       </div>
                     </div>
@@ -176,9 +173,9 @@ export default function Home() {
                         3
                       </div>
                       <div>
-                        <p className="font-black">Check je volgende stap</p>
+                        <p className="font-black">Bekijk wat nu telt</p>
                         <p className="mt-1 text-sm leading-6 text-slate-600">
-                          Acties, bronnen, checklist en waarschuwingen.
+                          Wat eerst doen, wat bewaren en waar controleren.
                         </p>
                       </div>
                     </div>
@@ -187,11 +184,10 @@ export default function Home() {
 
                 <div className="mt-5 rounded-2xl bg-slate-950 p-4 text-white">
                   <p className="text-sm font-bold text-slate-300">
-                    BoeteRadar beslist niets officieel.
+                    BoeteRadar is geen officiële instantie.
                   </p>
                   <p className="mt-1 font-black">
-                    Het helpt je vooral om sneller te weten wat je moet
-                    controleren.
+                    Je krijgt houvast, maar controleert altijd verder.
                   </p>
                 </div>
               </div>
@@ -233,13 +229,12 @@ export default function Home() {
               </p>
 
               <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">
-                Waar wil je snel duidelijkheid over?
+                Wat is er gebeurd?
               </h2>
             </div>
 
             <p className="max-w-xl text-sm leading-6 text-slate-700">
-              Elke check geeft een eerste indicatie, maar stuurt je ook naar
-              officiële bronnen en praktische acties.
+              Kies de situatie die het dichtst bij jouw probleem ligt.
             </p>
           </div>
 
@@ -290,13 +285,12 @@ export default function Home() {
               </p>
 
               <h2 className="mt-2 text-3xl font-black">
-                Herkenbare situaties, zonder juridisch jargon.
+                Gewone problemen, duidelijk uitgelegd.
               </h2>
 
               <p className="mt-4 leading-7 text-slate-700">
-                BoeteRadar begint bij de vraag die mensen echt hebben: “Wat moet
-                ik nu doen?” Daarna pas komen bronnen, bewijsstukken en
-                waarschuwingen.
+                Je hoeft niet eerst door lange overheidspagina’s te zoeken.
+                Begin met je situatie en ga daarna gericht verder.
               </p>
             </div>
 
@@ -321,13 +315,12 @@ export default function Home() {
               </p>
 
               <h2 className="mt-2 text-3xl font-black">
-                Wat BoeteRadar wel en niet doet.
+                Duidelijk, maar voorzichtig.
               </h2>
 
               <p className="mt-4 leading-7 text-slate-300">
-                De site is bedoeld als eerste hulpmiddel. Niet als definitief
-                advies, niet als officiële beslissing en niet als vervanging van
-                een expert.
+                BoeteRadar helpt je orde brengen. De uiteindelijke regels en
+                beslissingen blijven bij de officiële instanties.
               </p>
 
               <Link
@@ -341,7 +334,7 @@ export default function Home() {
             <div className="grid gap-3 bg-white p-7 md:p-8">
               <div className="rounded-2xl bg-emerald-50 p-5">
                 <p className="font-black text-emerald-950">
-                  Wel: structuur brengen
+                  Je krijgt overzicht
                 </p>
                 <p className="mt-2 text-sm leading-6 text-emerald-900">
                   Je ziet wat je best controleert, bewaart of eerst doet.
@@ -350,18 +343,16 @@ export default function Home() {
 
               <div className="rounded-2xl bg-orange-50 p-5">
                 <p className="font-black text-orange-950">
-                  Niet: officiële uitkomst beloven
+                  Geen valse zekerheid
                 </p>
                 <p className="mt-2 text-sm leading-6 text-orange-900">
-                  De echte gevolgen hangen af van je concrete situatie en de
-                  bevoegde instantie.
+                  De echte gevolgen hangen af van je situatie en de bevoegde
+                  instantie.
                 </p>
               </div>
 
               <div className="rounded-2xl bg-slate-100 p-5">
-                <p className="font-black text-slate-950">
-                  Altijd: officiële bron controleren
-                </p>
+                <p className="font-black text-slate-950">Controleer verder</p>
                 <p className="mt-2 text-sm leading-6 text-slate-700">
                   Bij twijfel vraag je advies aan een boekhouder, jurist,
                   verzekeraar of officiële dienst.
@@ -382,12 +373,12 @@ export default function Home() {
               </p>
 
               <h2 className="mt-2 max-w-2xl text-3xl font-black">
-                Checklists om sneller te verzamelen wat je nodig hebt.
+                Leg meteen de juiste dingen klaar.
               </h2>
 
               <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-                Praktische lijsten voor documenten, deadlines, betalingsbewijzen
-                en communicatie met je boekhouder.
+                Korte checklists voor documenten, bewijs en berichten aan je
+                boekhouder.
               </p>
             </div>
 
@@ -471,12 +462,11 @@ export default function Home() {
               </p>
 
               <h2 className="mt-2 text-3xl font-black">
-                Help bepalen welke check als volgende komt.
+                Welke situatie ontbreekt nog?
               </h2>
 
               <p className="mt-3 max-w-2xl leading-7 text-slate-700">
-                BoeteRadar is nog in testfase. Feedback helpt om de site
-                duidelijker, nuttiger en betrouwbaarder te maken.
+                Mis je een probleem dat veel mensen herkennen? Laat het weten.
               </p>
             </div>
 
