@@ -182,6 +182,12 @@ export default function Footer() {
 
             <div className="mt-4 grid gap-3">
               <Link
+  href="/over"
+  className="text-sm font-medium text-slate-300 transition hover:text-white"
+>
+  Over BoeteRadar
+</Link>
+              <Link
                 href="/bronnen"
                 className="text-sm font-medium text-slate-300 transition hover:text-white"
               >
