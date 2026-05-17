@@ -11,30 +11,70 @@ import { useState } from "react";
 
 export default function BtwAangifteTeLaatPage() {
   const [monthsLate, setMonthsLate] = useState(1);
+  const [declarationSubmitted, setDeclarationSubmitted] = useState("no");
+  const [vatDue, setVatDue] = useState("yes");
+  const [amount, setAmount] = useState(1000);
   const [paid, setPaid] = useState("yes");
-  const [firstTime, setFirstTime] = useState("yes");
+  const [paymentDaysLate, setPaymentDaysLate] = useState(0);
+  const [reminderReceived, setReminderReceived] = useState("no");
+  const [previousProblems, setPreviousProblems] = useState("no");
+  const [hasAccountant, setHasAccountant] = useState("yes");
   const [calculated, setCalculated] = useState(false);
 
   const safeMonths = Math.max(0, Number(monthsLate));
+  const safeAmount = Math.max(0, Number(amount));
+  const safePaymentDaysLate = Math.max(0, Number(paymentDaysLate));
+
   const cappedMonths = Math.min(safeMonths, 5);
-  const estimatedFine = cappedMonths * 100;
+  const estimatedFilingFine = cappedMonths * 100;
+
+  const startedPaymentMonthsLate =
+    safePaymentDaysLate === 0 ? 0 : Math.max(1, Math.ceil(safePaymentDaysLate / 30));
+
+  const estimatedInterest =
+    vatDue === "yes"
+      ? Math.round((safeAmount * 0.08 * startedPaymentMonthsLate) / 12)
+      : 0;
+
+  const estimatedTotal = estimatedFilingFine + estimatedInterest;
 
   let risk = "Laag";
   let riskColor = "border-emerald-300 bg-emerald-50";
-  let advice = "Controleer je aangifte en bewaar je bewijs.";
+  let resultTitle = "Beperkte aandacht nodig";
+  let advice = "Controleer of je aangifte en betaling correct verwerkt zijn.";
+  let explanation =
+    "Als de aangifte intussen ingediend is en de betaling in orde is, blijft de situatie meestal overzichtelijker.";
 
-  if (safeMonths >= 1) {
+  if (safeMonths >= 1 || declarationSubmitted === "no") {
     risk = "Middelmatig";
     riskColor = "border-orange-300 bg-orange-50";
+    resultTitle = "Onderneem snel actie";
     advice =
-      "Dien je aangifte zo snel mogelijk in en controleer of de betaling in orde is.";
+      "Dien je aangifte zo snel mogelijk in en bewaar bewijs van verzending.";
+    explanation =
+      "Een te late aangifte kan een administratieve boete veroorzaken. Hoe langer de vertraging, hoe hoger de indicatie tot aan het maximum.";
   }
 
-  if (safeMonths >= 3 || paid === "no" || firstTime === "no") {
+  if (
+    safeMonths >= 3 ||
+    declarationSubmitted === "no" ||
+    paid === "no" ||
+    reminderReceived === "yes" ||
+    previousProblems === "yes" ||
+    safeAmount >= 5000
+  ) {
     risk = "Hoog";
     riskColor = "border-red-300 bg-red-50";
+    resultTitle = "Laat dit niet liggen";
     advice =
       "Dien de aangifte in, betaal wat nog openstaat en contacteer je boekhouder.";
+    explanation =
+      "Je situatie vraagt extra aandacht door de vertraging, een ontbrekende aangifte, openstaande betaling, een herinnering of eerdere problemen.";
+  }
+
+  if (hasAccountant === "yes" && risk === "Hoog") {
+    advice =
+      "Stuur je boekhouder meteen de periode, aangiftestatus, betalingstatus en eventuele FOD-berichten door.";
   }
 
   return (
@@ -48,12 +88,13 @@ export default function BtwAangifteTeLaatPage() {
           </p>
 
           <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-            Btw-aangifte te laat? Dit doe je eerst.
+            Btw-aangifte te laat? Maak een betere inschatting.
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-            Is je btw-aangifte te laat of nog niet ingediend? Check snel wat je
-            best nakijkt, wat je bewaart en wanneer je je boekhouder inschakelt.
+            Vul in hoe lang je aangifte te laat is, of ze intussen werd
+            ingediend en of er ook een betalingsprobleem is. BoeteRadar geeft
+            een indicatief totaal en een duidelijke volgende stap.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -80,32 +121,30 @@ export default function BtwAangifteTeLaatPage() {
             </a>
           </div>
 
-          <DisclaimerBox text="BoeteRadar geeft informatie en eenvoudige rekenvoorbeelden. Dit is geen juridisch, fiscaal of boekhoudkundig advies. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
+          <DisclaimerBox text="BoeteRadar geeft informatie en indicatieve rekenvoorbeelden. Dit is geen juridisch, fiscaal of boekhoudkundig advies. De echte boete, interest of gevolgen kunnen afwijken. Controleer altijd officiële bronnen of vraag advies aan je boekhouder." />
 
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-black text-orange-600">1</p>
-              <h3 className="mt-1 font-black">Dien alsnog in</h3>
+              <h3 className="mt-1 font-black">Bereken je indicatie</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Staat de aangifte nog open? Dien ze zo snel mogelijk in via
-                Intervat.
+                Vul vertraging, aangiftestatus en betalingstatus in.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-black text-orange-600">2</p>
-              <h3 className="mt-1 font-black">Check je betaling</h3>
+              <h3 className="mt-1 font-black">Dien alsnog in</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Kijk na of er nog btw openstaat en of je betalingsbewijs klopt.
+                Staat de aangifte nog open? Wacht dan niet langer.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
               <p className="text-sm font-black text-orange-600">3</p>
-              <h3 className="mt-1 font-black">Bewaar alles</h3>
+              <h3 className="mt-1 font-black">Bewaar bewijs</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Bewaar bewijs van aangifte, betaling en berichten van FOD
-                Financiën.
+                Bewaar aangifte, betaling en eventuele FOD-berichten.
               </p>
             </div>
           </div>
@@ -115,26 +154,22 @@ export default function BtwAangifteTeLaatPage() {
           id="check"
           className="mt-6 rounded-[2rem] bg-white p-7 shadow-sm md:p-8"
         >
-          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm font-black uppercase tracking-wide text-orange-600">
-                Snelle check
-              </p>
+          <p className="text-sm font-black uppercase tracking-wide text-orange-600">
+            Uitgebreide btw-aangiftecheck
+          </p>
 
-              <h2 className="mt-2 text-2xl font-black">
-                Hoe ernstig is je situatie?
-              </h2>
+          <h2 className="mt-2 text-2xl font-black">
+            Vul je situatie zo precies mogelijk in
+          </h2>
 
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-700">
-                Vul je situatie in. De uitkomst is een hulpmiddel, geen
-                officiële beslissing.
-              </p>
-            </div>
-          </div>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-700">
+            De berekening blijft indicatief, maar wordt nuttiger als je ook
+            betaling, herinneringen en eerdere problemen meeneemt.
+          </p>
 
           <div className="mt-6 grid gap-5">
             <label className="font-bold">
-              Hoeveel maanden ben je te laat?
+              Hoeveel maanden is je aangifte ongeveer te laat?
               <input
                 type="number"
                 min="0"
@@ -145,11 +180,23 @@ export default function BtwAangifteTeLaatPage() {
               />
             </label>
 
+            <div className="rounded-2xl bg-slate-50 p-4">
+              <p className="text-sm font-bold text-slate-700">
+                Maanden meegerekend voor de boete
+              </p>
+              <p className="mt-1 text-2xl font-black text-slate-950">
+                {cappedMonths}
+              </p>
+              <p className="mt-1 text-xs leading-5 text-slate-600">
+                BoeteRadar rekent maximaal 5 maanden mee voor deze indicatie.
+              </p>
+            </div>
+
             <label className="font-bold">
-              Heb je de btw al betaald?
+              Is je btw-aangifte ondertussen ingediend?
               <select
-                value={paid}
-                onChange={(e) => setPaid(e.target.value)}
+                value={declarationSubmitted}
+                onChange={(e) => setDeclarationSubmitted(e.target.value)}
                 className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
               >
                 <option value="yes">Ja</option>
@@ -158,10 +205,98 @@ export default function BtwAangifteTeLaatPage() {
             </label>
 
             <label className="font-bold">
-              Is dit je eerste probleem met een btw-deadline?
+              Moest je voor deze periode btw betalen?
               <select
-                value={firstTime}
-                onChange={(e) => setFirstTime(e.target.value)}
+                value={vatDue}
+                onChange={(e) => setVatDue(e.target.value)}
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="yes">Ja</option>
+                <option value="no">Nee, ik had geen te betalen btw</option>
+              </select>
+            </label>
+
+            {vatDue === "yes" && (
+              <>
+                <label className="font-bold">
+                  Over welk btw-bedrag gaat het ongeveer?
+                  <input
+                    type="number"
+                    min="0"
+                    value={amount}
+                    onChange={(e) => setAmount(Number(e.target.value))}
+                    className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+                  />
+                </label>
+
+                <label className="font-bold">
+                  Is de btw ondertussen betaald?
+                  <select
+                    value={paid}
+                    onChange={(e) => setPaid(e.target.value)}
+                    className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+                  >
+                    <option value="yes">Ja</option>
+                    <option value="no">Nee</option>
+                  </select>
+                </label>
+
+                <label className="font-bold">
+                  Hoeveel dagen was of is de betaling ongeveer te laat?
+                  <input
+                    type="number"
+                    min="0"
+                    max="3650"
+                    value={paymentDaysLate}
+                    onChange={(e) => setPaymentDaysLate(Number(e.target.value))}
+                    className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+                  />
+                </label>
+
+                <div className="rounded-2xl bg-slate-50 p-4">
+                  <p className="text-sm font-bold text-slate-700">
+                    Begonnen maanden voor interest
+                  </p>
+                  <p className="mt-1 text-2xl font-black text-slate-950">
+                    {startedPaymentMonthsLate}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    Elke begonnen maand kan meetellen. Controleer de exacte
+                    berekening altijd via officiële bronnen of je boekhouder.
+                  </p>
+                </div>
+              </>
+            )}
+
+            <label className="font-bold">
+              Heb je al een herinnering of bericht gekregen?
+              <select
+                value={reminderReceived}
+                onChange={(e) => setReminderReceived(e.target.value)}
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="no">Nee</option>
+                <option value="yes">Ja</option>
+              </select>
+            </label>
+
+            <label className="font-bold">
+              Had je eerder al problemen met btw-deadlines?
+              <select
+                value={previousProblems}
+                onChange={(e) => setPreviousProblems(e.target.value)}
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="no">Nee</option>
+                <option value="yes">Ja</option>
+              </select>
+            </label>
+
+            <label className="font-bold">
+              Werk je met een boekhouder?
+              <select
+                value={hasAccountant}
+                onChange={(e) => setHasAccountant(e.target.value)}
                 className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
               >
                 <option value="yes">Ja</option>
@@ -173,43 +308,97 @@ export default function BtwAangifteTeLaatPage() {
               onClick={() => setCalculated(true)}
               className="rounded-xl bg-slate-950 px-5 py-4 font-bold text-white transition hover:bg-slate-800"
             >
-              Toon mijn indicatie
+              Bereken mijn indicatie
             </button>
           </div>
 
           {calculated && (
             <div className={`mt-6 rounded-2xl border p-5 ${riskColor}`}>
-              <h3 className="text-xl font-black">Jouw indicatie</h3>
+              <div className="flex flex-col justify-between gap-4 md:flex-row md:items-start">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-wide text-slate-600">
+                    Jouw indicatie
+                  </p>
 
-              <p className="mt-3">
-                <strong>Risiconiveau:</strong> {risk}
-              </p>
+                  <h3 className="mt-1 text-2xl font-black">{resultTitle}</h3>
 
-              <p className="mt-2">
-                <strong>Ruwe boete-indicatie:</strong> ongeveer €
-                {estimatedFine}
-              </p>
+                  <p className="mt-3">
+                    <strong>Risiconiveau:</strong> {risk}
+                  </p>
+                </div>
 
-              <p className="mt-3 text-sm leading-6 text-slate-700">
-                Deze indicatie gebruikt een eenvoudige vuistregel van €100 per
-                maand vertraging, met een maximum van €500. De echte gevolgen
-                kunnen anders zijn.
+                <div className="rounded-2xl bg-white/70 p-4 md:min-w-56">
+                  <p className="text-sm font-bold text-slate-700">
+                    Indicatief totaal
+                  </p>
+                  <p className="mt-1 text-4xl font-black">
+                    €{estimatedTotal}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-3 md:grid-cols-3">
+                <div className="rounded-2xl bg-white/70 p-4">
+                  <p className="text-sm font-bold text-slate-700">
+                    Aangifteboete
+                  </p>
+                  <p className="mt-1 text-2xl font-black">
+                    €{estimatedFilingFine}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    €100 per maand, met maximum €500.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-white/70 p-4">
+                  <p className="text-sm font-bold text-slate-700">
+                    Interest-indicatie
+                  </p>
+                  <p className="mt-1 text-2xl font-black">
+                    €{estimatedInterest}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    Alleen meegerekend als je btw moest betalen.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-white/70 p-4">
+                  <p className="text-sm font-bold text-slate-700">
+                    Btw-bedrag
+                  </p>
+                  <p className="mt-1 text-2xl font-black">
+                    €{vatDue === "yes" ? safeAmount : 0}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    Dit is het bedrag dat jij hebt ingevuld.
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-5 text-sm leading-6 text-slate-700">
+                {explanation}
               </p>
 
               <p className="mt-3 font-bold">Wat nu? {advice}</p>
+
+              <p className="mt-3 text-xs leading-5 text-slate-600">
+                Deze berekening is een benadering. De exacte boete, interest of
+                gevolgen kunnen afhangen van verwerking, communicatie, eerdere
+                dossiers en beoordeling door de administratie.
+              </p>
             </div>
           )}
         </div>
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           <section className="rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
-            <h2 className="text-2xl font-black">Wat kan meespelen?</h2>
+            <h2 className="text-2xl font-black">Wat rekent BoeteRadar mee?</h2>
 
             <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
-              <li>Hoe lang je aangifte al te laat is.</li>
-              <li>Of je de btw intussen betaald hebt.</li>
-              <li>Of dit de eerste keer is of al eerder gebeurde.</li>
-              <li>Of je al een bericht of herinnering kreeg.</li>
+              <li>Hoeveel maanden je aangifte te laat is.</li>
+              <li>Of de aangifte intussen ingediend is.</li>
+              <li>Of je btw moest betalen en of dat al gebeurd is.</li>
+              <li>Of je al een herinnering kreeg of eerder problemen had.</li>
             </ul>
           </section>
 
@@ -218,9 +407,9 @@ export default function BtwAangifteTeLaatPage() {
 
             <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-slate-700">
               <li>Dien de btw-aangifte zo snel mogelijk in.</li>
-              <li>Controleer of je betaling gelukt is.</li>
+              <li>Betaal wat nog openstaat.</li>
               <li>Bewaar bewijs van aangifte en betaling.</li>
-              <li>Noteer je volgende btw-deadline.</li>
+              <li>Controleer later of alles verwerkt is.</li>
               <li>Contacteer je boekhouder bij twijfel.</li>
             </ol>
           </section>
@@ -257,7 +446,7 @@ export default function BtwAangifteTeLaatPage() {
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">Status van betaling</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Is de btw al betaald? Wanneer en met welke mededeling?
+                Is er btw te betalen? Is die al betaald?
               </p>
             </div>
 
@@ -328,19 +517,29 @@ export default function BtwAangifteTeLaatPage() {
           <div className="mt-6 grid gap-4">
             <div className="rounded-2xl bg-slate-50 p-5">
               <h3 className="font-black">
-                Wat moet ik doen als mijn btw-aangifte te laat is?
+                Hoe wordt de aangifteboete berekend?
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Dien ze zo snel mogelijk alsnog in. Controleer daarna je betaling
-                en bewaar bewijs.
+                BoeteRadar rekent met €100 per maand vertraging en een maximum
+                van €500. Dit blijft een indicatie.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Is de berekening exact?</h3>
+              <h3 className="font-black">
+                Waarom telt de calculator ook betaling mee?
+              </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Nee. Het is een eenvoudige indicatie. De echte gevolgen hangen
-                af van je concrete situatie.
+                Een te late aangifte en te late betaling kunnen samen voorkomen.
+                Daarom kan je ook het betalingsdeel invullen.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="font-black">Is deze berekening exact?</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Nee. De berekening is een hulpmiddel. De echte boete, interest
+                of gevolgen kunnen anders zijn.
               </p>
             </div>
 
@@ -349,8 +548,8 @@ export default function BtwAangifteTeLaatPage() {
                 Moet ik mijn boekhouder contacteren?
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Dat is verstandig als je meerdere maanden te laat bent, nog niet
-                betaald hebt of al eerder problemen had.
+                Dat is verstandig als je aangifte nog niet ingediend is, als er
+                nog btw openstaat of als je al een bericht kreeg.
               </p>
             </div>
           </div>
