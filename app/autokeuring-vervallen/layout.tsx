@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Autokeuring vervallen in België? Check je volgende stap | BoeteRadar",
+  title: "Autokeuring vervallen? Dit regel je eerst | BoeteRadar",
   description:
-    "Check wat je best doet als je autokeuring vervallen is. Krijg een eerste risico-inschatting, praktisch stappenplan en officiële bronnen.",
+    "Is je autokeuring vervallen in België? Bekijk wat je best meteen regelt, wat je bewaart en welke officiële bronnen je kan controleren.",
   alternates: {
     canonical: "https://www.boeteradar.be/autokeuring-vervallen",
   },
   openGraph: {
-    title: "Autokeuring vervallen in België?",
+    title: "Autokeuring vervallen?",
     description:
-      "Krijg een eerste indicatie van je mogelijke risico en zie welke stappen je best controleert.",
+      "Bekijk wat je eerst doet als je technische keuring verlopen is.",
     url: "https://www.boeteradar.be/autokeuring-vervallen",
     siteName: "BoeteRadar België",
     locale: "nl_BE",

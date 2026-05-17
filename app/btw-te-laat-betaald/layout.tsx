@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Btw te laat betaald in België? Check je mogelijke risico | BoeteRadar",
+  title: "Btw te laat betaald? Dit controleer je eerst | BoeteRadar",
   description:
-    "Check wat je mogelijk riskeert als je btw te laat betaald is. Krijg een eerste indicatie, praktische stappen, officiële bronnen en een btw-deadline checklist.",
+    "Heb je je btw te laat betaald in België? Bekijk wat je best nakijkt, welk bewijs je bewaart en welke officiële bronnen je kan controleren.",
   alternates: {
     canonical: "https://www.boeteradar.be/btw-te-laat-betaald",
   },
   openGraph: {
-    title: "Btw te laat betaald in België?",
+    title: "Btw te laat betaald?",
     description:
-      "Krijg een eerste indicatie van je mogelijke risico en zie welke stappen je best controleert.",
+      "Bekijk wat je eerst controleert als je btw te laat betaald is.",
     url: "https://www.boeteradar.be/btw-te-laat-betaald",
     siteName: "BoeteRadar België",
     locale: "nl_BE",

@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Personenbelasting te laat in België? Check je mogelijke risico | BoeteRadar",
+  title: "Personenbelasting te laat? Dit kan je nu doen | BoeteRadar",
   description:
-    "Check wat je best doet als je aangifte personenbelasting te laat is of nog niet werd ingediend. Krijg een eerste indicatie, stappenplan, officiële bronnen en noodchecklist.",
+    "Is je aangifte personenbelasting te laat of nog niet ingediend? Bekijk wat je best eerst nakijkt via MyMinfin, Tax-on-web of je boekhouder.",
   alternates: {
-    canonical: "https://boeteradar.vercel.app/personenbelasting-te-laat",
+    canonical: "https://www.boeteradar.be/personenbelasting-te-laat",
   },
   openGraph: {
-    title: "Personenbelasting te laat in België?",
+    title: "Personenbelasting te laat?",
     description:
-      "Krijg een eerste indicatie van je mogelijke risico en zie wat je best controleert via MyMinfin, Tax-on-web of je boekhouder.",
-    url: "https://boeteradar.vercel.app/personenbelasting-te-laat",
+      "Bekijk wat je eerst doet als je belastingaangifte te laat is of nog openstaat.",
+    url: "https://www.boeteradar.be/personenbelasting-te-laat",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
     type: "website",
