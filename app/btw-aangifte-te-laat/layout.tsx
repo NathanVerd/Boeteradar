@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Btw-aangifte te laat in België? Check je mogelijke risico | BoeteRadar",
+  title: "Btw-aangifte te laat? Dit kan je nu doen | BoeteRadar",
   description:
-    "Check wat je mogelijk riskeert als je btw-aangifte te laat is in België. Krijg een eerste indicatie, stappenplan, officiële bronnen en btw-deadline checklist.",
+    "Is je btw-aangifte te laat in België? Bekijk wat je best eerst doet, wat je moet bewaren en welke officiële bronnen je kan controleren.",
   alternates: {
     canonical: "https://www.boeteradar.be/btw-aangifte-te-laat",
   },
   openGraph: {
-    title: "Btw-aangifte te laat in België?",
+    title: "Btw-aangifte te laat?",
     description:
-      "Krijg een eerste indicatie van je mogelijke risico en zie wat je best controleert bij een te late btw-aangifte.",
+      "Bekijk wat je nu best doet bij een te late btw-aangifte in België.",
     url: "https://www.boeteradar.be/btw-aangifte-te-laat",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
