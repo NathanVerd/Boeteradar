@@ -81,7 +81,7 @@ export default function Home() {
               </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-black tracking-tight text-slate-950 md:text-6xl">
-                Fout gemaakt? Krijg snel overzicht.
+                Administratieve fout gemaakt? Krijg snel overzicht.
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
