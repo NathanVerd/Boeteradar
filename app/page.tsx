@@ -1,4 +1,3 @@
-import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
@@ -42,15 +41,6 @@ const checks = [
     category: "Student",
     tag: "Student@work",
   },
-];
-
-const situations = [
-  "Btw-aangifte vergeten",
-  "Btw nog niet betaald",
-  "Belastingaangifte te laat",
-  "Keuring verlopen",
-  "Te veel studentenuren",
-  "Bewijs kwijt of onduidelijk",
 ];
 
 const trustPoints = [
@@ -195,32 +185,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-3xl bg-slate-950 p-6 text-white shadow-sm">
-            <p className="text-4xl font-black">5</p>
-            <p className="mt-2 font-black">Actieve checks</p>
-            <p className="mt-2 text-sm leading-6 text-slate-300">
-              Btw, belastingen, autokeuring en studentenwerk.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-orange-200 bg-orange-50 p-6 shadow-sm">
-            <p className="text-4xl font-black text-orange-700">2</p>
-            <p className="mt-2 font-black">Gratis checklists</p>
-            <p className="mt-2 text-sm leading-6 text-slate-700">
-              Downloadbaar zonder e-mailadres.
-            </p>
-          </div>
-
-          <div className="rounded-3xl bg-white p-6 shadow-sm">
-            <p className="text-4xl font-black">BE</p>
-            <p className="mt-2 font-black">Belgische context</p>
-            <p className="mt-2 text-sm leading-6 text-slate-700">
-              Gebouwd rond Belgische instanties en procedures.
-            </p>
-          </div>
-        </section>
-
         <section id="checks" className="mt-12">
           <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
@@ -274,36 +238,6 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
-        </section>
-
-        <section className="mt-12 rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
-          <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
-            <div>
-              <p className="text-sm font-black uppercase tracking-wide text-orange-600">
-                Vaak gezocht
-              </p>
-
-              <h2 className="mt-2 text-3xl font-black">
-                Gewone problemen, duidelijk uitgelegd.
-              </h2>
-
-              <p className="mt-4 leading-7 text-slate-700">
-                Je hoeft niet eerst door lange overheidspagina’s te zoeken.
-                Begin met je situatie en ga daarna gericht verder.
-              </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {situations.map((situation) => (
-                <div
-                  key={situation}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-bold leading-6 text-slate-800"
-                >
-                  {situation}
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -480,10 +414,6 @@ export default function Home() {
             </a>
           </div>
         </section>
-
-        <div className="mt-8">
-          <DisclaimerBox text="BoeteRadar geeft eenvoudige informatie en rekenvoorbeelden. Dit is geen juridisch, fiscaal, boekhoudkundig, sociaal of verzekeringsadvies. Controleer altijd officiële bronnen of vraag professioneel advies bij twijfel." />
-        </div>
       </section>
 
       <Footer />
