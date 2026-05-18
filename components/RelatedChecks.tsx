@@ -16,6 +16,10 @@ const checks = [
     href: "/btw-te-laat-betaald",
   },
   {
+    title: "Brief van FOD Financiën ontvangen",
+    href: "/brief-fod-financien-ontvangen",
+  },
+  {
     title: "Personenbelasting te laat",
     href: "/personenbelasting-te-laat",
   },
@@ -49,7 +53,7 @@ export default function RelatedChecks({
           <Link
             key={check.href}
             href={check.href}
-            className="rounded-2xl bg-white/10 p-4 font-bold hover:bg-white/15"
+            className="rounded-2xl bg-white/10 p-4 font-bold transition hover:bg-white/15"
           >
             {check.title} →
           </Link>

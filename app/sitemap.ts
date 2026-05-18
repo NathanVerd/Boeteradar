@@ -8,8 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/over",
     "/bronnen",
     "/disclaimer",
+    "/feedback",
     "/btw-aangifte-te-laat",
     "/btw-te-laat-betaald",
+    "/brief-fod-financien-ontvangen",
     "/personenbelasting-te-laat",
     "/autokeuring-vervallen",
     "/student-te-veel-gewerkt",
@@ -24,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       page === ""
         ? 1
-        : page === "/over" || page === "/bronnen"
+        : page === "/over" || page === "/bronnen" || page === "/feedback"
           ? 0.85
           : page.includes("/checklists/")
             ? 0.7

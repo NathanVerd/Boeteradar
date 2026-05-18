@@ -20,6 +20,14 @@ const checks = [
     tag: "Betaling",
   },
   {
+    title: "Brief van FOD Financiën ontvangen",
+    description:
+      "Je kreeg een brief, eBox-bericht of MyMinfin-melding. Check hoe dringend het is.",
+    href: "/brief-fod-financien-ontvangen",
+    category: "FOD Financiën",
+    tag: "Brief",
+  },
+  {
     title: "Personenbelasting te laat",
     description:
       "Je belastingaangifte is te laat of onzeker. Kijk wat je nog kan doen.",
@@ -93,9 +101,9 @@ export default function Home() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-                BoeteRadar helpt je bij btw, belastingen, autokeuring en
-                studentenwerk. Kies je situatie en zie meteen wat je best
-                nakijkt, bewaart of regelt.
+                BoeteRadar helpt je bij btw, belastingen, brieven van FOD
+                Financiën, autokeuring en studentenwerk. Kies je situatie en zie
+                meteen wat je best nakijkt, bewaart of regelt.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -155,7 +163,7 @@ export default function Home() {
                       <div>
                         <p className="font-black">Kies je situatie</p>
                         <p className="mt-1 text-sm leading-6 text-slate-600">
-                          Btw, belasting, auto of studentenwerk.
+                          Btw, belasting, FOD-brief, auto of studentenwerk.
                         </p>
                       </div>
                     </div>
@@ -226,8 +234,8 @@ export default function Home() {
                 key={check.title}
                 href={check.href}
                 className={`group rounded-[1.75rem] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md ${
-                  index < 2
-                    ? "border border-orange-200 md:col-span-3"
+                  index < 3
+                    ? "border border-orange-200 md:col-span-2"
                     : "border border-slate-200 md:col-span-2"
                 }`}
               >
