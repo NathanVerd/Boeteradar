@@ -50,6 +50,24 @@ const trustPoints = [
   "Gemaakt voor België",
 ];
 
+const trustLinks = [
+  {
+    title: "Over BoeteRadar",
+    description: "Waarom de site bestaat en hoe je de checks gebruikt.",
+    href: "/over",
+  },
+  {
+    title: "Bronnen",
+    description: "Welke officiële bronnen BoeteRadar gebruikt.",
+    href: "/bronnen",
+  },
+  {
+    title: "Disclaimer",
+    description: "Wat BoeteRadar wel en niet voor je kan doen.",
+    href: "/disclaimer",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f6f1ea] text-slate-950">
@@ -149,9 +167,9 @@ export default function Home() {
                         2
                       </div>
                       <div>
-                        <p className="font-black">Geef je situatie aan</p>
+                        <p className="font-black">Vul enkele gegevens in</p>
                         <p className="mt-1 text-sm leading-6 text-slate-700">
-                          Bijvoorbeeld hoeveel dagen je te laat bent.
+                          Bijvoorbeeld een bedrag, datum, status of document.
                         </p>
                       </div>
                     </div>
@@ -257,12 +275,21 @@ export default function Home() {
                 beslissingen blijven bij de officiële instanties.
               </p>
 
-              <Link
-                href="/bronnen"
-                className="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-slate-100"
-              >
-                Lees over bronnen →
-              </Link>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/bronnen"
+                  className="rounded-full bg-white px-5 py-3 text-center text-sm font-black text-slate-950 transition hover:bg-slate-100"
+                >
+                  Lees over bronnen
+                </Link>
+
+                <Link
+                  href="/disclaimer"
+                  className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-center text-sm font-black text-white transition hover:bg-white/15"
+                >
+                  Disclaimer
+                </Link>
+              </div>
             </div>
 
             <div className="grid gap-3 bg-white p-7 md:p-8">
@@ -293,6 +320,50 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-12 rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-black uppercase tracking-wide text-orange-600">
+                Vertrouwen
+              </p>
+
+              <h2 className="mt-2 text-3xl font-black">
+                Lees hoe BoeteRadar werkt.
+              </h2>
+
+              <p className="mt-3 max-w-2xl leading-7 text-slate-700">
+                BoeteRadar is een hulpmiddel, geen officiële instantie. Daarom
+                zijn de bronnen, disclaimer en uitleg bewust zichtbaar gemaakt.
+              </p>
+            </div>
+
+            <Link
+              href="/over"
+              className="rounded-full bg-slate-950 px-6 py-3 text-center font-black text-white transition hover:bg-slate-800"
+            >
+              Over BoeteRadar
+            </Link>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {trustLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-orange-200 hover:bg-orange-50"
+              >
+                <h3 className="font-black text-slate-950">{link.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-700">
+                  {link.description}
+                </p>
+                <p className="mt-4 text-sm font-black text-orange-600">
+                  Lees meer →
+                </p>
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -404,14 +475,12 @@ export default function Home() {
               </p>
             </div>
 
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdndgj220iZG4IBmJCSqDwY5vf_kZZWTAbVd99zzVCafsdaAQ/viewform"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/feedback"
               className="rounded-full bg-orange-600 px-6 py-3 text-center font-black text-white transition hover:bg-orange-700"
             >
               Geef feedback →
-            </a>
+            </Link>
           </div>
         </section>
       </section>
