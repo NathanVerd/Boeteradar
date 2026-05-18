@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hulp aanvragen via BoeteRadar",
     description:
-      "Laat weten waar je mee vastzit en welke administratieve situatie je wil laten nakijken.",
+      "Beschrijf kort je administratieve situatie en vraag hulp als je twijfelt over je volgende stap.",
     url: "https://www.boeteradar.be/hulp-aanvragen",
     siteName: "BoeteRadar België",
     locale: "nl_BE",
@@ -22,20 +22,31 @@ export const metadata: Metadata = {
   },
 };
 
-const helpSituations = [
-  "Je kreeg een brief, eBox-bericht of MyMinfin-melding van FOD Financiën.",
-  "Je btw-aangifte of btw-betaling is mogelijk te laat.",
-  "Je personenbelasting is nog open, onzeker of te laat.",
-  "Je kreeg een voorstel van wijziging, boete, herinnering of aanslag.",
-  "Je weet niet welke documenten je moet bewaren of doorsturen.",
+const situations = [
+  "Btw-aangifte te laat",
+  "Btw te laat betaald",
+  "Brief van FOD Financiën",
+  "Personenbelasting",
+  "Aanslag van ambtswege",
+  "Voorstel van wijziging",
+  "Betalingsprobleem",
+  "Iets anders",
 ];
 
-const whatToPrepare = [
-  "Over welk probleem het gaat.",
-  "Of er een termijn of datum in de brief staat.",
-  "Of je al gereageerd of betaald hebt.",
-  "Of je met een boekhouder werkt.",
-  "Welke officiële berichten je hebt ontvangen.",
+const profiles = [
+  "Particulier",
+  "Student",
+  "Zelfstandige",
+  "Vennootschap",
+  "Ik weet het niet",
+];
+
+const deadlines = [
+  "Ja, minder dan 7 dagen",
+  "Ja, 7 tot 30 dagen",
+  "Ja, meer dan 30 dagen",
+  "Nee",
+  "Ik weet het niet",
 ];
 
 export default function HulpAanvragenPage() {
@@ -57,113 +68,176 @@ export default function HulpAanvragenPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-            BoeteRadar helpt je eerst zelf overzicht krijgen. Als je daarna nog
-            twijfelt, kan je een hulpaanvraag indienen. Dan beschrijf je kort je
-            situatie, zodat duidelijk wordt welke ondersteuning je nodig hebt.
+            Vul hieronder kort je situatie in. BoeteRadar is geen officiële
+            instantie en geeft zelf geen juridisch, fiscaal of boekhoudkundig
+            advies, maar je aanvraag kan helpen om duidelijk te maken welke
+            ondersteuning je mogelijk nodig hebt.
           </p>
 
-          <p className="mt-4 max-w-3xl leading-7 text-slate-700">
-            Deel geen rijksregisternummer, klantnummer, officiële documenten of
-            gevoelige persoonsgegevens via het formulier. Beschrijf je situatie
-            algemeen en concreet.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdndgj220iZG4IBmJCSqDwY5vf_kZZWTAbVd99zzVCafsdaAQ/viewform"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-orange-600 px-6 py-3 text-center font-black text-white transition hover:bg-orange-700"
-            >
-              Hulpaanvraag openen
-            </a>
-
-            <Link
-              href="/"
-              className="rounded-full border border-slate-200 bg-slate-50 px-6 py-3 text-center font-black text-slate-900 transition hover:bg-slate-100"
-            >
-              Eerst een check doen
-            </Link>
+          <div className="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-5">
+            <p className="font-black text-orange-900">
+              Deel geen gevoelige gegevens.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-slate-700">
+              Stuur geen rijksregisternummer, klantnummer, officiële documenten,
+              medische gegevens of volledige brieven door. Beschrijf je situatie
+              algemeen en concreet.
+            </p>
           </div>
         </section>
 
-        <section className="mt-6 grid gap-6 md:grid-cols-2">
-          <div className="rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
-            <p className="text-sm font-black uppercase tracking-wide text-orange-600">
-              Wanneer gebruiken?
-            </p>
+        <section className="mt-6 rounded-[2rem] bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-black uppercase tracking-wide text-orange-600">
+            Aanvraagformulier
+          </p>
 
-            <h2 className="mt-2 text-2xl font-black">
-              Vooral bij fiscale of administratieve twijfel.
-            </h2>
+          <h2 className="mt-2 text-2xl font-black">
+            Beschrijf kort waar je mee vastzit.
+          </h2>
 
-            <ul className="mt-5 space-y-3 leading-7 text-slate-700">
-              {helpSituations.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-sm font-black text-orange-700">
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <form action="/api/hulp-aanvragen" method="post" className="mt-6 grid gap-5">
+            <label className="font-bold">
+              Waarover gaat je situatie?
+              <select
+                name="situation"
+                required
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="">Kies een situatie</option>
+                {situations.map((situation) => (
+                  <option key={situation} value={situation}>
+                    {situation}
+                  </option>
+                ))}
+              </select>
+            </label>
 
-          <div className="rounded-[2rem] bg-slate-950 p-7 text-white shadow-sm md:p-8">
-            <p className="text-sm font-black uppercase tracking-wide text-orange-300">
-              Voor je begint
-            </p>
+            <label className="font-bold">
+              Ben je particulier, student, zelfstandige of vennootschap?
+              <select
+                name="profile"
+                required
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="">Kies je profiel</option>
+                {profiles.map((profile) => (
+                  <option key={profile} value={profile}>
+                    {profile}
+                  </option>
+                ))}
+              </select>
+            </label>
 
-            <h2 className="mt-2 text-2xl font-black">
-              Leg eerst de basisinformatie klaar.
-            </h2>
+            <label className="font-bold">
+              Is er een termijn of deadline?
+              <select
+                name="deadline"
+                required
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="">Kies een optie</option>
+                {deadlines.map((deadline) => (
+                  <option key={deadline} value={deadline}>
+                    {deadline}
+                  </option>
+                ))}
+              </select>
+            </label>
 
-            <ul className="mt-5 space-y-3 leading-7 text-slate-300">
-              {whatToPrepare.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-black text-orange-300">
-                    ✓
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <label className="font-bold">
+              Staat er een bedrag in de brief of situatie?
+              <select
+                name="amountMentioned"
+                required
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+              >
+                <option value="">Kies een optie</option>
+                <option value="Ja">Ja</option>
+                <option value="Nee">Nee</option>
+                <option value="Ik weet het niet">Ik weet het niet</option>
+              </select>
+            </label>
+
+            <label className="font-bold">
+              Beschrijf kort je situatie
+              <textarea
+                name="message"
+                required
+                minLength={20}
+                rows={6}
+                placeholder="Bijvoorbeeld: Ik kreeg een brief van FOD Financiën over mijn aangifte. Er staat een termijn in, maar ik weet niet wat ik nu eerst moet doen."
+                className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal leading-7"
+              />
+            </label>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              <label className="font-bold">
+                E-mailadres
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="jij@email.be"
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+                />
+              </label>
+
+              <label className="font-bold">
+                Telefoonnummer optioneel
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="+32 ..."
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white p-3 font-normal"
+                />
+              </label>
+            </div>
+
+            <label className="flex gap-3 rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700">
+              <input
+                name="consent"
+                type="checkbox"
+                required
+                value="Akkoord"
+                className="mt-1 h-4 w-4 shrink-0"
+              />
+              <span>
+                Ik begrijp dat BoeteRadar geen officiële instantie is en dat ik
+                geen gevoelige gegevens zoals rijksregisternummer, klantnummer of
+                officiële documenten mag doorsturen.
+              </span>
+            </label>
+
+            <button
+              type="submit"
+              className="rounded-xl bg-orange-600 px-5 py-4 font-black text-white transition hover:bg-orange-700"
+            >
+              Hulpaanvraag verzenden
+            </button>
+          </form>
         </section>
 
-        <section className="mt-6 rounded-[2rem] border border-orange-200 bg-orange-50 p-7 shadow-sm md:p-8">
-          <p className="text-sm font-black uppercase tracking-wide text-orange-700">
+        <section className="mt-6 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-8">
+          <p className="text-sm font-black uppercase tracking-wide text-orange-600">
             Belangrijk
           </p>
 
           <h2 className="mt-2 text-2xl font-black">
-            BoeteRadar is geen officiële instantie.
+            Dit vervangt geen professioneel advies.
           </h2>
 
           <p className="mt-3 max-w-3xl leading-7 text-slate-700">
-            Een hulpaanvraag via BoeteRadar vervangt geen juridisch, fiscaal of
-            boekhoudkundig advies. Bij dringende termijnen, boetes, grote
-            bedragen of officiële beslissingen controleer je altijd de officiële
-            bron of contacteer je een bevoegde professional.
+            Bij dringende termijnen, officiële beslissingen, grote bedragen,
+            boetes of aanslagen controleer je altijd de officiële bron of vraag
+            je rechtstreeks advies aan een bevoegde professional.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdndgj220iZG4IBmJCSqDwY5vf_kZZWTAbVd99zzVCafsdaAQ/viewform"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-orange-600 px-6 py-3 text-center font-black text-white transition hover:bg-orange-700"
-            >
-              Hulpaanvraag indienen →
-            </a>
-
-            <Link
-              href="/disclaimer"
-              className="rounded-full border border-orange-200 bg-white px-6 py-3 text-center font-black text-orange-700 transition hover:bg-orange-100"
-            >
-              Lees de disclaimer
-            </Link>
-          </div>
+          <Link
+            href="/disclaimer"
+            className="mt-5 inline-flex rounded-full border border-orange-200 bg-orange-50 px-6 py-3 font-black text-orange-700 transition hover:bg-orange-100"
+          >
+            Lees de disclaimer
+          </Link>
         </section>
 
         <BackHomeLink label="← Terug naar homepage" />
