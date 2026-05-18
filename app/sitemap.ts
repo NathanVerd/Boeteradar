@@ -5,21 +5,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = [
     "",
+    "/over",
+    "/bronnen",
+    "/disclaimer",
     "/btw-aangifte-te-laat",
     "/btw-te-laat-betaald",
-    "/autokeuring-vervallen",
     "/personenbelasting-te-laat",
+    "/autokeuring-vervallen",
     "/student-te-veel-gewerkt",
     "/checklists/btw-deadline-checklist",
     "/checklists/personenbelasting-noodchecklist",
-    "/disclaimer",
-    "/bronnen",
   ];
 
   return pages.map((page) => ({
     url: `${baseUrl}${page}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
-    priority: page === "" ? 1 : page.includes("/checklists/") ? 0.7 : 0.8,
+    priority:
+      page === ""
+        ? 1
+        : page === "/over" || page === "/bronnen"
+          ? 0.85
+          : page.includes("/checklists/")
+            ? 0.7
+            : 0.8,
   }));
 }
