@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Bronnen | Hoe BoeteRadar officiële bronnen gebruikt",
   description:
-    "Lees hoe BoeteRadar officiële Belgische bronnen gebruikt voor btw, personenbelasting, autokeuring, studentenwerk en administratieve checks.",
+    "Lees hoe BoeteRadar officiële Belgische bronnen gebruikt voor btw, personenbelasting, brieven van FOD Financiën, autokeuring, studentenwerk en administratieve checks.",
   alternates: {
     canonical: "https://www.boeteradar.be/bronnen",
   },
@@ -66,6 +66,29 @@ const sourceGroups = [
     ],
   },
   {
+    title: "Brief of bericht van FOD Financiën",
+    description:
+      "Voor brieven, eBox-berichten, MyMinfin-meldingen, contact met FOD Financiën en het opvolgen van officiële communicatie.",
+    links: [
+      {
+        label: "FOD Financiën — MyMinfin",
+        href: "https://financien.belgium.be/nl/E-services/MyMinfin",
+      },
+      {
+        label: "FOD Financiën — Contact",
+        href: "https://financien.belgium.be/nl/Contact",
+      },
+      {
+        label: "FOD Financiën — e-services",
+        href: "https://financien.belgium.be/nl/E-services",
+      },
+      {
+        label: "eBox — Officiële digitale brievenbus",
+        href: "https://myebox.be/",
+      },
+    ],
+  },
+  {
     title: "Autokeuring",
     description:
       "Voor technische keuring, keuringscentra en algemene informatie rond voertuigkeuring.",
@@ -109,6 +132,10 @@ const checks = [
   {
     label: "Btw te laat betaald",
     href: "/btw-te-laat-betaald",
+  },
+  {
+    label: "Brief van FOD Financiën ontvangen",
+    href: "/brief-fod-financien-ontvangen",
   },
   {
     label: "Personenbelasting te laat",
