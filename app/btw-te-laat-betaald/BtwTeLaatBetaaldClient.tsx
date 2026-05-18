@@ -4,6 +4,7 @@ import BackHomeLink from "@/components/BackHomeLink";
 import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import HelpRequestCta from "@/components/HelpRequestCta";
 import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
 import Link from "next/link";
@@ -72,13 +73,16 @@ function countStartedVatInterestMonths(
 
   while (currentPeriodStart <= paymentDate) {
     startedMonths += 1;
-    currentPeriodStart = addMonthsClamped(firstInterestPeriodStart, startedMonths);
+    currentPeriodStart = addMonthsClamped(
+      firstInterestPeriodStart,
+      startedMonths
+    );
   }
 
   return startedMonths;
 }
 
-export default function BtwTeLaatBetaaldPage() {
+export default function BtwTeLaatBetaaldClient() {
   const [amount, setAmount] = useState(1000);
   const [filingFrequency, setFilingFrequency] = useState("quarterly");
   const [dueDate, setDueDate] = useState("2026-04-25");
@@ -623,6 +627,12 @@ export default function BtwTeLaatBetaaldPage() {
             officiële bronnen of vraag professioneel advies.
           </p>
         </section>
+
+        <HelpRequestCta
+          title="Twijfel je over je btw-betaling?"
+          description="Als er nog btw openstaat, een mededeling fout liep, je een herinnering kreeg of het bedrag groot is, kan extra hulp nuttig zijn."
+          buttonLabel="Hulp bij btw-betaling aanvragen"
+        />
 
         <RelatedChecks
           title="Nog iets rond btw controleren?"

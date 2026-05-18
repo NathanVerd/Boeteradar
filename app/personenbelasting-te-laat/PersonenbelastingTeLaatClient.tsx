@@ -4,6 +4,7 @@ import BackHomeLink from "@/components/BackHomeLink";
 import DisclaimerBox from "@/components/DisclaimerBox";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import HelpRequestCta from "@/components/HelpRequestCta";
 import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
 import Link from "next/link";
@@ -638,6 +639,12 @@ export default function PersonenbelastingTeLaatClient() {
             officiële bronnen of vraag professioneel advies.
           </p>
         </section>
+
+        <HelpRequestCta
+          title="Wil je hulp bij je personenbelasting?"
+          description="Bij een openstaande aangifte, bericht in MyMinfin, aanslag van ambtswege of onzekerheid over je documenten kan het verstandig zijn om hulp te vragen."
+          buttonLabel="Hulp bij personenbelasting aanvragen"
+        />
 
         <RelatedChecks excludeHref="/personenbelasting-te-laat" />
 

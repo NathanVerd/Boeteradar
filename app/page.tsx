@@ -120,6 +120,13 @@ export default function Home() {
                 >
                   Bekijk checklists
                 </a>
+
+                <Link
+                  href="/hulp-aanvragen"
+                  className="rounded-full border border-orange-200 bg-white px-6 py-3 text-center font-black text-orange-700 transition hover:-translate-y-0.5 hover:bg-orange-50"
+                >
+                  Hulp aanvragen
+                </Link>
               </div>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -464,6 +471,33 @@ export default function Home() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-12 rounded-[2rem] border border-orange-200 bg-orange-50 p-7 shadow-sm md:p-8">
+          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-wide text-orange-700">
+                Hulp nodig?
+              </p>
+
+              <h2 className="mt-2 text-3xl font-black">
+                Twijfel je na een check nog steeds?
+              </h2>
+
+              <p className="mt-3 max-w-2xl leading-7 text-slate-700">
+                Bij een brief, boete, termijn, btw-probleem of openstaande
+                aangifte kan je een hulpaanvraag indienen. Deel geen gevoelige
+                gegevens, maar beschrijf kort je situatie.
+              </p>
+            </div>
+
+            <Link
+              href="/hulp-aanvragen"
+              className="rounded-full bg-orange-600 px-6 py-3 text-center font-black text-white transition hover:bg-orange-700"
+            >
+              Hulp aanvragen →
+            </Link>
           </div>
         </section>
 

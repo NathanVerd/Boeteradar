@@ -3,6 +3,7 @@
 import BackHomeLink from "@/components/BackHomeLink";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import HelpRequestCta from "@/components/HelpRequestCta";
 import RelatedChecks from "@/components/RelatedChecks";
 import { useMemo, useState } from "react";
 
@@ -63,7 +64,8 @@ export default function BriefFodFinancienClient() {
   const [responded, setResponded] = useState<YesNo>("nee");
   const [hasAccountant, setHasAccountant] = useState<YesNo>("nee");
   const [amountMentioned, setAmountMentioned] = useState<YesNo>("nee");
-  const [reminderType, setReminderType] = useState<ReminderType>("onduidelijk");
+  const [reminderType, setReminderType] =
+    useState<ReminderType>("onduidelijk");
   const [documentsReady, setDocumentsReady] = useState<YesNo>("nee");
   const [firstLetter, setFirstLetter] = useState<YesNo>("ja");
   const [calculated, setCalculated] = useState(false);
@@ -335,7 +337,9 @@ export default function BriefFodFinancienClient() {
               </span>
               <select
                 value={topic}
-                onChange={(event) => setTopic(event.target.value as LetterTopic)}
+                onChange={(event) =>
+                  setTopic(event.target.value as LetterTopic)
+                }
                 className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none focus:border-orange-400"
               >
                 {Object.entries(topicLabels).map(([value, label]) => (
@@ -644,6 +648,12 @@ export default function BriefFodFinancienClient() {
             </a>
           </div>
         </section>
+
+        <HelpRequestCta
+          title="Twijfel je over een brief van FOD Financiën?"
+          description="Als je niet zeker weet wat de brief betekent, welke termijn geldt of hoe je moet reageren, kan je een hulpaanvraag indienen."
+          buttonLabel="Hulp bij FOD-brief aanvragen"
+        />
 
         <div className="mt-10">
           <RelatedChecks excludeHref="/brief-fod-financien-ontvangen" />

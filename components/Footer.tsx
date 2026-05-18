@@ -198,6 +198,13 @@ export default function Footer() {
 
             <div className="mt-4 grid gap-3">
               <Link
+                href="/hulp-aanvragen"
+                className="text-sm font-bold text-orange-300 transition hover:text-white"
+              >
+                Hulp aanvragen
+              </Link>
+
+              <Link
                 href="/over"
                 className="text-sm font-medium text-slate-300 transition hover:text-white"
               >
