@@ -10,6 +10,10 @@ const checkLinks = [
     href: "/btw-te-laat-betaald",
   },
   {
+    label: "Brief van FOD Financiën ontvangen",
+    href: "/brief-fod-financien-ontvangen",
+  },
+  {
     label: "Personenbelasting te laat",
     href: "/personenbelasting-te-laat",
   },
