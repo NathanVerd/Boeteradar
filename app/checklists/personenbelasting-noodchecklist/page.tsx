@@ -3,6 +3,26 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import OfficialSources from "@/components/OfficialSources";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Personenbelasting noodchecklist | BoeteRadar België",
+  description:
+    "Gratis noodchecklist voor personenbelasting in België. Controleer MyMinfin, Tax-on-web, aanslagjaar, fiscale fiches, attesten en berichten van FOD Financiën.",
+  alternates: {
+    canonical:
+      "https://www.boeteradar.be/checklists/personenbelasting-noodchecklist",
+  },
+  openGraph: {
+    title: "Personenbelasting noodchecklist",
+    description:
+      "Gebruik deze checklist als je aangifte personenbelasting te laat, nog open of onduidelijk is.",
+    url: "https://www.boeteradar.be/checklists/personenbelasting-noodchecklist",
+    siteName: "BoeteRadar België",
+    locale: "nl_BE",
+    type: "website",
+  },
+};
 
 const urgentSteps = [
   {
