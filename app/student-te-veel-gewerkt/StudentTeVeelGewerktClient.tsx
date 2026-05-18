@@ -8,7 +8,7 @@ import OfficialSources from "@/components/OfficialSources";
 import RelatedChecks from "@/components/RelatedChecks";
 import { useState } from "react";
 
-export default function StudentTeVeelGewerktClient() {
+export default function StudentTeVeelGewerktPage() {
   const [ageGroup, setAgeGroup] = useState("18-25");
   const [region, setRegion] = useState("flanders");
   const [studentHoursUsed, setStudentHoursUsed] = useState(620);
@@ -338,7 +338,9 @@ export default function StudentTeVeelGewerktClient() {
               </div>
 
               <div>
-                <p className="text-sm font-bold text-slate-700">Boven 650</p>
+                <p className="text-sm font-bold text-slate-700">
+                  Boven 650
+                </p>
                 <p className="mt-1 text-2xl font-black">
                   {exceededStudentHours}
                 </p>
@@ -462,9 +464,7 @@ export default function StudentTeVeelGewerktClient() {
               >
                 <option value="everything">Alles samen</option>
                 <option value="social-contributions">Sociale bijdragen</option>
-                <option value="child-benefit">
-                  Groeipakket of kinderbijslag
-                </option>
+                <option value="child-benefit">Groeipakket of kinderbijslag</option>
                 <option value="taxes">Belastingen / fiscaal ten laste</option>
               </select>
             </label>
@@ -507,7 +507,9 @@ export default function StudentTeVeelGewerktClient() {
 
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 <div className="rounded-2xl bg-white/70 p-4">
-                  <p className="text-sm font-bold text-slate-700">Binnen 650</p>
+                  <p className="text-sm font-bold text-slate-700">
+                    Binnen 650
+                  </p>
                   <p className="mt-1 text-2xl font-black">
                     {remainingStudentHours}
                   </p>
@@ -517,7 +519,9 @@ export default function StudentTeVeelGewerktClient() {
                 </div>
 
                 <div className="rounded-2xl bg-white/70 p-4">
-                  <p className="text-sm font-bold text-slate-700">Boven 650</p>
+                  <p className="text-sm font-bold text-slate-700">
+                    Boven 650
+                  </p>
                   <p className="mt-1 text-2xl font-black">
                     {exceededStudentHours}
                   </p>
@@ -597,9 +601,7 @@ export default function StudentTeVeelGewerktClient() {
               <li>Download of bewaar je Student@work-attest.</li>
               <li>Controleer je geplande shifts voor je ze aanneemt.</li>
               <li>Bewaar contracten en loonfiches.</li>
-              <li>
-                Check je regio bij je uitbetaler als je 18 jaar of ouder bent.
-              </li>
+              <li>Check je regio bij je uitbetaler als je 18 jaar of ouder bent.</li>
             </ol>
           </section>
         </div>
@@ -735,7 +737,9 @@ export default function StudentTeVeelGewerktClient() {
             </div>
 
             <div className="rounded-2xl bg-slate-50 p-5">
-              <h3 className="font-black">Tellen meerdere werkgevers samen?</h3>
+              <h3 className="font-black">
+                Tellen meerdere werkgevers samen?
+              </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
                 Ja. Je studentenuren worden niet per werkgever apart bekeken.
                 Controleer daarom je totale teller op Student@work.
