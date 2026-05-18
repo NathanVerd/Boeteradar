@@ -3,6 +3,25 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import OfficialSources from "@/components/OfficialSources";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Btw-deadline checklist | BoeteRadar België",
+  description:
+    "Gratis btw-deadline checklist voor België. Controleer Intervat, facturen, betaling, mededeling en bewijsstukken vóór je btw-deadline.",
+  alternates: {
+    canonical: "https://www.boeteradar.be/checklists/btw-deadline-checklist",
+  },
+  openGraph: {
+    title: "Btw-deadline checklist",
+    description:
+      "Gebruik deze checklist om je btw-aangifte, betaling en bewijsstukken op tijd te controleren.",
+    url: "https://www.boeteradar.be/checklists/btw-deadline-checklist",
+    siteName: "BoeteRadar België",
+    locale: "nl_BE",
+    type: "website",
+  },
+};
 
 const checklistItems = [
   {
