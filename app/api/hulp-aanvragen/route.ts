@@ -66,7 +66,7 @@ export async function POST(request: Request) {
   const safeSubmittedAt = escapeHtml(submittedAt);
 
   await resend.emails.send({
-    from: "BoeteRadar <onboarding@resend.dev>",
+    from: "BoeteRadar <hulp@boeteradar.be>",
     to: leadToEmail,
     replyTo: email,
     subject: `Nieuwe hulpaanvraag: ${situation}`,
