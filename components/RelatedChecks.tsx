@@ -20,6 +20,10 @@ const checks = [
     href: "/brief-fod-financien-ontvangen",
   },
   {
+    title: "Aanslag van ambtswege ontvangen",
+    href: "/aanslag-van-ambtswege-ontvangen",
+  },
+  {
     title: "Personenbelasting te laat",
     href: "/personenbelasting-te-laat",
   },

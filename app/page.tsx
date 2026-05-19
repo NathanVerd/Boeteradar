@@ -28,6 +28,14 @@ const checks = [
     tag: "Brief",
   },
   {
+    title: "Aanslag van ambtswege ontvangen",
+    description:
+      "Je kreeg een aanslag van ambtswege. Check termijn, bewijs en wat je eerst moet doen.",
+    href: "/aanslag-van-ambtswege-ontvangen",
+    category: "FOD Financiën",
+    tag: "Aanslag",
+  },
+  {
     title: "Personenbelasting te laat",
     description:
       "Je belastingaangifte is te laat of onzeker. Kijk wat je nog kan doen.",

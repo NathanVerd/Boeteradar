@@ -14,6 +14,10 @@ const checkLinks = [
     href: "/brief-fod-financien-ontvangen",
   },
   {
+    label: "Aanslag van ambtswege ontvangen",
+    href: "/aanslag-van-ambtswege-ontvangen",
+  },
+  {
     label: "Personenbelasting te laat",
     href: "/personenbelasting-te-laat",
   },

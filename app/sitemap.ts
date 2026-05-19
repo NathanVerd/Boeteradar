@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/btw-aangifte-te-laat",
     "/btw-te-laat-betaald",
     "/brief-fod-financien-ontvangen",
+    "/aanslag-van-ambtswege-ontvangen",
     "/personenbelasting-te-laat",
     "/autokeuring-vervallen",
     "/student-te-veel-gewerkt",
