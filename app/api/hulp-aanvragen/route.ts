@@ -35,19 +35,26 @@ export async function POST(request: Request) {
     !email ||
     !consent
   ) {
+    console.error("Help request missing required fields");
     redirect("/hulp-aanvragen?fout=ontbrekende-gegevens");
   }
 
   if (message.length < 20) {
+    console.error("Help request message too short");
     redirect("/hulp-aanvragen?fout=bericht-te-kort");
   }
 
   const resendApiKey = process.env.RESEND_API_KEY;
   const leadToEmail = process.env.LEAD_TO_EMAIL;
 
-  if (!resendApiKey || !leadToEmail) {
-    console.error("Missing RESEND_API_KEY or LEAD_TO_EMAIL");
-    redirect("/hulp-aanvragen?fout=configuratie");
+  if (!resendApiKey) {
+    console.error("Missing RESEND_API_KEY");
+    redirect("/hulp-aanvragen?fout=geen-resend-key");
+  }
+
+  if (!leadToEmail) {
+    console.error("Missing LEAD_TO_EMAIL");
+    redirect("/hulp-aanvragen?fout=geen-lead-email");
   }
 
   const resend = new Resend(resendApiKey);
@@ -65,7 +72,7 @@ export async function POST(request: Request) {
   const safePhone = escapeHtml(phone || "Niet ingevuld");
   const safeSubmittedAt = escapeHtml(submittedAt);
 
-  await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: "BoeteRadar <hulp@boeteradar.be>",
     to: leadToEmail,
     replyTo: email,
@@ -101,6 +108,13 @@ export async function POST(request: Request) {
       </div>
     `,
   });
+
+  if (error) {
+    console.error("Resend email error:", JSON.stringify(error, null, 2));
+    redirect("/hulp-aanvragen?fout=email-niet-verzonden");
+  }
+
+  console.log("Help request email sent:", data?.id);
 
   redirect("/hulp-aanvragen/bedankt");
 }
